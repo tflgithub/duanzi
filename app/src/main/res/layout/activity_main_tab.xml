@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.anna.duanzi.widget.TabFragmentHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!-- 这里是tab选项卡的内容 ，宽度要填满，高度自动适应 -->
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <!-- tabhost上面一条黑色分割 @drawable/line_shop -->
+        <View
+            android:id="@+id/view_2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:background="#D1D1D1" >
+        </View>
+
+        <!-- 调换framelayout和tabwidget的前后顺序可以分别实现tab的top和在底下的效果 -->
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </TabWidget>
+    </LinearLayout>
+
+</com.anna.duanzi.widget.TabFragmentHost>

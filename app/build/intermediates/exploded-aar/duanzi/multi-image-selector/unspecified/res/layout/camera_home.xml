@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <me.nereo.multi_image_selector.camera.CameraGrid
+            android:id="@+id/camera_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true" />
+
+        <View
+            android:id="@+id/focus_index"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/cam_focus"
+            android:visibility="invisible" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/action_button"-->
+        <!--android:src="@drawable/camera_shutter"-->
+        <!--android:layout_above="@+id/bottom_relative"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="20dp"/>-->
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/bottom_relative"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_alignParentBottom="true">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/camera_flip_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/camera_flip"/>-->
+
+
+        <!--<ImageView-->
+        <!--android:id="@+id/flash_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/camera_flash_off"-->
+        <!--android:layout_toRightOf="@+id/camera_flip_view"-->
+        <!--android:layout_marginLeft="20dp"/>-->
+        <!--</RelativeLayout>-->
+
+        <include
+            layout="@layout/camera_control"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+
+</FrameLayout>

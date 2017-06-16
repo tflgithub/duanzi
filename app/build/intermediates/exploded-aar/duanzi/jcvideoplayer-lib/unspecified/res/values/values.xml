@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="biz_audio_progress_bg">#ff0000</color>
+    <color name="biz_audio_progress_first">#ffffff</color>
+    <color name="biz_audio_progress_second">#6b6666</color>
+    <color name="black_a10_color">#1a000000</color>
+    <color name="default_bg">#aa000000</color>
+    <color name="white_fafaf8">#fafaf8</color>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="media_controller_view_height">40.0dip</dimen>
+    <string name="app_name">JiecaoVideoPlayer</string>
+</resources>

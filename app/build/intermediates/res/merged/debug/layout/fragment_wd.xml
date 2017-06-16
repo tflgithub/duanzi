@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <com.anna.duanzi.widget.CircleImageView
+            android:id="@+id/iv_user_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:border_color="#dddddd"
+            app:border_width="8dp" />
+
+        <TextView
+            android:id="@+id/tv_login_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/text_black_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ly_setting"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_selector"
+        android:divider="@drawable/bottom_line"
+        android:gravity="center|left"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingBottom="2dp"
+        android:showDividers="end">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="会员相关" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:divider="@drawable/bottom_line"
+        android:background="@drawable/layout_selector"
+        android:gravity="center|left"
+        android:paddingBottom="2dp"
+        android:orientation="vertical"
+        android:showDividers="end">
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="分享给朋友" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:divider="@drawable/bottom_line"
+        android:background="@drawable/layout_selector"
+        android:gravity="center|left"
+        android:paddingBottom="2dp"
+        android:orientation="vertical"
+        android:showDividers="end">
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="用户反馈" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_version_update"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:divider="@drawable/bottom_line"
+        android:gravity="center|left"
+        android:paddingBottom="2dp"
+        android:background="@drawable/layout_selector"
+        android:orientation="vertical"
+        android:showDividers="end">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:text="版本更新" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

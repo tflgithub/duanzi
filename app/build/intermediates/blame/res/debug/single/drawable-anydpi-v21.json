@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_flash_on.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\drawable-anydpi-v21\\ic_flash_on.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_camera_rear.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\drawable-anydpi-v21\\ic_camera_rear.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_flash_auto.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\drawable-anydpi-v21\\ic_flash_auto.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_camera_front.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\drawable-anydpi-v21\\ic_camera_front.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_flash_off.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\drawable-anydpi-v21\\ic_flash_off.xml"
+    }
+]

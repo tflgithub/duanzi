@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">快放乐讯</string>
+    <string name="action_search">查找</string>
+    <string name="action_add">添加</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_image">图片</string>
+    <string name="tab_video">视频</string>
+    <string name="tab_found">发现</string>
+    <string name="tab_me">我</string>
+
+    <string name="loading">加载中...</string>
+    <string name="no_update">休息一下，暂时无更新</string>
+    <string name="no_more">没有更多数据了</string>
+    <string name="title_activity_turn_book">TurnBookActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--member-->
+    <string name="grade_one">一级会员（分享给10个朋友即可获得）</string>
+    <string name="grade_two">二级会员（30元）推广期间暂不开放</string>
+    <string name="grade_three">三级级会员（50元）推广期间暂不开放</string>
+    <string name="member_tip">
+       温馨提示： 微信分享给朋友时，一定要选择返回快放乐讯才会记录你的分享次数。
+    </string>
+    <string name="free_video_tip">非会员，免费试看5分钟</string>
+
+    <string name="stalled">启动</string>
+    <string name="download_stop">继续</string>
+    <string name="downloading">暂停</string>
+    <string name="download_complete">已下载</string>
+    <string name="download">下载</string>
+    <string name="install">安装</string>
+
+    <!--member only-->
+    <string name="online_area">在线电影专区</string>
+    <string name="down_load_area">精品下载专区</string>
+    <string name="image_area">图片专区</string>
+    <string name="hot_down_load">精品下载</string>
+    <string name="my_down_load">我的下载</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, CamTestActivity!</string>
+    <string name="app_name">CameraExample</string>
+    
+    <!-- UI Elements -->
+    <string name="btn_capture">Click</string>
+    
+    <!-- Toast Messages -->
+    <string name="camera_not_found">No camera harware found</string>
+    <string name="take_photo_help">Touch anywhere on screen to take picture</string>
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.anna.duanzi.activity.MembersOnlyActivity">
+
+    <include layout="@layout/header_actionbar" />
+
+    <Button
+        android:id="@+id/btn_online_area"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/fb_btn_selector"
+        android:onClick="onClick"
+        android:text="@string/online_area" />
+
+    <Button
+        android:id="@+id/btn_down_load_area"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/fb_btn_selector"
+        android:onClick="onClick"
+        android:text="@string/down_load_area" />
+
+    <Button
+        android:id="@+id/btn_image_area"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/fb_btn_selector"
+        android:onClick="onClick"
+        android:text="@string/image_area" />
+
+</LinearLayout>

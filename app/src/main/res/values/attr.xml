@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="menu_icon" format="reference"></attr>
+    <attr name="menu_color" format="color"></attr>
+    <attr name="text" format="string"></attr>
+    <attr name="text_size" format="dimension"></attr>
+
+    <declare-styleable name="ChangeColorIconWithText">
+        <attr name="menu_icon"></attr>
+        <attr name="menu_color"></attr>
+        <attr name="text"></attr>
+        <attr name="text_size"></attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="rtl_RecyclerTabLayout">
+        <attr name="rtl_tabIndicatorColor" format="color" />
+        <attr name="rtl_tabIndicatorHeight" format="dimension" />
+
+        <attr name="rtl_tabBackground" format="reference" />
+
+        <attr name="rtl_tabTextAppearance" format="reference" />
+        <attr name="rtl_tabSelectedTextColor" format="color" />
+
+        <attr name="rtl_tabOnScreenLimit" format="integer" />
+        <attr name="rtl_tabMinWidth" format="dimension" />
+        <attr name="rtl_tabMaxWidth" format="dimension" />
+
+        <attr name="rtl_tabPaddingStart" format="dimension" />
+        <attr name="rtl_tabPaddingTop" format="dimension" />
+        <attr name="rtl_tabPaddingEnd" format="dimension" />
+        <attr name="rtl_tabPaddingBottom" format="dimension" />
+        <attr name="rtl_tabPadding" format="dimension" />
+
+        <attr name="rtl_scrollEnabled" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="tabTextView">
+        <attr name="tabSelectedTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DownLoadButton">
+        <attr name="normalBackground" format="reference|color"/>
+        <attr name="downLoadedBackground" format="reference|color"/>
+        <attr name="downLoadCompleteBackground" format="reference|color"/>
+        <attr name="textColor" format="reference|color"/>
+    </declare-styleable>
+
+</resources>

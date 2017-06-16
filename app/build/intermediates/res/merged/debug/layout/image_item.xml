@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_selector"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="2dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/text_black_14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center|left"
+        android:text="dd" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/img_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tv_image_num"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_channel_header_subscription"
+            android:gravity="center"
+            android:padding="5dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_click_num"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:text="100人阅读" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_comment_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="12条评论" />
+
+        <TextView
+            android:id="@+id/tv_dig"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_pop_digg_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="+10" />
+    </LinearLayout>
+</LinearLayout>

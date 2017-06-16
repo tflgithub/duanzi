@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="bgColor_overlay_black">#95000000</color>
+    <color name="bgColor_svprogressdefaultview">@android:color/white</color>
+    <color name="roundColor_svprogresshuddefault">#e5e5e5</color>
+    <color name="roundProgressColor_svprogresshuddefault">@android:color/black</color>
+    <color name="textColor_svprogresshuddefault_msg">#000000</color>
+    <declare-styleable name="SVCircleProgressBar"><attr format="color" name="svprogress_roundColor"/><attr format="color" name="svprogress_roundProgressColor"/><attr format="dimension" name="svprogress_roundWidth"/><attr format="integer" name="svprogress_max"/><attr name="svprogress_style"><enum name="STROKE" value="0"/><enum name="FILL" value="1"/></attr></declare-styleable>
+    <dimen name="margintop_svprogresshuddefault_msg">10dp</dimen>
+    <dimen name="padding_svprogresshuddefault">15dp</dimen>
+    <dimen name="radius_svprogresshuddefault">25px</dimen>
+    <dimen name="size_image_bigloading">80dp</dimen>
+    <dimen name="size_image_smallloading">60dp</dimen>
+    <dimen name="size_minwidth_svprogresshuddefault">120dp</dimen>
+    <dimen name="textSize_svprogresshuddefault_msg">15sp</dimen>
+    <integer name="svanimation_default_duration">300</integer>
+    <style name="AlertActivity_AlertStyle" parent="android:Theme.Dialog">
+        <!--<item name="android:windowAnimationStyle">@style/AnimAlert</item>-->
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

@@ -1,0 +1,490 @@
+[
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_svprogresshud.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\svprogresshud\\1.0.6\\res\\layout\\layout_svprogresshud.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\radio_sex.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\radio_sex.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\apk_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\apk_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\camera_home.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\camera_home.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_tinker.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_tinker.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\comment_popupwindow.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\comment_popupwindow.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_message.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_message.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_games.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_games.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_empty_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_empty_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_net_error_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_net_error_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\avoscloud_feedback_thread_actionbar.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\avoscloud_feedback_thread_actionbar.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\video_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\video_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\recyclerview.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\recyclerview.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_modify_password.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_modify_password.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\tab_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_web_txt.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_web_txt.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fiction_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fiction_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\image_area_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\image_area_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_svprogressdefault.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.bigkoo\\svprogresshud\\1.0.6\\res\\layout\\view_svprogressdefault.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_pay.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_pay.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_loading.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_loading.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\un_down_load_movies_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\un_down_load_movies_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\error_info.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\error_info.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_single_image_seletor.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_single_image_seletor.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\avoscloud_feedback_user_reply.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\avoscloud_feedback_user_reply.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_folder.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\list_item_folder.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\movies_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\movies_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_download_area.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_download_area.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_txt.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_txt.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_tab.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_tab.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\video_control_view.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\jcvideoplayer-lib\\unspecified\\res\\layout\\video_control_view.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_found_password.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_found_password.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_default_login.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_default_login.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_comment.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_comment.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_update_password.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_update_password.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_update_bind_mobile.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_update_bind_mobile.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\down_load_movies_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\down_load_movies_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_down_load.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_down_load.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\avoscloud_feedback_dev_reply.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\avoscloud_feedback_dev_reply.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_member.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_member.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_data.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_data.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cmp_customer_actionbar.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\cmp_customer_actionbar.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_members_only.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_members_only.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\back_header.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\back_header.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\camera_control.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\camera_control.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_material_dialog.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.3.1\\res\\layout\\layout_material_dialog.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_turn_book.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_turn_book.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_tab.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_main_tab.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_main_my.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\tab_main_my.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_default.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\activity_default.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_image_page.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_image_page.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_update_mobile.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_update_mobile.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_actionbar_2.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\header_actionbar_2.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_image_area_acitvity.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_image_area_acitvity.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_item_list.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_item_list.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_account_login.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_account_login.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_update_nick.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_update_nick.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_main_home.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\tab_main_home.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_txt.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_txt.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_simple_dropdown_hint.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_simple_dropdown_hint.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_setting.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_wd.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_wd.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_main_message.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\tab_main_message.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_user_info.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_edit_user_info.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_loading_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_loading_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\comment_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\comment_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_fullscreen.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\jcvideoplayer-lib\\unspecified\\res\\layout\\activity_fullscreen.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_image.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\list_item_image.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\avoscloud_feedback_activity_conversation.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\avoscloud_feedback_activity_conversation.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_progress_dialog.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\view_progress_dialog.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_clip_image.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\activity_clip_image.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_actionbar.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\header_actionbar.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_video.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_video.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\avoscloud_sns_web_activity.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\avoscloud_sns_web_activity.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\image_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\image_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_found.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_found.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\txt_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\txt_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_item.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_online_movies.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_online_movies.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_camera.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\list_item_camera.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\view_header.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_header.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\photo_process_activity.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\multi-image-selector\\unspecified\\res\\layout\\photo_process_activity.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_user_info.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_user_info.xml"
+    }
+]

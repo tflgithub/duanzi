@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.anna.duanzi"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
+    <application
+            android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <!-- share sdk -->
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!--
+                           AuthorizeAdapter表示一个继承自cn.sharesdk.framework.authorize.AuthorizeAdapter
+                           的类，这个类可以监听到页面的生命周期，也可以获取授权页面的各种UI控件。
+                           开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".activity.ImagePageActivity" />
+        <activity
+            android:name=".activity.TurnBookActivity"
+            android:label="@string/title_activity_turn_book" />
+        <activity
+            android:name=".activity.CommentActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.TxtActivity" />
+        <activity android:name=".activity.WebTxtActivity" />
+
+        <service
+            android:name="com.cn.tfl.update.DownloadService"
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <service android:name=".service.RegisterCodeTimerService" />
+
+        <activity android:name=".activity.VideoActivity" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name="com.avos.sns.SNSWebActivity" />
+        <activity
+            android:name="com.avos.avoscloud.feedback.ThreadActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <!-- Image Selector Entry -->
+        <activity
+            android:name=".activity.SingleImageSelectorActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".activity.EditUserInfoActivity" />
+        <activity android:name=".activity.MemberActivity" />
+        <activity android:name=".activity.GamesActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.DownLoadAreaActivity" />
+        <activity android:name=".activity.MembersOnlyActivity" />
+        <activity android:name=".activity.OnlineMoviesActivity" />
+        <activity android:name=".activity.ImageAreaActivity" />
+        <activity android:name=".activity.PayActivity" />
+    </application>
+
+</manifest>

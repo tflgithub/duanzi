@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:anna="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/tab_bg"
+        android:orientation="horizontal" >
+
+        <com.anna.duanzi.ChangeColorIconWithText
+            android:id="@+id/id_indicator_one"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            anna:menu_icon="@drawable/ic_tab_home_normal"
+            anna:text="@string/tab_home"
+            anna:text_size="12sp"
+            anna:menu_color="#ff45c01a" />
+
+        <com.anna.duanzi.ChangeColorIconWithText
+            android:id="@+id/id_indicator_two"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            anna:menu_icon="@drawable/ic_publish_take_picture_normal"
+            anna:text="@string/tab_image"
+            anna:text_size="12sp"
+            anna:menu_color="#ff45c01a" />
+
+        <com.anna.duanzi.ChangeColorIconWithText
+            android:id="@+id/id_indicator_three"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            anna:menu_icon="@drawable/ic_publish_take_video_normal"
+            anna:text="@string/tab_video"
+            anna:text_size="12sp"
+            anna:menu_color="#ff45c01a" />
+
+        <com.anna.duanzi.ChangeColorIconWithText
+            android:id="@+id/id_indicator_four"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            anna:menu_icon="@drawable/ic_tab_discovery_normal"
+            anna:text="@string/tab_found"
+            anna:text_size="12sp"
+            anna:menu_color="#ff45c01a" />
+
+        <com.anna.duanzi.ChangeColorIconWithText
+            android:id="@+id/id_indicator_five"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            anna:menu_icon="@drawable/icon_2_n"
+            anna:text="@string/tab_me"
+            anna:text_size="12sp"
+            anna:menu_color="#ff45c01a" />
+    </LinearLayout>
+
+</LinearLayout>

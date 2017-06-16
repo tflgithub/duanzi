@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
+        android:id="@+id/video_controller"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:paddingLeft="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_click_num"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:text="100人播放" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_comment_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="12条评论" />
+
+        <TextView
+            android:id="@+id/tv_dig"
+            style="@style/text_gray_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_pop_digg_normal"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="+10" />
+    </LinearLayout>
+
+
+</LinearLayout>

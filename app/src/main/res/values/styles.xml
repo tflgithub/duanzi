@@ -1,0 +1,134 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+    <style name="rtl_RecyclerTabLayout">
+        <item name="rtl_tabMinWidth">72dp</item>
+        <item name="rtl_tabMaxWidth">264dp</item>
+        <item name="rtl_tabIndicatorColor">@color/gray</item>
+        <item name="rtl_tabIndicatorHeight">2dp</item>
+        <item name="rtl_tabPaddingStart">12dp</item>
+        <item name="rtl_tabPaddingEnd">12dp</item>
+        <item name="rtl_tabBackground">?attr/selectableItemBackground</item>
+        <item name="rtl_tabTextAppearance">@style/rtl_RecyclerTabLayout.Tab</item>
+        <item name="rtl_tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="rtl_RecyclerTabLayout.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="tabTextView">
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="text_gray_12sp">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_orange_12sp">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_orange_14sp">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="text_orange_16sp">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_green_12sp">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_green_16sp">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_gray_14sp">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="text_black_14sp">
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">14sp</item>
+</style>
+
+    <style name="text_black_22sp">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_gray_22sp">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_bottom_hidden</item>
+        <item name="android:windowExitAnimation">@anim/pop_bottom_show</item>
+    </style>
+
+    <style name="MyDialogStyleBottom" parent="android:Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+        <item name="android:windowFrame">@null</item>
+        ;!-- 边框 -->
+        <item name="android:windowIsFloating">false</item>
+        ;!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        ;!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        ;!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        ;!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        ;!-- 模糊 -->
+    </style>
+
+    <!-- 自定义ActionBar样式，重设ActionBar背景，隐藏actionbar左侧的应用图标和标题 -->
+    <style name="actionbar_def_style" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <!-- 在样式里面直接替换掉actionbar的背景，避免在有的窗口进入慢时导致进入时显示系统默认的actionbar -->
+        <item name="android:background">@drawable/tab_bg</item>
+        <!-- 在样式里面去掉acionbar的应用图标和标题 -->
+        <item name="android:displayOptions">useLogo</item>
+    </style>
+
+    <!-- 自定义窗口样式，需要带ActionBar -->
+    <style name="ActivityTheme_Light" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/actionbar_def_style</item>
+    </style>
+
+    <style name="common_horizontal_division_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">#dddddd</item>
+    </style>
+
+</resources>

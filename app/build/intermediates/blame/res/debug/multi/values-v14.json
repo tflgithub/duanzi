@@ -1,0 +1,289 @@
+[
+    {
+        "outputFile": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\values-v14\\values-v14.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 6,
+                    "endColumn": 12,
+                    "endOffset": 303
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 285,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 537
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 308,
+                    "endLine": 11,
+                    "endColumn": 12,
+                    "endOffset": 579
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 301,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 584,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 770
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\DroidPlugin\\unspecified\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 4,
+                        "endColumn": 12,
+                        "endOffset": 241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 775,
+                    "endLine": 17,
+                    "endColumn": 12,
+                    "endOffset": 962
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\duanzi\\DroidPlugin\\unspecified\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 246,
+                        "endLine": 7,
+                        "endColumn": 12,
+                        "endOffset": 433
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 967,
+                    "endColumn": 70,
+                    "endOffset": 1033
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 818,
+                        "endColumn": 70,
+                        "endOffset": 884
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1038,
+                    "endColumn": 82,
+                    "endOffset": 1116
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 889,
+                        "endColumn": 82,
+                        "endOffset": 967
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1121,
+                    "endLine": 25,
+                    "endColumn": 12,
+                    "endOffset": 1526
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 972,
+                        "endLine": 18,
+                        "endColumn": 12,
+                        "endOffset": 1377
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1531,
+                    "endLine": 31,
+                    "endColumn": 12,
+                    "endOffset": 1948
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1382,
+                        "endLine": 24,
+                        "endColumn": 12,
+                        "endOffset": 1799
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1953,
+                    "endColumn": 119,
+                    "endOffset": 2068
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 2040,
+                        "endColumn": 119,
+                        "endOffset": 2155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 2073,
+                    "endColumn": 62,
+                    "endOffset": 2131
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 2160,
+                        "endColumn": 62,
+                        "endOffset": 2218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 2136,
+                    "endLine": 36,
+                    "endColumn": 12,
+                    "endOffset": 2285
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 2223,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 2372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 2290,
+                    "endColumn": 62,
+                    "endOffset": 2348
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 2377,
+                        "endColumn": 62,
+                        "endOffset": 2435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 2353,
+                    "endColumn": 131,
+                    "endOffset": 2480
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 2440,
+                        "endColumn": 131,
+                        "endOffset": 2567
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2485,
+                    "endLine": 41,
+                    "endColumn": 12,
+                    "endOffset": 2613
+                },
+                "from": {
+                    "file": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 545,
+                        "endLine": 16,
+                        "endColumn": 12,
+                        "endOffset": 675
+                    }
+                }
+            }
+        ]
+    }
+]
