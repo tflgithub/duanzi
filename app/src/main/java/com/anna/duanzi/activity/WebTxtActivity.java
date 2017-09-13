@@ -142,7 +142,7 @@ public class WebTxtActivity extends BaseActivity implements OnClickListener {
                     commentBadgeView.setTextSize(8);
                     commentBadgeView.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
                     commentBadgeView.setAlpha(1f);
-                    commentBadgeView.setBadgeMargin(0, 0);
+                    commentBadgeView.setBadgeMargin(0, 8);
                     commentBadgeView.show();
                 } else {
                     // 查询失败

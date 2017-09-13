@@ -1,81 +1,63 @@
 package com.anna.duanzi.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.TextView;
-
 import com.anna.duanzi.R;
-import com.anna.duanzi.adapter.ImageAreaAdapter;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.domain.ImageArea;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVObject;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.FindCallback;
-import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
-import com.cn.fodel.tfl_list_recycler_view.TflListInterface;
-import com.cn.fodel.tfl_list_recycler_view.TflListModel;
-import com.cn.fodel.tfl_list_recycler_view.TflListRecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.Bind;
+import com.anna.duanzi.fragment.BackHandledFragment;
+import com.anna.duanzi.fragment.BackHandledInterface;
+import com.anna.duanzi.fragment.ImageTitleFragment;
 import butterknife.ButterKnife;
 
-public class ImageAreaActivity extends BaseActivity {
+public class ImageAreaActivity extends BaseActivity implements BackHandledInterface {
 
-    @Bind(R.id.recycler_view)
-    TflListRecyclerView mRecyclerView;
-    private TflListAdapter<ImageArea> tflListAdapter;
-    private List<ImageArea> dataList = new ArrayList<>();
-
+    private BackHandledFragment mBackHandedFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_area_acitvity);
         ButterKnife.bind(this);
         ((TextView) findViewById(R.id.header_actionbar_title)).setText(getString(R.string.image_area));
-        initData();
+        ImageTitleFragment imageTitleFragment=new ImageTitleFragment();
+        loadFragment(imageTitleFragment);
     }
 
-    private void initData() {
-        tflListAdapter = new ImageAreaAdapter(dataList);
-        tflListAdapter.setOnItemClickListener(new TflListInterface.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, Object o) {
-                ImageArea imageArea = (ImageArea) o;
-                Intent intent = new Intent(ImageAreaActivity.this, ImagePageActivity.class);
-                intent.putExtra("imageId", imageArea.objectId);
-                intent.putExtra("imageTitle", imageArea.title);
-                startActivity(intent);
-            }
-        });
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(tflListAdapter);
-        mRecyclerView.setDivider(R.drawable.bottom_line);
-        loadData();
+    public void loadFragment(BackHandledFragment fragment) {
+        BackHandledFragment backHandledFragment = fragment;
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fl_container, backHandledFragment, "default");
+        ft.addToBackStack("tag");
+        ft.commit();
     }
 
-    private void loadData() {
-        tflListAdapter.changeMode(TflListModel.MODE_LOADING);
-        AVQuery<ImageArea> query = AVObject.getQuery(ImageArea.class);
-        query.orderByDescending("createdAt");
-        query.findInBackground(new FindCallback<ImageArea>() {
-            @Override
-            public void done(List<ImageArea> list, AVException e) {
-                if (e == null) {
-                    tflListAdapter.changeMode(TflListModel.MODE_DATA);
-                    tflListAdapter.setData(list);
+    @Override
+    public void onBackPressed() {
+        if (mBackHandedFragment == null || !mBackHandedFragment.onBackPressed()) {
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                super.onBackPressed();
+            } else {
+                if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                    finish();
                 }
+                getSupportFragmentManager().popBackStack();
             }
-        });
+        }
     }
 
+    @Override
+    public void setSelectedFragment(BackHandledFragment selectedFragment) {
+        this.mBackHandedFragment = selectedFragment;
+    }
 
     public void onClick(View view) {
-        finish();
+        switch (view.getId()) {
+            case R.id.header_actionbar_back:
+                onBackPressed();
+                break;
+        }
     }
 }

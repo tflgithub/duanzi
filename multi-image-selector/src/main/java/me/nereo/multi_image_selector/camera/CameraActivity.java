@@ -2,7 +2,6 @@ package me.nereo.multi_image_selector.camera;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;

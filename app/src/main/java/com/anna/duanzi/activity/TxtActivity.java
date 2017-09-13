@@ -45,7 +45,7 @@ public class TxtActivity extends BaseActivity implements View.OnClickListener {
     private void initView() {
         comment_btn = (ImageView) findViewById(R.id.comment_btn);
         digg_btn = (ImageView) findViewById(R.id.digg_btn);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
+        iv_back = (ImageView) findViewById(R.id.header_actionbar_back);
         iv_back.setOnClickListener(this);
         tv_comment = (TextView) findViewById(R.id.tv_comment);
         tv_title = (TextView) findViewById(R.id.tv_title);
@@ -108,7 +108,7 @@ public class TxtActivity extends BaseActivity implements View.OnClickListener {
                     commentBadgeView.setTextSize(8);
                     commentBadgeView.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
                     commentBadgeView.setAlpha(1f);
-                    commentBadgeView.setBadgeMargin(0, 0);
+                    commentBadgeView.setBadgeMargin(0, 8);
                     commentBadgeView.show();
                 } else {
                     // 查询失败
@@ -134,7 +134,7 @@ public class TxtActivity extends BaseActivity implements View.OnClickListener {
                 intent1.putExtra("commentId", id);
                 startActivity(intent1);
                 break;
-            case R.id.iv_back:
+            case R.id.header_actionbar_back:
                 finish();
                 break;
             case R.id.iv_share:

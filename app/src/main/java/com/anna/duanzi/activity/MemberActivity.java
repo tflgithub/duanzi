@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.ShareLog;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -28,7 +28,7 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class MemberActivity extends BaseActivity {
 
-    private String grade = Contants.MEMBER.MEMBER_LEVEL_1;//默认一级会员
+    private String grade = Constants.MEMBER.MEMBER_LEVEL_1;//默认一级会员
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +45,11 @@ public class MemberActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.rb_grade_one) {
-                    grade = Contants.MEMBER.MEMBER_LEVEL_1;
+                    grade = Constants.MEMBER.MEMBER_LEVEL_1;
                 } else if (checkedId == R.id.rb_grade_two) {
-                    grade = Contants.MEMBER.MEMBER_LEVEL_2;
+                    grade = Constants.MEMBER.MEMBER_LEVEL_2;
                 } else if (checkedId == R.id.rb_grade_three) {
-                    grade = Contants.MEMBER.MEMBER_LEVEL_3;
+                    grade = Constants.MEMBER.MEMBER_LEVEL_3;
                 }
             }
         });
@@ -63,11 +63,11 @@ public class MemberActivity extends BaseActivity {
                 break;
             case R.id.btn_ok:
                 switch (grade) {
-                    case Contants.MEMBER.MEMBER_LEVEL_1:
+                    case Constants.MEMBER.MEMBER_LEVEL_1:
                         break;
-                    case Contants.MEMBER.MEMBER_LEVEL_2:
+                    case Constants.MEMBER.MEMBER_LEVEL_2:
                         break;
-                    case Contants.MEMBER.MEMBER_LEVEL_3:
+                    case Constants.MEMBER.MEMBER_LEVEL_3:
                         break;
                 }
                 SharedPreferences mSharedPreferences = getSharedPreferences("version", Context.MODE_PRIVATE);
@@ -108,7 +108,7 @@ public class MemberActivity extends BaseActivity {
         shareLog.saveInBackground(new SaveCallback() {
             @Override
             public void done(AVException e) {
-                if (e == null && AVUser.getCurrentUser().getString("vip").equals(Contants.MEMBER.MEMBER_LEVEL_0)) {
+                if (e == null && AVUser.getCurrentUser().getString("vip").equals(Constants.MEMBER.MEMBER_LEVEL_0)) {
                     countShare();
                 }
             }
@@ -121,9 +121,9 @@ public class MemberActivity extends BaseActivity {
         shareLogAVQuery.countInBackground(new CountCallback() {
             @Override
             public void done(int i, AVException e) {
-                if (e == null && i >= Contants.SHARE_COUNT_NUM_TEMP) {
+                if (e == null && i >= Constants.SHARE_COUNT_NUM_TEMP) {
                     Toast.makeText(MemberActivity.this, "您分享已达到10次，已升级为1级会员,感谢您的支持！", Toast.LENGTH_SHORT).show();
-                    AVUser.getCurrentUser().put("vip", Contants.MEMBER.MEMBER_LEVEL_1);
+                    AVUser.getCurrentUser().put("vip", Constants.MEMBER.MEMBER_LEVEL_1);
                     AVUser.getCurrentUser().saveInBackground();
                 }
             }

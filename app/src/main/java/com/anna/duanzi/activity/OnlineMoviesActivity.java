@@ -10,8 +10,7 @@ import android.widget.TextView;
 import com.anna.duanzi.R;
 import com.anna.duanzi.adapter.OnlineMoviesAdapter;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
-import com.anna.duanzi.domain.Movies;
+import com.anna.duanzi.domain.WebMovie;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
@@ -36,8 +35,8 @@ public class OnlineMoviesActivity extends BaseActivity implements TflLoadMoreLis
 
     @Bind(R.id.recycler_view)
     TflListRecyclerView mRecyclerView;
-    private TflListAdapter<Movies> tflListAdapter;
-    private List<Movies> dataList = new ArrayList<>();
+    private TflListAdapter<WebMovie> tflListAdapter;
+    private List<WebMovie> dataList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,9 +74,9 @@ public class OnlineMoviesActivity extends BaseActivity implements TflLoadMoreLis
             }
             data_skip = data_skip + data_limit;
             query.skip(data_skip);
-            query.findInBackground(new FindCallback<Movies>() {
+            query.findInBackground(new FindCallback<WebMovie>() {
                 @Override
-                public void done(List<Movies> list, AVException e) {
+                public void done(List<WebMovie> list, AVException e) {
                     if (list != null && list.size() > 0) {
                         tflListAdapter.addData(list);
                         mLoadingLock = false;
@@ -93,23 +92,22 @@ public class OnlineMoviesActivity extends BaseActivity implements TflLoadMoreLis
     }
 
 
-    AVQuery<Movies> query;
+    AVQuery<WebMovie> query;
     private int mTotalDataCount = 0;
     private boolean mLoadingLock = false;
 
     private void loadData() {
         tflListAdapter.changeMode(TflListModel.MODE_LOADING);
-        query = AVObject.getQuery(Movies.class);
-        query.whereEqualTo("category", Contants.MEMBER_AREA.CATEGORY_ONLINE);
+        query = AVObject.getQuery(WebMovie.class);
         query.limit(data_limit);
         query.orderByDescending("createdAt");
         query.countInBackground(new CountCallback() {
             @Override
             public void done(int i, AVException e) {
                 mTotalDataCount = i;
-                query.findInBackground(new FindCallback<Movies>() {
+                query.findInBackground(new FindCallback<WebMovie>() {
                     @Override
-                    public void done(List<Movies> list, AVException e) {
+                    public void done(List<WebMovie> list, AVException e) {
                         if (e == null) {
                             tflListAdapter.changeMode(TflListModel.MODE_DATA);
                             tflListAdapter.setData(list);

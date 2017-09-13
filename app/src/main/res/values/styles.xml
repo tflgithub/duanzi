@@ -1,20 +1,17 @@
 <resources>
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
+    <style name="AppTheme" parent="MyThemeBlue"></style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <!-- 蓝色为主色调 -->
+    <style name="MyThemeBlue" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--选中状态icon的颜色和字体颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--正常状态下字体颜色和icon颜色-->
+        <item name="android:textColorPrimary">@color/color_white</item>
+
     </style>
 
 
@@ -98,17 +95,11 @@
     <style name="MyDialogStyleBottom" parent="android:Theme.Dialog">
         <item name="android:windowAnimationStyle">@style/AnimBottom</item>
         <item name="android:windowFrame">@null</item>
-        ;!-- 边框 -->
         <item name="android:windowIsFloating">false</item>
-        ;!-- 是否浮现在activity之上 -->
         <item name="android:windowIsTranslucent">true</item>
-        ;!-- 半透明 -->
         <item name="android:windowNoTitle">true</item>
-        ;!-- 无标题 -->
         <item name="android:windowBackground">@android:color/transparent</item>
-        ;!-- 背景透明 -->
         <item name="android:backgroundDimEnabled">true</item>
-        ;!-- 模糊 -->
     </style>
 
     <!-- 自定义ActionBar样式，重设ActionBar背景，隐藏actionbar左侧的应用图标和标题 -->
@@ -129,6 +120,10 @@
         <item name="android:layout_height">0.5dp</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:background">#dddddd</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

@@ -16,8 +16,6 @@ public class BasePreferences {
         mAccessHelper = new AccessHelper();
     }
 
-
-
     public AccessHelper getAccessHelper() {
         return mAccessHelper;
     }

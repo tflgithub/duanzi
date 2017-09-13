@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.domain.Movies;
+import com.anna.duanzi.domain.WebMovie;
 import com.avos.avoscloud.AVFile;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
@@ -20,9 +20,9 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
  * Created by Administrator on 2016/10/12.
  */
 public class OnlineMoviesAdapter extends
-        TflListAdapter<Movies> {
+        TflListAdapter<WebMovie> {
 
-    public OnlineMoviesAdapter(List<Movies> data) {
+    public OnlineMoviesAdapter(List<WebMovie> data) {
         super(data);
     }
 
@@ -41,12 +41,11 @@ public class OnlineMoviesAdapter extends
 
     @Override
     public void onBindDataViewHolder(final RecyclerView.ViewHolder holder, int position) {
-        final Movies movies = mData.get(position);
-        AVFile videoFile = movies.getAVFile("movie");
-        AVFile videoImageFile = movies.getAVFile("image");
+        final WebMovie movies = mData.get(position);
+        AVFile videoImageFile = movies.getAVFile("thumbImage");
         DataViewHolder videoViewHolder = (DataViewHolder) holder;
-        if (videoFile.getUrl() != null && videoImageFile.getUrl() != null) {
-            videoViewHolder.jcVideoPlayer.setUp(videoFile.getUrl(),
+        if(videoImageFile!=null) {
+            videoViewHolder.jcVideoPlayer.setUp(movies.url,
                     videoImageFile.getUrl(),
                     movies.title);
         }

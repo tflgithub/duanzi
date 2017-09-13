@@ -18,14 +18,13 @@ import android.net.Uri;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 import com.anna.duanzi.R;
 
 /**
  * Created by Administrator on 2016/10/9.
  */
-public class CircleImageView extends ImageView {
+public class CircleImageView extends android.support.v7.widget.AppCompatImageView {
 
 
     private static final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
@@ -63,7 +62,6 @@ public class CircleImageView extends ImageView {
 
     public CircleImageView(Context context) {
         super(context);
-
         init();
     }
 

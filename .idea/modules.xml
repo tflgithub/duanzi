@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" filepath="$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" filepath="$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" />
       <module fileurl="file://$PROJECT_DIR$/page_curl/page_curl.iml" filepath="$PROJECT_DIR$/page_curl/page_curl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewcardgallery/recyclerviewcardgallery.iml" filepath="$PROJECT_DIR$/recyclerviewcardgallery/recyclerviewcardgallery.iml" />
       <module fileurl="file://$PROJECT_DIR$/tfl_list_recycler_view/tfl_list_recycler_view.iml" filepath="$PROJECT_DIR$/tfl_list_recycler_view/tfl_list_recycler_view.iml" />
     </modules>
   </component>

@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
@@ -52,8 +51,6 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
 
     private android.view.animation.Animation animation;
 
-    private LinearLayout ly_bottom;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,23 +64,17 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
     private void initView() {
         iv_back = (ImageView) findViewById(R.id.header_actionbar_back);
         iv_back.setOnClickListener(this);
-        ly_bottom = (LinearLayout) findViewById(R.id.ly_bottom);
         title = getIntent().getExtras().getString("imageTitle");
-        //是否需要评论。
-        if (title == null) {
-            ly_bottom.setVisibility(View.VISIBLE);
-            comment_btn = (ImageView) findViewById(R.id.comment_btn);
-            digg_btn = (ImageView) findViewById(R.id.digg_btn);
-            tv_comment = (TextView) findViewById(R.id.tv_comment);
-            animation = AnimationUtils.loadAnimation(this, R.anim.applaud_animation);
-            tv_digg_number_animation = (TextView) findViewById(R.id.tv_digg_number_animation);
-            digg_btn.setOnClickListener(this);
-            comment_btn.setOnClickListener(this);
-            tv_comment.setOnClickListener(this);
-            findViewById(R.id.iv_share).setOnClickListener(this);
-        } else {
-            ((TextView) findViewById(R.id.header_actionbar_title)).setText(title);
-        }
+        ((TextView) findViewById(R.id.header_actionbar_title)).setText(title);
+        comment_btn = (ImageView) findViewById(R.id.comment_btn);
+        digg_btn = (ImageView) findViewById(R.id.digg_btn);
+        tv_comment = (TextView) findViewById(R.id.tv_comment);
+        animation = AnimationUtils.loadAnimation(this, R.anim.applaud_animation);
+        tv_digg_number_animation = (TextView) findViewById(R.id.tv_digg_number_animation);
+        digg_btn.setOnClickListener(this);
+        comment_btn.setOnClickListener(this);
+        tv_comment.setOnClickListener(this);
+        findViewById(R.id.iv_share).setOnClickListener(this);
     }
 
 
@@ -109,10 +100,8 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
                 initViewPager();
             }
         });
-        if (title == null) {
-            countComment();
-            countDigg();
-        }
+        countComment();
+        countDigg();
     }
 
     /**
@@ -132,7 +121,7 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
                     commentBadgeView.setTextSize(8);
                     commentBadgeView.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
                     commentBadgeView.setAlpha(1f);
-                    commentBadgeView.setBadgeMargin(0, 0);
+                    commentBadgeView.setBadgeMargin(0, 8);
                     commentBadgeView.show();
                 } else {
                     // 查询失败

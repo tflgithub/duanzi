@@ -1,7 +1,6 @@
 package com.anna.duanzi.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,22 +10,25 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.utils.StringUtils;
 import com.anna.duanzi.utils.UIUtils;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.ProgressCallback;
 import com.avos.avoscloud.SaveCallback;
+import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.bumptech.glide.Glide;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 import me.drakeet.materialdialog.MaterialDialog;
+import me.nereo.multi_image_selector.MultiImageSelectorFragment;
 import me.nereo.multi_image_selector.camera.utils.BitmapUtils;
 
 public class UserInfoActivity extends BaseActivity implements UIUtils.DialogListener {
@@ -34,6 +36,7 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
     private ImageView iv_head;
     private TextView tv_nick_name, tv_email, tv_sex, tv_mobile;
     MaterialDialog materialDialog;
+    private SVProgressHUD mSVProgressHUD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
     }
 
     private void initView() {
+        mSVProgressHUD = new SVProgressHUD(this);
         ((TextView) findViewById(R.id.header_actionbar_title)).setText("账号管理");
         iv_head = (ImageView) findViewById(R.id.iv_head);
         tv_nick_name = (TextView) findViewById(R.id.tv_nick_name);
@@ -77,21 +81,21 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
             case R.id.iv_head:
                 Intent intent = new Intent(this, SingleImageSelectorActivity.class);
                 // whether show camera
-                intent.putExtra(SingleImageSelectorActivity.EXTRA_SHOW_CAMERA, true);
+                intent.putExtra(MultiImageSelectorFragment.EXTRA_SHOW_CAMERA, true);
                 // select mode (SingleImageSelectorActivity.MODE_SINGLE OR SingleImageSelectorActivity.MODE_MULTI)
-                intent.putExtra(SingleImageSelectorActivity.EXTRA_SELECT_MODE, SingleImageSelectorActivity.MODE_SINGLE);
+                intent.putExtra(MultiImageSelectorFragment.EXTRA_SELECT_MODE, MultiImageSelectorFragment.MODE_SINGLE);
                 startActivityForResult(intent, REQUEST_IMAGE);
                 break;
             case R.id.ry_update_nick_name:
                 Intent nIntent = new Intent(UserInfoActivity.this, EditUserInfoActivity.class);
-                nIntent.putExtra(Contants.UPDATE_USERINFO_TYPE, Contants.UPDATE_USERINFO.NICK_NAME);
-                nIntent.putExtra(Contants.UPDATE_USERINFO_CONTENT, tv_nick_name.getText().toString());
+                nIntent.putExtra(Constants.UPDATE_USERINFO_TYPE, Constants.UPDATE_USERINFO.NICK_NAME);
+                nIntent.putExtra(Constants.UPDATE_USERINFO_CONTENT, tv_nick_name.getText().toString());
                 startActivityForResult(nIntent, REQUEST_NICK_NAME);
                 break;
             case R.id.ry_update_email:
                 Intent eIntent = new Intent(UserInfoActivity.this, EditUserInfoActivity.class);
-                eIntent.putExtra(Contants.UPDATE_USERINFO_TYPE, Contants.UPDATE_USERINFO.EMAIL);
-                eIntent.putExtra(Contants.UPDATE_USERINFO_CONTENT, tv_email.getText().toString());
+                eIntent.putExtra(Constants.UPDATE_USERINFO_TYPE, Constants.UPDATE_USERINFO.EMAIL);
+                eIntent.putExtra(Constants.UPDATE_USERINFO_CONTENT, tv_email.getText().toString());
                 startActivityForResult(eIntent, REQUEST_EMAIL);
                 break;
             case R.id.ry_update_sex:
@@ -105,7 +109,7 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
                 break;
             case R.id.ry_update_mobile:
                 Intent mobileIntent = new Intent(UserInfoActivity.this, EditUserInfoActivity.class);
-                mobileIntent.putExtra(Contants.UPDATE_USERINFO_TYPE, Contants.UPDATE_USERINFO.MOBILE);
+                mobileIntent.putExtra(Constants.UPDATE_USERINFO_TYPE, Constants.UPDATE_USERINFO.MOBILE);
                 startActivity(mobileIntent);
                 break;
         }
@@ -179,22 +183,38 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
 
     //上传用户头像
     private void upLoadUserHeadImage(final Uri uri) {
-        AVFile avFile = null;
         final String path = BitmapUtils.getRealFilePathFromUri(getApplicationContext(), uri);
         try {
-            avFile = AVFile.withFile(AVUser.getCurrentUser().getUsername() + ".png", new File(path));
-            final AVFile finalAvFile = avFile;
-            avFile.saveInBackground(new SaveCallback() {
+            final AVFile file = AVFile.withAbsoluteLocalPath(AVUser.getCurrentUser().getUsername() + ".png", path);
+            mSVProgressHUD.showWithProgress("正在保存头像中...", SVProgressHUD.SVProgressHUDMaskType.Black);
+            file.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(AVException e) {
-                    //Log.d(TAG, finalAvFile.getUrl());//返回一个唯一的 Url 地址
-                    AVUser.getCurrentUser().put("headImage", finalAvFile.getUrl());
-                    AVUser.getCurrentUser().saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(AVException e) {
-                            upLoadOver(path);
-                        }
-                    });
+                    if (e == null) {
+                        AVUser.getCurrentUser().put("headImage", file.getUrl());
+                        AVUser.getCurrentUser().saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(AVException e) {
+                                if (e == null) {
+                                    iv_head.setImageBitmap(BitmapFactory.decodeFile(path));
+                                } else {
+                                    Toast.makeText(UserInfoActivity.this, "修改头像失败", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    } else {
+                        Toast.makeText(UserInfoActivity.this, "修改头像失败", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }, new ProgressCallback() {
+                @Override
+                public void done(Integer integer) {
+                    // 上传进度数据，integer 介于 0 和 100。
+                    if (integer == 100) {
+                        mSVProgressHUD.dismiss();
+                    } else {
+                        mSVProgressHUD.getProgressBar().setProgress(integer);
+                    }
                 }
             });
         } catch (FileNotFoundException e) {
@@ -202,18 +222,13 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
         }
     }
 
-    private void upLoadOver(String path) {
-        Bitmap bitmap = BitmapFactory.decodeFile(path);
-        iv_head.setImageBitmap(bitmap);
-    }
-
     @Override
     public void disBack(int action) {
         switch (action) {
             case UIUtils.DialogListener.UPDATE_PASSWORD:
                 Intent mIntent = new Intent(UserInfoActivity.this, EditUserInfoActivity.class);
-                mIntent.putExtra(Contants.UPDATE_USERINFO_TYPE, Contants.UPDATE_USERINFO.PASSWORD);
-                mIntent.putExtra(Contants.UPDATE_USERINFO_CONTENT, AVUser.getCurrentUser().getMobilePhoneNumber());
+                mIntent.putExtra(Constants.UPDATE_USERINFO_TYPE, Constants.UPDATE_USERINFO.PASSWORD);
+                mIntent.putExtra(Constants.UPDATE_USERINFO_CONTENT, AVUser.getCurrentUser().getMobilePhoneNumber());
                 startActivity(mIntent);
                 break;
             case UIUtils.DialogListener.LOGOUT:

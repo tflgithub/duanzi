@@ -7,20 +7,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_head"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="?actionBarSize"
         android:visibility="gone"
         android:background="@drawable/tab_bg" />
-
-
-    <!--<com.cjj.MaterialRefreshLayout-->
-        <!--android:id="@+id/refresh"-->
-        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-        <!--app:overlay="false"-->
-        <!--app:wave_show="false"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-        <!---->
-    <!--</com.cjj.MaterialRefreshLayout>-->
 
     <com.cn.fodel.tfl_list_recycler_view.TflListRecyclerView
         android:id="@+id/recycler_view"

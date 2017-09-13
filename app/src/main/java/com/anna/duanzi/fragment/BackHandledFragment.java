@@ -1,17 +1,15 @@
 package com.anna.duanzi.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 
-import com.bigkoo.svprogresshud.SVProgressHUD;
+import com.anna.duanzi.base.BaseFragment;
 
 /**
  * Created by tfl on 2016/10/28.
  */
-public abstract class BackHandledFragment extends Fragment {
+public abstract class BackHandledFragment extends BaseFragment {
 
     protected BackHandledInterface mBackHandledInterface;
-    protected SVProgressHUD mSVProgressHUD;
     protected boolean isSuccess = false;
     protected boolean isShow = false;
 
@@ -23,7 +21,6 @@ public abstract class BackHandledFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mSVProgressHUD = new SVProgressHUD(getActivity());
         if (!(getActivity() instanceof BackHandledInterface)) {
             throw new ClassCastException(
                     "Hosting Activity must implement BackHandledInterface");

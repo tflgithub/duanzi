@@ -3,7 +3,8 @@ package com.anna.duanzi.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 
 import java.util.HashMap;
 
@@ -31,19 +32,16 @@ public class FragmentFactory {
                     break;
                 case 1:
                     baseFragment = new HomeFragment();
-                    bundle.putString(Contants.CATEGORY,Contants.CATEGORY_IMAGE);
+                    bundle.putString(Constants.CATEGORY, Constants.CATEGORY_IMAGE);
                     baseFragment.setArguments(bundle);
                     break;
                 case 2:
                     baseFragment = new HomeFragment();
-                    bundle.putString(Contants.CATEGORY,Contants.CATEGORY_VIDEO);
+                    bundle.putString(Constants.CATEGORY, Constants.CATEGORY_VIDEO);
                     baseFragment.setArguments(bundle);
                     break;
                 case 3:
                     baseFragment = new FoundFragment();
-                    break;
-                case 4:
-                    baseFragment=new WdFragment();
                     break;
             }
             //缓存到本地

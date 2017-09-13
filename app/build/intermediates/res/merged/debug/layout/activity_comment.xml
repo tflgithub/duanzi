@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/back_header" />
+    <include layout="@layout/header_actionbar" />
 
     <com.cjj.MaterialRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/refresh"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/tab_bg"
+        android:background="@drawable/menu_bg"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="5dp">

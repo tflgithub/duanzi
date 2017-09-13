@@ -5,19 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Comment;
 import com.anna.duanzi.domain.Duanzi;
-import com.anna.duanzi.widget.BadgeView;
 import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.CountCallback;
-import com.bumptech.glide.Glide;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
 
@@ -60,14 +56,7 @@ public class TxtAdapter extends
     @Override
     public void onBindDataViewHolder(final RecyclerView.ViewHolder holder, int position) {
         final Duanzi duanzi = mData.get(position);
-        ((ViewHolder) holder).tv_title.setText(duanzi.title);
-        AVFile imageFile = duanzi.getAVFile("image");
-        if (imageFile != null) {
-            ((ViewHolder) holder).iv_title.setVisibility(View.VISIBLE);
-            Glide.with(mContext).load(imageFile.getUrl()).placeholder(R.drawable.image_default_normal).into(((ViewHolder) holder).iv_title);
-        } else {
-            ((ViewHolder) holder).iv_title.setVisibility(View.GONE);
-        }
+        ((ViewHolder) holder).tv_content.setText(duanzi.content);
         commentAVQuery.whereEqualTo("commentId", duanzi.objectId);
         commentAVQuery.countInBackground(new CountCallback() {
             @Override
@@ -121,16 +110,14 @@ public class TxtAdapter extends
 
 
     private class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_title, tv_click_num, tv_comment, tv_digg;
-        ImageView iv_title;
+        TextView tv_content, tv_click_num, tv_comment, tv_digg;
 
         public ViewHolder(View rootView) {
             super(rootView);
-            tv_title = (TextView) itemView.findViewById(R.id.tv_title);
+            tv_content = (TextView) itemView.findViewById(R.id.tv_content);
             tv_click_num = (TextView) itemView.findViewById(R.id.tv_click_num);
             tv_comment = (TextView) itemView.findViewById(R.id.tv_comment);
             tv_digg = (TextView) itemView.findViewById(R.id.tv_dig);
-            iv_title = (ImageView) itemView.findViewById(R.id.iv_title);
         }
     }
 

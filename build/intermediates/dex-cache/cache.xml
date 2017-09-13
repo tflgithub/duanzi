@@ -2,277 +2,364 @@
 <items version="2" >
 
     <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\tfl_list_recycler_view\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3ed9cdb70df8a8b44f5b17ee51af707b4ad95e0a">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-cd2f64c0064114c14c2e13be0fc8de8d5e599727.jar" />
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\fd4619c67f71adc598040f5fdd36668f04a524f5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_60d0bc2652e732c1d47bbd65cb048e40dddae027\classes.dex" />
     </item>
     <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\jcvideoplayer-lib\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ed4d3a9bd2ac456d70ba3d598f28e0452b635d5a">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-fca976e5e8fb0f80dad2e218b7c672e2147c6100.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-d00eff633e4d179177c8fc92f671d71b504ecc8a.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\multi-image-selector\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7f1bce30de5e909945ea67e97c2fb5636d67d3f0">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-e9b0dc8f4704b51703767f6916f4dc18622d7c26.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\avoscloud-feedback-v3.14.8.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d0d4b121496bd27497db212a89b5eee6ca1218bd">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\avoscloud-feedback-v3.14.8-4c8f6fd8779da832b12f05540ee980cd72cf76cc.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\cn.leancloud.android\avoscloud-push\v3.7.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="bcd57585af79c723e03ad019c5a922bc185c7b46">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-76685cee1090d40cef6c74884c431a19f4d0b29a.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\core-3.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\core-3.2.1-a0cd68f20fa7d7fb55c749c9eca47a14e134ca46.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\ShareSDK-ShortMessage-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ae6b6037cec513fb84b2b748182948cf7805ae88">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-ShortMessage-2.7.9-369f4fcbe51aa3d916427b3a08107c19a26755d4.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.cjj.materialrefeshlayout\library\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="597d857fe9b090c4582f0855a2c6d6cc45fec544">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-9cc5459e68461e957e0180dc729fbc41417c8911.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\avoscloud-sns-v3.14.8.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d1cc373d42ada373b2a4bb91f4e092201ea2a944">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\avoscloud-sns-v3.14.8-bb38f6e44c94c19dc117bc6ba84635d9856397f8.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\MobTools-2016.1102.1128.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="0d5f33b3f009ae3e02c32dd1e70efcd6a252f3a6">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\MobTools-2016.1102.1128-0e0d7abf6e44d6140f514c01e93e4fa7088dede6.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Wechat-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="17856b4dfbb942a80b0e6df570292e8fe6e0ca3b">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-2.7.9-58c9ec6d03f50ad087b37f5f65a33a09b4654346.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\android_auto_update\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e0f2219b708bd2f9c8a2a118986ad52095d02f89">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-017ec3b50f47d449ef420097fbe3ab7d69e37181.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\me.drakeet.materialdialog\library\1.3.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="6e57fe155cea810fb2ba5fe9ffabcb197ecf81d1">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-188056533d369d3742bf5ff4f3aea0351dad5f02.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.4\dd9eeb557650c4ad7394df23f0f5cf27a7cfc697\universal-image-loader-1.9.4.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-9ea8fb5385fe07db6288a8746eb2660897f432c0.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Core-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="26a52e0d02642517cc4a4db0a2e5c507c02404fd">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-Core-2.7.9-48b27a11085c40033111c0be514af1559e9ef08c.jar" />
-    </item>
-    <item
+        is-multidex="true"
         jar="D:\androidProject\duanzi\app\libs\ShareSDK-Email-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="607a1049e2eaaa4af93c3b90f1cdc96ffef3f07e">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-Email-2.7.9-8428125a3141c94c5883b535679d56bc652a73e2.jar" />
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-Email-2.7.9_8428125a3141c94c5883b535679d56bc652a73e2\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.leancloud.android\Java-WebSocket\1.2.0-leancloud\221fb6750fcf164a85a98bbbafe0879e18868562\Java-WebSocket-1.2.0-leancloud.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="221fb6750fcf164a85a98bbbafe0879e18868562">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\Java-WebSocket-1.2.0-leancloud-f765a2bacc02bdfb43cb74fdcaa7e2ce50ab9ed6.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0-03e25c6b3178abc8ecb48b05be1f281aa0724b29.jar" />
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\eventbus-2.4.0_f2a954c67d075c174c121662d9254ef1633d04b0\classes.dex" />
     </item>
     <item
-        jar="D:\androidProject\duanzi\app\libs\MobCommons-2016.1102.1128.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5a3a5754e3bb9af46449eaab21b43420b75260d">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\MobCommons-2016.1102.1128-0eab6e6d8f8f195cd45b2dbc7950e9b55abaa15b.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\cn.leancloud.android\avoscloud-statistics\v3.7.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f1cf20824cc1181d13841fb7742e5aebb4857e28">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-ad83f1b538ec5ae26310e23ac164937d8f785d11.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.leancloud.android\fastjson\1.1.39-leancloud\94d4ebd4acdaf01d7445435382eea2d2d38e7534\fastjson-1.1.39-leancloud.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="94d4ebd4acdaf01d7445435382eea2d2d38e7534">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\fastjson-1.1.39-leancloud-689e3dd539b196ff1cb05227c64cdfb6bcde6274.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Wechat-Moments-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="605bc07df42ac4faf1b17eef58bf47e5fe6ae43d">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Moments-2.7.9-b0a3faa73ae629ccf9f21f9e16ec1f252b8b960d.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\page_curl\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="36cac93bcfb3039df6eca829656a8c1fb08d9d47">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-0ede5945f90d2bbb8a49dddb1955fe251a60d41f.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.4.0\f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2\picasso-2.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.4.0\f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2\picasso-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\picasso-2.4.0-0d0a23f9dc51e58a9c332365505e6fc92a70b86a.jar" />
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.4.0_0bb4f91a58cb367ac7ed501efe02829be672ef83\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.leancloud.android\okio\1.6.0-leancloud\7086c00a30a6de0ee3b963ec2c3702d37f1de11d\okio-1.6.0-leancloud.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7086c00a30a6de0ee3b963ec2c3702d37f1de11d">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\okio-1.6.0-leancloud-4f297d19881354ffcf4818ca211e1f9cb5cc473e.jar" />
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\83bc596fca9eb6667978a2bdf4dccfae917648d2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_744f59f2fa8e127f25c307526182277317d8894f\classes.dex" />
     </item>
     <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-a3f45a0c4513f33e83e293ced0bd1c4d1d0d0e69.jar" />
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\2ee4e43a1e3b3ac5cd11535b0316885ae18a5003\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f30c99aebb87d1bc448d2784d6e38bd1fe49a998">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_53a3202b7ea45220b9618cc47a917fc4c7b70eeb\classes.dex" />
     </item>
     <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-641ff24f71546123132e8f6c5402832e2382b9cd.jar" />
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\6d7f2365e4074f54ad3b550afa6df1e947aa6b2d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_977b6a6c1c02ee2c4c95203a5777a076c0d5341d\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.leancloud.android\okhttp\2.6.0-leancloud\7d1a8dbbc128e91cf41ab6eafaa741ab2a6ff930\okhttp-2.6.0-leancloud.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7d1a8dbbc128e91cf41ab6eafaa741ab2a6ff930">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\okhttp-2.6.0-leancloud-4ac5788587b01fb9bf9bba3f178268cdb160db5b.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.bigkoo\svprogresshud\1.0.6\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="9a5538db04156f8a3901002870b8b81a6d99cfad">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-9d03d0dc70ac349c83afbe7ec058e7d3bd9c3e99.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3abb4b88f5a8a0584a9b01d3170d7165f12f8588">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-e0b9042cfc9212349e35ddd88b3e7a675267f6f6.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-91a43a9ac902d1169294a586d9b26358584655c0.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-a647dc94ebaca8f0044ed04640db79a4b0d69fbc.jar" />
-    </item>
-    <item
-        jar="D:\tool\adt-bundle-windows-x86_64-20140624\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-a676de635009dda914a235018c4664ae9fa39b02.jar" />
-    </item>
-    <item
-        jar="D:\androidProject\duanzi\app\build\intermediates\exploded-aar\duanzi\DroidPlugin\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="37b532ad60ae8de64870d23e90cae9f1b4244f99">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\classes-1c11bddf6fc5d3fbe160c29c2c6806e6504888c3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.6.1\86b122e640af09b0723e1fa44083c354ba6d9089\glide-3.6.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\glide-3.6.1-4020668c253519df8db009e7f815b6fcc7d18017.jar" />
-    </item>
-    <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1-fc861cbde294a7e4a9efd57936d766cb077b60e2.jar" />
-    </item>
-    <item
+        is-multidex="true"
         jar="D:\androidProject\duanzi\app\libs\ShareSDK-Wechat-Core-2.7.9.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="161e0d4f694f07ace2cc6e2fb8b5f3d988fdcb1e">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\ShareSDK-Wechat-Core-2.7.9-cec395dd60b451fe4c30e701630ebe3eecff253b.jar" />
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-Wechat-Core-2.7.9_cec395dd60b451fe4c30e701630ebe3eecff253b\classes.dex" />
     </item>
     <item
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\cn.leancloud.android\avoscloud-sdk\v3.15.2\dd6e3932cbf313f6d3c4979b1fae4df21700777a\avoscloud-sdk-v3.15.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="dd6e3932cbf313f6d3c4979b1fae4df21700777a">
-        <dex dex="D:\androidProject\duanzi\app\build\intermediates\pre-dexed\debug\avoscloud-sdk-v3.15.2-630da29cc96811f951094edad28c1b60d83285e1.jar" />
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Wechat-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="17856b4dfbb942a80b0e6df570292e8fe6e0ca3b">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-Wechat-2.7.9_58c9ec6d03f50ad087b37f5f65a33a09b4654346\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\60c810ffbab7fc6879fade7f19f1a279c09a2fc6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8b813fa60ad9521e2cb487969da97302d5c98981\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\2abbe79a8d71b89d56d3b468e4eeb4fa1301cfb9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9a5538db04156f8a3901002870b8b81a6d99cfad">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_831ad9644f7d903b8be5cc185a1870c393410829\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Core-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26a52e0d02642517cc4a4db0a2e5c507c02404fd">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-Core-2.7.9_48b27a11085c40033111c0be514af1559e9ef08c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\1c0c959d6281a0f3f1a9ebecf6befaa9a9ada1bd\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_94ac57928955f648591f76a2339c27190548343c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\f6f015f91eaace44821517eb35011740ca9a643e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e6019dab2d34648fa538032426891865ca2ca0c6">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2a0238cde796261cb95d293b08ed4fa5f640cff4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\com.jakewharton\butterknife\7.0.1\d5d13ea991eab0252e3710e5df3d6a9d4b21d461\butterknife-7.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-7.0.1_f6eb83daaf15dd2687320d9cb4e6db5a3c6c46cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\3156bcd9f55d9d123e4095970a2bd86c224e7486\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_584b74757bdbcc94005fb0f9a40048d2b8a6ee63\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\ba3e16638055ea0a76ce73c39cae8fb11fbe2e89\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d228425a0cc7baff5e4590e9b451e61803388936\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\d5dcd788ce5400da2fcc9f9636399f5c8454e2e0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e0963f2daa43360b47348504f2d6d9184e5ccb2a">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_80a6992ddce3a29df7e33f311b4f6ccd42556bf8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\79ebf34cf08918d57cb3344f5545d61bc3755053\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_400fd47d67c85b2fa4653f89ac558807ceb40daa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\f6ca5c3007cafd1f5171064328562b602865be58\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8cc07cad6f46da22e9911778261f34ace9a1e0d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc200d9e391189005a007b679d5c30360ea67486">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a791d1bf142d48e296f1d41fb2e8a01bbe989a00\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\MobTools-2016.1102.1128.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0d5f33b3f009ae3e02c32dd1e70efcd6a252f3a6">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\MobTools-2016.1102.1128_0e0d7abf6e44d6140f514c01e93e4fa7088dede6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\e4be6f97f5ec89db2bd458adddb5c957aa833689\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="385b5af83dbdc1f5e9f2cb0203adc321a62dafbb">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3dbd6ee26640eaca97ea02e48e18112ab815d46c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\02e0d2b5ca34128188be5d21c93b478c5af09565\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9dd3fbd819a4361f55b3d5e94995232325964270\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.6.1\86b122e640af09b0723e1fa44083c354ba6d9089\glide-3.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.6.1_543716d4281076467b7f784d3f161796ab03f844\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\9c41f3014d4b0aeb412c914988b07ca805e78e89\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1c7b0a413e454845c1d88793a8a15b0993ffd9f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\tool\adt-bundle-windows-x86_64-20140624\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_ed6dc3306feacb2f64f077fd40f2ec36d3da1941\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\1398185443a0bc5f74bbcb8058d3d208278ff585\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_57fa03c5d03cabdf8a26a3f6e90a84433ddf8613\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\ShareSDK-ShortMessage-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ae6b6037cec513fb84b2b748182948cf7805ae88">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-ShortMessage-2.7.9_369f4fcbe51aa3d916427b3a08107c19a26755d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\40bda1ccb19a320c7d84104e4088b891b63ea8e3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5b5a922ee4e4be346994e58102882d86d67469be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\tool\adt-bundle-windows-x86_64-20140624\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_de6b23e65885f095001497c2679c09357e26844e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0ffc2e44adcf4edae4125aa9f1fcbf5de3eaebdc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.4\dd9eeb557650c4ad7394df23f0f5cf27a7cfc697\universal-image-loader-1.9.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\universal-image-loader-1.9.4_8b78c6afb9e99cbd1215124ab19647047db92e99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\8a2d0985e212b5cdf4dbfda48bfbf6bc276ee4df\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="597d857fe9b090c4582f0855a2c6d6cc45fec544">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cef30ccfc5176c2f547a90f7eb41bd24bfce6a9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\f80c2b9051f2776cbe826c40da7fad66a3971476\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1fb0bed44913aefdfc3a500f59ff3687a6ceab3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\ShareSDK-Wechat-Moments-2.7.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="605bc07df42ac4faf1b17eef58bf47e5fe6ae43d">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK-Wechat-Moments-2.7.9_b0a3faa73ae629ccf9f21f9e16ec1f252b8b960d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\41611d62f825006cc0a4b07e6b8583a3725029d8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9c14165c82a36a56b8ef1d3a9241f51623a34eb5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\androidProject\duanzi\app\libs\MobCommons-2016.1102.1128.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5a3a5754e3bb9af46449eaab21b43420b75260d">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\2\MobCommons-2016.1102.1128_0eab6e6d8f8f195cd45b2dbc7950e9b55abaa15b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.android\build-cache\95b5c931fa5fc00f7e4109685ff52875f9d20808\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e57fe155cea810fb2ba5fe9ffabcb197ecf81d1">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aa58006328b63850eb2d77a0a20936fa7e002bbf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3\caches\modules-2\files-2.1\cn.leancloud.android\avoscloud-statistics\v4.4.4\16e524f872f686d070e74195b957424f06b99b10\avoscloud-statistics-v4.4.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="16e524f872f686d070e74195b957424f06b99b10">
+        <dex dex="D:\androidProject\duanzi\app\build\intermediates\transforms\dex\debug\folders\1000\10\avoscloud-statistics-v4.4.4_f6e9801bb836582a767cfa7e6475fac353d46186\classes.dex" />
     </item>
 
 </items>

@@ -1,19 +1,12 @@
 package com.anna.duanzi.common;
 
-import android.util.Log;
-
 import com.anna.duanzi.domain.Area;
 import com.anna.duanzi.domain.Duanzi;
-import com.anna.duanzi.utils.StringUtils;
 import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
-import com.avos.avoscloud.RequestMobileCodeCallback;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**

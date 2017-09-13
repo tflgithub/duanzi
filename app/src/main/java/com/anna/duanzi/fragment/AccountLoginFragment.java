@@ -68,6 +68,16 @@ public class AccountLoginFragment extends BackHandledFragment {
         return view;
     }
 
+    @Override
+    public View initView() {
+        return null;
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
 
     @OnClick({R.id.tv_find_password, R.id.tv_vail_code_login, R.id.btn_login})
     public void onClick(View view) {

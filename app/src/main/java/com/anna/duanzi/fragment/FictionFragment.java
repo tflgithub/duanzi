@@ -12,7 +12,8 @@ import com.anna.duanzi.activity.LoginActivity;
 import com.anna.duanzi.activity.MemberActivity;
 import com.anna.duanzi.activity.TurnBookActivity;
 import com.anna.duanzi.adapter.FicitonAdapter;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.Fiction;
 import com.anna.duanzi.utils.ContextUtils;
 import com.anna.duanzi.utils.FileUtils;
@@ -85,7 +86,7 @@ public class FictionFragment extends BaseFragment implements UIUtils.DialogListe
                     startActivity(intent);
                     return;
                 }
-                if (Contants.MEMBER.MEMBER_LEVEL_0.equals(AVUser.getCurrentUser().getString("vip"))) {
+                if (Constants.MEMBER.MEMBER_LEVEL_0.equals(AVUser.getCurrentUser().getString("vip"))) {
                     UIUtils uiUtils = new UIUtils(getActivity());
                     uiUtils.setDialogListener(FictionFragment.this);
                     uiUtils.createConfirmDialog("温馨提示", "您现在还不是会员，去升级为会员", "立马就去", "我再想想", 0);

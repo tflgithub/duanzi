@@ -26,9 +26,10 @@ import android.widget.Toast;
 import com.anna.duanzi.R;
 import com.anna.duanzi.adapter.CommentAdapter;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
 import com.anna.duanzi.common.HttpHelper;
 import com.anna.duanzi.domain.Comment;
+import com.anna.duanzi.utils.UIUtils;
+import com.anna.duanzi.widget.BadgeView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
@@ -74,7 +75,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
 
     CommentPopupWindow commentPopupWindow;
 
-    private ImageView digg_btn;
+    private ImageView digg_btn, comment_btn;
 
     private TextView tv_comment, tv_digg_number_animation;
 
@@ -86,6 +87,8 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
     boolean isSuccess = false;
 
     private SVProgressHUD mSVProgressHUD;
+
+    private BadgeView commentBadgeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
         refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refresh);
         digg_btn = (ImageView) findViewById(R.id.digg_btn);
         tv_comment = (TextView) findViewById(R.id.tv_comment);
+        comment_btn = (ImageView) findViewById(R.id.comment_btn);
         animation = AnimationUtils.loadAnimation(this, R.anim.applaud_animation);
         tv_digg_number_animation = (TextView) findViewById(R.id.tv_digg_number_animation);
         digg_btn.setOnClickListener(this);
@@ -113,6 +117,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
         commentPopupWindow.setSoftInputMode(CommentPopupWindow.INPUT_METHOD_NEEDED);
         //设置模式，和Activity的一样，覆盖，调整大小。
         commentPopupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        findViewById(R.id.iv_share).setOnClickListener(this);
         mSVProgressHUD.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(SVProgressHUD hud) {
@@ -182,13 +187,14 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
         });
     }
 
+    String videoUrl, title;
 
     private void initData() {
-
         videoId = getIntent().getExtras().getString("videoId");
-        String videoUrl = getIntent().getExtras().getString("videoUrl");
+        title = getIntent().getExtras().getString("title");
+        videoUrl = getIntent().getExtras().getString("videoUrl");
         String imageUrl = getIntent().getExtras().getString("imageUrl");
-        int STATE = getIntent().getExtras().getInt("current_state");
+        int STATE = getIntent().getExtras().getInt("current_state", jcVideoPlayer.CURRENT_STATE_NORMAL);
         jcVideoPlayer.setUpForVideoActivity(videoUrl, imageUrl);
         jcVideoPlayer.setState(STATE);
         JCMediaManager.intance().setUuid(jcVideoPlayer.uuid);
@@ -218,6 +224,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
             }
         });
         countDigg();
+        countComment();
     }
 
 
@@ -263,6 +270,9 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.digg_btn:
                 digg();
+                break;
+            case R.id.iv_share:
+                UIUtils.showShare(this, null, true, title, null, null, videoUrl);
                 break;
         }
     }
@@ -327,6 +337,31 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
         });
     }
 
+    /**
+     * 统计评论
+     */
+    private void countComment() {
+        AVQuery<Comment> query = AVQuery.getQuery("Comment");
+        query.whereEqualTo("commentId", videoId);
+        query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
+        query.countInBackground(new CountCallback() {
+            @Override
+            public void done(int i, AVException e) {
+                if (e == null) {
+                    // 查询成功，输出计数
+                    commentBadgeView = new BadgeView(VideoActivity.this, comment_btn);
+                    commentBadgeView.setText(i + "");
+                    commentBadgeView.setTextSize(8);
+                    commentBadgeView.setBadgePosition(BadgeView.POSITION_TOP_RIGHT);
+                    commentBadgeView.setAlpha(1f);
+                    commentBadgeView.setBadgeMargin(0, 8);
+                    commentBadgeView.show();
+                } else {
+                    // 查询失败
+                }
+            }
+        });
+    }
 
     /**
      * 发表评论
@@ -335,6 +370,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
         mSVProgressHUD.showWithStatus("提交中，请稍后...");
         Comment comment = new Comment();
         comment.put("commentId", commentId);
+        comment.put("user", AVUser.getCurrentUser().getMobilePhoneNumber());
         comment.put("commentContent", editText.getText().toString());
         comment.saveInBackground(new SaveCallback() {
             @Override

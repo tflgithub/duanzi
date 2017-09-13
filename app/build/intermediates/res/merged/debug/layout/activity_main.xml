@@ -1,77 +1,95 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:anna="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
+    <com.anna.duanzi.widget.NoScrollViewPager
         android:id="@+id/id_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </android.support.v4.view.ViewPager>
-
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/tab_bg"
-        android:orientation="horizontal" >
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/menu_bg"
+        android:orientation="horizontal">
 
-        <com.anna.duanzi.ChangeColorIconWithText
+        <com.anna.duanzi.widget.ChangeColorIconWithText
             android:id="@+id/id_indicator_one"
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="5dp"
+            anna:menu_color="@color/colorPrimary"
             anna:menu_icon="@drawable/ic_tab_home_normal"
             anna:text="@string/tab_home"
-            anna:text_size="12sp"
-            anna:menu_color="#ff45c01a" />
+            anna:text_size="12sp" />
 
-        <com.anna.duanzi.ChangeColorIconWithText
+        <com.anna.duanzi.widget.ChangeColorIconWithText
             android:id="@+id/id_indicator_two"
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="5dp"
+            anna:menu_color="@color/colorPrimary"
             anna:menu_icon="@drawable/ic_publish_take_picture_normal"
             anna:text="@string/tab_image"
-            anna:text_size="12sp"
-            anna:menu_color="#ff45c01a" />
+            anna:text_size="12sp" />
 
-        <com.anna.duanzi.ChangeColorIconWithText
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <com.anna.duanzi.widget.ChangeColorIconWithText
             android:id="@+id/id_indicator_three"
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="5dp"
+            anna:menu_color="@color/colorPrimary"
             anna:menu_icon="@drawable/ic_publish_take_video_normal"
             anna:text="@string/tab_video"
-            anna:text_size="12sp"
-            anna:menu_color="#ff45c01a" />
+            anna:text_size="12sp" />
 
-        <com.anna.duanzi.ChangeColorIconWithText
+        <com.anna.duanzi.widget.ChangeColorIconWithText
             android:id="@+id/id_indicator_four"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="12dp"
+            android:padding="5dp"
+            anna:menu_color="@color/colorPrimary"
             anna:menu_icon="@drawable/ic_tab_discovery_normal"
             anna:text="@string/tab_found"
-            anna:text_size="12sp"
-            anna:menu_color="#ff45c01a" />
-
-        <com.anna.duanzi.ChangeColorIconWithText
-            android:id="@+id/id_indicator_five"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:padding="12dp"
-            anna:menu_icon="@drawable/icon_2_n"
-            anna:text="@string/tab_me"
-            anna:text_size="12sp"
-            anna:menu_color="#ff45c01a" />
+            anna:text_size="12sp" />
     </LinearLayout>
 
-</LinearLayout>
+    <!--<com.anna.duanzi.widget.CircleButton-->
+    <!--android:id="@+id/cb_add"-->
+    <!--android:layout_width="55dp"-->
+    <!--android:layout_height="55dp"-->
+    <!--android:layout_gravity="bottom|center"-->
+    <!--anna:cb_border_color="@color/colorPrimaryDark"-->
+    <!--android:onClick="onClick"-->
+    <!--anna:cb_pressedRingWidth="5dp"-->
+    <!--anna:cb_border_width="10dp"-->
+    <!--anna:cb_center_color="@color/white"-->
+    <!--anna:cb_color="@color/colorPrimary" />-->
+
+    <com.anna.duanzi.widget.GooeyMenu
+        android:id="@+id/gooey_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="2dp"
+        anna:fab_radius="@dimen/big_circle_radius"
+        anna:gap_between_menu_fab="@dimen/min_gap"
+        anna:menu_drawable="@array/drawable_array"
+        anna:menu_radius="@dimen/small_circle_radius"
+        anna:no_of_menu="3"
+        anna:small_menu_open="false" />
+
+
+</FrameLayout>

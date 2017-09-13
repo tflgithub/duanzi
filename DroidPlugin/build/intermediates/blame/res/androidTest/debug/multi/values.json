@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\androidProject\\duanzi\\DroidPlugin\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "outputFile": "D:\\androidProject\\duanzi\\DroidPlugin\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {

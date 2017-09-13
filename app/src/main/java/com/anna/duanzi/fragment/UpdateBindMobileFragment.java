@@ -1,13 +1,9 @@
 package com.anna.duanzi.fragment;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +17,6 @@ import com.avos.avoscloud.AVMobilePhoneVerifyCallback;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.RequestMobileCodeCallback;
 import com.avos.avoscloud.SaveCallback;
-import com.avos.avoscloud.UpdatePasswordCallback;
 import com.bigkoo.svprogresshud.SVProgressHUD;
 
 import butterknife.Bind;
@@ -46,21 +41,16 @@ public class UpdateBindMobileFragment extends BackHandledFragment {
         return false;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_update_bind_mobile, null);
+    public View initView() {
+        View view = View.inflate(getActivity(),R.layout.fragment_update_bind_mobile, null);
         ButterKnife.bind(this, view);
-        init();
         return view;
     }
 
-    private void init() {
+    @Override
+    public void initData() {
         RegisterCodeTimerService.setHandler(mCodeHandler);
         mIntent = new Intent(getActivity(), RegisterCodeTimerService.class);
         phoneNumber = getArguments().getString("phoneNumber");
@@ -75,7 +65,6 @@ public class UpdateBindMobileFragment extends BackHandledFragment {
             }
         });
     }
-
 
     @OnClick({R.id.tv_send_vail_code, R.id.btn_submit})
     public void onClick(View view) {

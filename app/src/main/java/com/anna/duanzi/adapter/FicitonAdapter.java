@@ -1,7 +1,6 @@
 package com.anna.duanzi.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.Fiction;
 import com.anna.duanzi.utils.ContextUtils;
 import com.avos.avoscloud.AVFile;
@@ -55,7 +54,7 @@ public class FicitonAdapter extends
         } else {
             ((ViewHolder) holder).tv_state.setTextColor(ContextUtils.getContext().getResources().getColor(R.color.orange));
         }
-        if (fiction.readPermission.equals(Contants.MEMBER.MEMBER_LEVEL_0)) {
+        if (fiction.readPermission.equals(Constants.MEMBER.MEMBER_LEVEL_0)) {
             ((ViewHolder) holder).tv_read_permission.setText("免费");
             ((ViewHolder) holder).tv_read_permission.setTextColor(ContextUtils.getContext().getResources().getColor(R.color.green));
         } else {

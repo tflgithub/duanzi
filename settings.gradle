@@ -1,1 +1,1 @@
-include ':app', ':jcvideoplayer-lib', ':tfl_list_recycler_view', ':page_curl', ':android_auto_update', ':multi-image-selector', ':DroidPlugin'
+include ':app', ':jcvideoplayer-lib', ':tfl_list_recycler_view', ':page_curl', ':android_auto_update', ':multi-image-selector', ':DroidPlugin', ':recyclerviewcardgallery'

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\values-v18\\values-v18.xml",
+        "outputFile": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 99
                 },
                 "from": {
-                    "file": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.1\\res\\values-v18\\values-v18.xml",
+                    "file": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\values-v18\\values-v18.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 291,
+                        "startOffset": 55,
                         "endColumn": 48,
-                        "endOffset": 335
+                        "endOffset": 99
                     }
                 }
             }

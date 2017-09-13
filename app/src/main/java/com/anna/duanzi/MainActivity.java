@@ -1,25 +1,24 @@
 package com.anna.duanzi;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import com.anna.duanzi.activity.LoginActivity;
 import com.anna.duanzi.activity.MemberActivity;
+import com.anna.duanzi.activity.PublishActivity;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
-import com.anna.duanzi.fragment.BaseFragment;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.fragment.FragmentFactory;
+import com.anna.duanzi.widget.ChangeColorIconWithText;
+import com.anna.duanzi.widget.GooeyMenu;
 import com.avos.avoscloud.AVUser;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +29,18 @@ import de.greenrobot.event.EventBus;
 import fm.jiecao.jcvideoplayer_lib.VideoEvents;
 
 public class MainActivity extends BaseActivity implements OnClickListener,
-        OnPageChangeListener {
+        OnPageChangeListener, GooeyMenu.GooeyMenuInterface {
 
     @Bind(R.id.id_viewpager)
     ViewPager mViewPager;
+
     private List<BaseFragment> mTabs = new ArrayList<>();
 
     private FragmentPagerAdapter mAdapter;
 
     private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<>();
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
+    GooeyMenu mGooeyMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,28 +50,18 @@ public class MainActivity extends BaseActivity implements OnClickListener,
         initView();
         initDatas();
         mViewPager.setAdapter(mAdapter);
-        initEvent();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        mViewPager.addOnPageChangeListener(this);
+        mGooeyMenu = (GooeyMenu) findViewById(R.id.gooey_menu);
+        mGooeyMenu.setOnMenuListener(this);
     }
 
-
-    /**
-     * 初始化所有事件
-     */
-    private void initEvent() {
-
-        mViewPager.setOnPageChangeListener(this);
-
-    }
 
     private void initDatas() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             BaseFragment baseFragment = FragmentFactory.createFragment(i);
             mTabs.add(baseFragment);
         }
-        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setOffscreenPageLimit(4);
         mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             @Override
@@ -90,7 +77,6 @@ public class MainActivity extends BaseActivity implements OnClickListener,
     }
 
     private void initView() {
-
         ChangeColorIconWithText one = (ChangeColorIconWithText) findViewById(R.id.id_indicator_one);
         mTabIndicators.add(one);
         ChangeColorIconWithText two = (ChangeColorIconWithText) findViewById(R.id.id_indicator_two);
@@ -99,16 +85,11 @@ public class MainActivity extends BaseActivity implements OnClickListener,
         mTabIndicators.add(three);
         ChangeColorIconWithText four = (ChangeColorIconWithText) findViewById(R.id.id_indicator_four);
         mTabIndicators.add(four);
-        ChangeColorIconWithText five = (ChangeColorIconWithText) findViewById(R.id.id_indicator_five);
-        mTabIndicators.add(five);
-
         one.setOnClickListener(this);
         two.setOnClickListener(this);
         three.setOnClickListener(this);
         four.setOnClickListener(this);
-        five.setOnClickListener(this);
         one.setIconAlpha(1.0f);
-
     }
 
 
@@ -141,12 +122,9 @@ public class MainActivity extends BaseActivity implements OnClickListener,
                 mTabIndicators.get(3).setIconAlpha(1.0f);
                 mViewPager.setCurrentItem(3, false);
                 break;
-            case R.id.id_indicator_five:
-                mTabIndicators.get(4).setIconAlpha(1.0f);
-                mViewPager.setCurrentItem(4, false);
-                break;
         }
     }
+
 
     /**
      * 重置其他的TabIndicator的颜色
@@ -160,15 +138,12 @@ public class MainActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onPageScrolled(int position, float positionOffset,
                                int positionOffsetPixels) {
-        // Log.e("TAG", "position = " + position + " ,positionOffset =  "
-        // + positionOffset);
         if (positionOffset > 0) {
             ChangeColorIconWithText left = mTabIndicators.get(position);
             ChangeColorIconWithText right = mTabIndicators.get(position + 1);
             left.setIconAlpha(1 - positionOffset);
             right.setIconAlpha(positionOffset);
         }
-
     }
 
     @Override
@@ -186,10 +161,7 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
     public void onEventMainThread(VideoEvents videoEvents) {
         if (videoEvents.type == VideoEvents.VE_IS_LOGIN) {
-            if (AVUser.getCurrentUser() == null) {
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-            } else if (currentUser.getString("vip").equals(Contants.MEMBER.MEMBER_LEVEL_0)) {
+            if (AVUser.getCurrentUser().getString("vip").equals(Constants.MEMBER.MEMBER_LEVEL_0)) {
                 Toast.makeText(this, getString(R.string.free_video_tip), Toast.LENGTH_LONG).show();
             }
         } else if (videoEvents.type == VideoEvents.VE_IS_VIP) {
@@ -203,40 +175,37 @@ public class MainActivity extends BaseActivity implements OnClickListener,
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://com.anna.duanzi/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app deep link URI is correct.
-                Uri.parse("android-app://com.anna.duanzi/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
         EventBus.getDefault().unregister(this);
+    }
+
+    private long firstTime = 0;
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                long secondTime = System.currentTimeMillis();
+                if (secondTime - firstTime > 2000) { //如果两次按键时间间隔大于2秒，则不退出
+                    Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                    firstTime = secondTime;//更新firstTime
+                    return true;
+                } else {//两次按键小于2秒时，退出应用
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void menuItemClicked(int menuNumber) {
+        Intent intent = new Intent(this, PublishActivity.class);
+        intent.putExtra(Constants.CATEGORY, menuNumber);
+        startActivity(intent);
     }
 }

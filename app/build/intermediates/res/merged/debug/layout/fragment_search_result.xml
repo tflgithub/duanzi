@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/search_loading_view" />
+
+    <ListView
+        android:id="@+id/search_result_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/search_emtpy_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="没有搜索到你想搜的内容"
+        android:textColor="@color/orange"
+        android:visibility="gone"
+        android:textSize="18sp">
+    </TextView>
+</RelativeLayout>

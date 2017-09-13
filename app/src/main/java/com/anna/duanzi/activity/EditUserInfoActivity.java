@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.fragment.BackHandledFragment;
 import com.anna.duanzi.fragment.BackHandledInterface;
 import com.anna.duanzi.fragment.ModifyPasswordFragment;
@@ -26,24 +26,24 @@ public class EditUserInfoActivity extends BaseActivity implements BackHandledInt
         title = (TextView) findViewById(R.id.header_actionbar_title);
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        int updateType = getIntent().getIntExtra(Contants.UPDATE_USERINFO_TYPE, 0);
-        String updateContent = getIntent().getStringExtra(Contants.UPDATE_USERINFO_CONTENT);
+        int updateType = getIntent().getIntExtra(Constants.UPDATE_USERINFO_TYPE, 0);
+        String updateContent = getIntent().getStringExtra(Constants.UPDATE_USERINFO_CONTENT);
         switch (updateType) {
-            case Contants.UPDATE_USERINFO.EMAIL:
+            case Constants.UPDATE_USERINFO.EMAIL:
                 title.setText("修改邮箱");
                 ft.add(R.id.fl_container, UpdateNickFragment.newInstance(updateType, updateContent));
                 break;
-            case Contants.UPDATE_USERINFO.NICK_NAME:
+            case Constants.UPDATE_USERINFO.NICK_NAME:
                 title.setText("修改昵称");
                 ft.add(R.id.fl_container, UpdateNickFragment.newInstance(updateType, updateContent));
                 break;
-            case Contants.UPDATE_USERINFO.MOBILE:
+            case Constants.UPDATE_USERINFO.MOBILE:
                 title.setText("更换手机");
                 BackHandledFragment backHandledFragment = new UpdateMobileFragment();
                 ft.replace(R.id.fl_container, backHandledFragment, "default");
                 ft.addToBackStack("tag");
                 break;
-            case Contants.UPDATE_USERINFO.PASSWORD:
+            case Constants.UPDATE_USERINFO.PASSWORD:
                 title.setText("修改密码");
                 ft.add(R.id.fl_container, ModifyPasswordFragment.newInstance(updateContent));
                 break;

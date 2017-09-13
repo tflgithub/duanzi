@@ -40,4 +40,8 @@
     <string name="image_area">图片专区</string>
     <string name="hot_down_load">精品下载</string>
     <string name="my_down_load">我的下载</string>
+
+
+    <string name="appbar_overscroll_behavior">com.anna.duanzi.widget.AppBarLayoutOverScrollViewBehavior</string>
+    <string name="appbar_circleimageview_behavior">com.anna.duanzi.widget.CircleImageInUsercBehavior</string>
 </resources>

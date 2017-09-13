@@ -5,13 +5,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -43,9 +41,8 @@ import me.nereo.multi_image_selector.adapter.ImageGridAdapter;
 import me.nereo.multi_image_selector.bean.Folder;
 import me.nereo.multi_image_selector.bean.Image;
 import me.nereo.multi_image_selector.camera.AppConstant;
-import me.nereo.multi_image_selector.camera.CameraActivity;
 import me.nereo.multi_image_selector.camera.ClipImageActivity;
-import me.nereo.multi_image_selector.camera.utils.BitmapUtils;
+import me.nereo.multi_image_selector.utils.FileUtils;
 import me.nereo.multi_image_selector.utils.TimeUtils;
 
 /**
@@ -93,7 +90,7 @@ public class MultiImageSelectorFragment extends Fragment {
     private GridView mGridView;
     private Callback mCallback;
 
-    private ImageGridAdapter mImageAdapter;
+    public ImageGridAdapter mImageAdapter;
     private FolderAdapter mFolderAdapter;
 
     private ListPopupWindow mFolderPopupWindow;
@@ -343,31 +340,23 @@ public class MultiImageSelectorFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 相机拍照完成后，返回图片路径
-//        if (requestCode == REQUEST_CAMERA) {
-//            if (resultCode == Activity.RESULT_OK) {
-//                if (mTmpFile != null) {
-//                    if (mCallback != null) {
-//                        mCallback.onCameraShot(mTmpFile);
-//                    }
-//                }
-//            } else {
-//                if (mTmpFile != null && mTmpFile.exists()) {
-//                    mTmpFile.delete();
-//                }
-//            }
-//        }
-        if (resultCode != AppConstant.RESULT_CODE.RESULT_OK) {
-            return;
-        }
         if (requestCode == AppConstant.REQUEST_CODE.CAMERA) {
-            final Uri uri = data.getData();
-            if (uri == null) {
-                return;
-            }
-            if (mCallback != null) {
-                mCallback.onCameraShot(uri);
+            if (resultCode == Activity.RESULT_OK) {
+                if (mTmpFile != null) {
+                    if (mCallback != null) {
+                        getActivity().getSupportLoaderManager().initLoader(LOADER_ALL, null, mLoaderCallback);
+                        mCallback.onCameraShot(mTmpFile.getPath());
+                    }
+                }
+            } else {
+                if (mTmpFile != null && mTmpFile.exists()) {
+                    mTmpFile.delete();
+                }
             }
         } else if (requestCode == AppConstant.REQUEST_CODE.CROP_PHOTO) {
+            if (data == null) {
+                return;
+            }
             final Uri uri = data.getData();
             if (uri == null) {
                 return;
@@ -422,24 +411,25 @@ public class MultiImageSelectorFragment extends Fragment {
      * 选择相机
      */
     private void showCameraAction() {
-        // CameraUtil.getInstance().camera(getActivity());
-        // 跳转到系统照相机
-//        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        if(cameraIntent.resolveActivity(getActivity().getPackageManager()) != null){
-//            // 设置系统相机拍照后的输出路径
-//            // 创建临时文件
-//            mTmpFile = FileUtils.createTmpFile(getActivity());
-//            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
-//            startActivityForResult(cameraIntent, REQUEST_CAMERA);
-//        }else{
-//            Toast.makeText(getActivity(), R.string.msg_no_camera, Toast.LENGTH_SHORT).show();
-//        }
-        // 设置系统相机拍照后的输出路径
-        // 创建临时文件
-        //mTmpFile = FileUtils.createTmpFile(getActivity());
-        Intent cameraIntent = new Intent(getActivity(), CameraActivity.class);
-        // cameraIntent.putExtra(CameraActivity.CAMERA_RETURN_PATH, mTmpFile.toString());
-        startActivityForResult(cameraIntent, AppConstant.REQUEST_CODE.CAMERA);
+        //跳转到系统照相机
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            // 设置系统相机拍照后的输出路径
+            // 创建临时文件
+            mTmpFile = FileUtils.createTmpFile(getActivity());
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
+            startActivityForResult(cameraIntent, AppConstant.REQUEST_CODE.CAMERA);
+        } else {
+            Toast.makeText(getActivity(), R.string.msg_no_camera, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //重置选中。
+    public void reSetSelected(ArrayList<String> resultList, ArrayList<String> unSelected) {
+        if (unSelected != null) {
+            mImageAdapter.setUnSelected(unSelected);
+        }
+        this.resultList = resultList;
     }
 
     /**
@@ -447,7 +437,7 @@ public class MultiImageSelectorFragment extends Fragment {
      *
      * @param image
      */
-    private void selectImageFromGrid(Image image, int mode) {
+    public void selectImageFromGrid(Image image, int mode) {
         if (image != null) {
             // 多选模式
             if (mode == MODE_MULTI) {
@@ -480,9 +470,7 @@ public class MultiImageSelectorFragment extends Fragment {
                 mImageAdapter.select(image);
             } else if (mode == MODE_SINGLE) {
                 // 单选模式
-                if (mCallback != null) {
-                    gotoClipActivity(Uri.fromFile(new File(image.path)));
-                }
+                gotoClipActivity(Uri.fromFile(new File(image.path)));
             }
         }
     }
@@ -589,12 +577,13 @@ public class MultiImageSelectorFragment extends Fragment {
      * 回调接口
      */
     public interface Callback {
+
         void onSingleImageSelected(Uri uri);
 
         void onImageSelected(String path);
 
         void onImageUnselected(String path);
 
-        void onCameraShot(Uri uri);
+        void onCameraShot(String path);
     }
 }

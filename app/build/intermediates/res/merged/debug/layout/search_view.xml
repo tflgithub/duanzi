@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/search_bg"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="4"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="搜你想搜的"
+        android:textCursorDrawable="@null"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:inputType="text"
+        android:drawableLeft="@drawable/ic_search"
+        android:textColor="#0e0e0e"
+        android:textSize="12sp"
+        android:textColorHint="@color/gray" />
+
+    <Button
+        android:id="@+id/bt_clear"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/delete" />
+</LinearLayout>

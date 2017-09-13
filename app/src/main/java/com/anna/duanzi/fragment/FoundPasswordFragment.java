@@ -16,7 +16,6 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
-import com.avos.avoscloud.RequestMobileCodeCallback;
 import com.bigkoo.svprogresshud.SVProgressHUD;
 import com.bigkoo.svprogresshud.listener.OnDismissListener;
 
@@ -79,6 +78,16 @@ public class FoundPasswordFragment extends BackHandledFragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public View initView() {
+        return null;
+    }
+
+    @Override
+    public void initData() {
+
     }
 
 

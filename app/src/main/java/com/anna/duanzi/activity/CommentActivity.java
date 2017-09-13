@@ -103,7 +103,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
         });
         tv_comment = (TextView) findViewById(R.id.tv_comment);
         tv_comment.setOnClickListener(this);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
+        iv_back = (ImageView) findViewById(R.id.header_actionbar_back);
         iv_back.setOnClickListener(this);
         recyclerView = (TflListRecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -231,7 +231,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
                 //显示窗口
                 commentPopupWindow.showAtLocation(CommentActivity.this.findViewById(R.id.main), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0); //设置layout在PopupWindow中显示的位置
                 break;
-            case R.id.iv_back:
+            case R.id.header_actionbar_back:
                 finish();
                 break;
         }

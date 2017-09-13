@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.activity.ImagePageActivity;
-import com.anna.duanzi.activity.LoginActivity;
 import com.anna.duanzi.activity.VideoActivity;
 import com.anna.duanzi.adapter.ImageAdapter;
 import com.anna.duanzi.adapter.TabAdapter;
 import com.anna.duanzi.adapter.VideoAdapter;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.common.HttpHelper;
 import com.anna.duanzi.domain.Area;
 import com.anna.duanzi.domain.Duanzi;
@@ -21,7 +21,6 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.CountCallback;
 import com.avos.avoscloud.FindCallback;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
@@ -70,53 +69,44 @@ public class HomeFragment extends BaseFragment implements TflLoadMoreListener {
 
     @Override
     public void initData() {
-        category = getArguments().getString(Contants.CATEGORY);
+        category = getArguments().getString(Constants.CATEGORY);
         loadArea();
         switch (category) {
-            case Contants.CATEGORY_IMAGE:
+            case Constants.CATEGORY_IMAGE:
                 tflListAdapter = new ImageAdapter(dataList, getActivity());
                 tflListAdapter.setOnItemClickListener(new TflListInterface.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, Object o) {
-                        if (AVUser.getCurrentUser() == null) {
-                            Intent intent = new Intent(getActivity(), LoginActivity.class);
-                            startActivity(intent);
-                        } else {
-                            Duanzi duanzi = (Duanzi) o;
-                            Intent intent = new Intent(getActivity(), ImagePageActivity.class);
-                            intent.putExtra("imageId", duanzi.objectId);
-                            startActivity(intent);
-                        }
+                        Duanzi duanzi = (Duanzi) o;
+                        Intent intent = new Intent(getActivity(), ImagePageActivity.class);
+                        intent.putExtra("imageId", duanzi.objectId);
+                        intent.putExtra("imageTitle", duanzi.title);
+                        startActivity(intent);
                     }
                 });
                 break;
-            case Contants.CATEGORY_VIDEO:
+            case Constants.CATEGORY_VIDEO:
                 tflListAdapter = new VideoAdapter(dataList);
                 tflListAdapter.setOnItemClickListener(new TflListInterface.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, Object o) {
-                        if (AVUser.getCurrentUser() == null) {
-                            Intent intent = new Intent(getActivity(), LoginActivity.class);
-                            startActivity(intent);
-                        } else {
-                            VideoAdapter.DataViewHolder videoViewHolder = (VideoAdapter.DataViewHolder) o;
-                            Intent intent = new Intent(getActivity(), VideoActivity.class);
-                            int position = videoViewHolder.getAdapterPosition();
-                            Duanzi duanzi = dataList.get(position);
-                            int CURRENT_STATE = videoViewHolder.jcVideoPlayer.CURRENT_STATE;
-                            intent.putExtra("current_state", CURRENT_STATE);
-                            intent.putExtra("videoId", duanzi.objectId);
-                            AVFile videoFile = duanzi.getAVFile("data");
-                            AVFile videoImageFile = duanzi.getAVFile("image");
-                            intent.putExtra("videoUrl", videoFile.getUrl());
-                            intent.putExtra("imageUrl", videoImageFile.getUrl());
-                            intent.putExtra("title", duanzi.title);
-                            JCMediaManager.intance().mediaPlayer.pause();
-                            videoViewHolder.jcVideoPlayer.isClickFullscreen = true;
-                            JCMediaManager.intance().mediaPlayer.setDisplay(null);
-                            JCMediaManager.intance().backUpUuid();
-                            startActivity(intent);
-                        }
+                        VideoAdapter.DataViewHolder videoViewHolder = (VideoAdapter.DataViewHolder) o;
+                        Intent intent = new Intent(getActivity(), VideoActivity.class);
+                        int position = videoViewHolder.getAdapterPosition();
+                        Duanzi duanzi = dataList.get(position);
+                        int CURRENT_STATE = videoViewHolder.jcVideoPlayer.CURRENT_STATE;
+                        intent.putExtra("current_state", CURRENT_STATE);
+                        intent.putExtra("videoId", duanzi.objectId);
+                        AVFile videoFile = duanzi.getAVFile("data");
+                        AVFile videoImageFile = duanzi.getAVFile("image");
+                        intent.putExtra("videoUrl", videoFile.getUrl());
+                        intent.putExtra("imageUrl", videoImageFile.getUrl());
+                        intent.putExtra("title", duanzi.title);
+                        JCMediaManager.intance().mediaPlayer.pause();
+                        videoViewHolder.jcVideoPlayer.isClickFullscreen = true;
+                        JCMediaManager.intance().mediaPlayer.setDisplay(null);
+                        JCMediaManager.intance().backUpUuid();
+                        startActivity(intent);
                     }
                 });
                 break;
@@ -134,7 +124,8 @@ public class HomeFragment extends BaseFragment implements TflLoadMoreListener {
     @Override
     public void onPause() {
         super.onPause();
-        if (category.equals(Contants.CATEGORY_VIDEO)) {
+        //如果是视频，界面跳出时，暂停。
+        if (category.equals(Constants.CATEGORY_VIDEO)) {
             JCVideoPlayer.releaseAllVideos();
         }
     }

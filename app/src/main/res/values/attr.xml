@@ -21,6 +21,24 @@
     </declare-styleable>
 
 
+    <declare-styleable name="CircleButton">
+        <attr name="cb_color" format="color" />
+        <attr name="cb_border_color" format="color" />
+        <attr name="cb_center_color" format="color" />
+        <attr name="cb_border_width" format="dimension" />
+        <attr name="cb_pressedRingWidth" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="GooeyMenu">
+        <attr name="no_of_menu" format="integer" />
+        <attr name="fab_radius" format="dimension" />
+        <attr name="menu_radius" format="dimension" />
+        <attr name="gap_between_menu_fab" format="dimension" />
+        <attr name="small_menu_open" format="boolean"></attr>
+        <attr name="menu_drawable" format="reference" />
+    </declare-styleable>
+
     <declare-styleable name="rtl_RecyclerTabLayout">
         <attr name="rtl_tabIndicatorColor" format="color" />
         <attr name="rtl_tabIndicatorHeight" format="dimension" />
@@ -49,10 +67,19 @@
     </declare-styleable>
 
     <declare-styleable name="DownLoadButton">
-        <attr name="normalBackground" format="reference|color"/>
-        <attr name="downLoadedBackground" format="reference|color"/>
-        <attr name="downLoadCompleteBackground" format="reference|color"/>
-        <attr name="textColor" format="reference|color"/>
+        <attr name="normalBackground" format="reference|color" />
+        <attr name="downLoadedBackground" format="reference|color" />
+        <attr name="downLoadCompleteBackground" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="TagView">
+        <attr name="lineMargin" format="dimension" />
+        <attr name="tagMargin" format="dimension" />
+        <attr name="textPaddingLeft" format="dimension" />
+        <attr name="textPaddingRight" format="dimension" />
+        <attr name="textPaddingTop" format="dimension" />
+        <attr name="textPaddingBottom" format="dimension" />
     </declare-styleable>
 
 </resources>

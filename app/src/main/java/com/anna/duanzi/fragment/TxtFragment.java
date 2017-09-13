@@ -8,7 +8,8 @@ import com.anna.duanzi.R;
 import com.anna.duanzi.activity.TxtActivity;
 import com.anna.duanzi.activity.WebTxtActivity;
 import com.anna.duanzi.adapter.TxtAdapter;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.Duanzi;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -72,7 +73,7 @@ public class TxtFragment extends BaseFragment implements TflLoadMoreListener {
         tflListAdapter.changeMode(TflListModel.MODE_LOADING);
         query = AVObject.getQuery(Duanzi.class);
         query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
-        query.whereEqualTo("category", Contants.CATEGORY_TXT);
+        query.whereEqualTo("category", Constants.CATEGORY_TXT);
         query.orderByDescending("createdAt");
         query.countInBackground(new CountCallback() {
             @Override

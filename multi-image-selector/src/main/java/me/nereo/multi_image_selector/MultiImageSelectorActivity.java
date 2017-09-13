@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -132,7 +131,12 @@ public class MultiImageSelectorActivity extends FragmentActivity implements Mult
     }
 
     @Override
-    public void onCameraShot(Uri uri) {
+    public void onCameraShot(String path) {
+
+    }
+
+    //   @Override
+//    public void onCameraShot(Uri uri) {
 //        if(imageFile != null) {
 //            Intent data = new Intent();
 //            resultList.add(imageFile.getAbsolutePath());
@@ -140,5 +144,5 @@ public class MultiImageSelectorActivity extends FragmentActivity implements Mult
 //            setResult(RESULT_OK, data);
 //            finish();
 //        }
-    }
+ //   }
 }

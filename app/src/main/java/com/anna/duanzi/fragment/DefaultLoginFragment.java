@@ -8,9 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,14 +55,17 @@ public class DefaultLoginFragment extends BackHandledFragment {
         mIntent = new Intent(getActivity(), RegisterCodeTimerService.class);
     }
 
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View initView() {
         View view = View.inflate(getActivity(), R.layout.fragment_default_login, null);
         (getActivity().findViewById(R.id.ib_back)).setVisibility(View.INVISIBLE);
         ButterKnife.bind(this, view);
         return view;
+    }
+
+    @Override
+    public void initData() {
+
     }
 
 

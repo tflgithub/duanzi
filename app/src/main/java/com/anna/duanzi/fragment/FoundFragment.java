@@ -1,12 +1,11 @@
 package com.anna.duanzi.fragment;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.activity.GamesActivity;
+import com.anna.duanzi.base.BaseFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,7 +21,6 @@ public class FoundFragment extends BaseFragment {
     @Bind(R.id.header_actionbar_back)
     ImageView back;
 
-
     @Override
     public View initView() {
         View view = View.inflate(getActivity(), R.layout.fragment_found, null);
@@ -37,12 +35,12 @@ public class FoundFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_game})
+    @OnClick({R.id.tv_trends,R.id.tv_transport})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_game:
-                Intent intent = new Intent(getActivity(), GamesActivity.class);
-                startActivity(intent);
+            case R.id.tv_transport:
+                break;
+            case R.id.tv_trends:
                 break;
         }
     }

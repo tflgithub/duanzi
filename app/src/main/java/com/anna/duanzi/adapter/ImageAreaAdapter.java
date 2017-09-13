@@ -7,11 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.domain.Image;
 import com.anna.duanzi.domain.ImageArea;
-import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.CountCallback;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
 
@@ -44,7 +40,7 @@ public class ImageAreaAdapter extends
     public void onBindDataViewHolder(final RecyclerView.ViewHolder holder, int position) {
         ImageArea imageArea = mData.get(position);
         ((ViewHolder) holder).tv_title.setText(imageArea.title);
-        countImage(imageArea.objectId, ((ViewHolder) holder).tv_image_count);
+        ((ViewHolder) holder).tv_image_count.setText(imageArea.count);
         holder.itemView.setTag(imageArea);
     }
 
@@ -90,22 +86,5 @@ public class ImageAreaAdapter extends
             tv_title = (TextView) itemView.findViewById(R.id.tv_title);
             tv_image_count = (TextView) itemView.findViewById(R.id.tv_image_num);
         }
-    }
-
-    private void countImage(String imageId, final TextView textView) {
-        AVQuery<Image> query = AVQuery.getQuery("Image");
-        query.whereEqualTo("imageId", imageId);
-        query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
-        query.countInBackground(new CountCallback() {
-            @Override
-            public void done(int i, AVException e) {
-                if (e == null) {
-                    // 查询成功，输出计数
-                    textView.setText(i + " P");
-                } else {
-                    // 查询失败
-                }
-            }
-        });
     }
 }

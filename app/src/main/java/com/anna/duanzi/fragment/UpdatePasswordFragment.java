@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +56,16 @@ public class UpdatePasswordFragment extends BackHandledFragment {
         ButterKnife.bind(this, view);
         init();
         return view;
+    }
+
+    @Override
+    public View initView() {
+        return null;
+    }
+
+    @Override
+    public void initData() {
+
     }
 
     private void init() {

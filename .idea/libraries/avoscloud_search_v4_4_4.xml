@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="avoscloud-search-v4.4.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/f6f015f91eaace44821517eb35011740ca9a643e/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/f6f015f91eaace44821517eb35011740ca9a643e/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

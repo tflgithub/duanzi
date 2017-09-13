@@ -83,6 +83,16 @@ public class UpdateMobileFragment extends BackHandledFragment {
         return view;
     }
 
+    @Override
+    public View initView() {
+        return null;
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
 
     @OnClick({R.id.btn_next_step})
     public void onClick(View view) {

@@ -13,8 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.common.DownloadProgressListener;
-import com.anna.duanzi.common.FileDownloader;
+import com.anna.duanzi.upgrade.DownloadProgressListener;
+import com.anna.duanzi.upgrade.FileDownloader;
 import com.anna.duanzi.domain.Movies;
 import com.anna.duanzi.widget.DownLoadButton;
 import com.anna.duanzi.widget.DownLoadText;

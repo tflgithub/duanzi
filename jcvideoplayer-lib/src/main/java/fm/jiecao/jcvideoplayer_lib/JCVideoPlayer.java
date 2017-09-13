@@ -353,6 +353,7 @@ public class JCVideoPlayer extends FrameLayout implements View.OnClickListener, 
             }
         } else if (videoEvents.type == VideoEvents.VE_MEDIAPLAYER_SEEKCOMPLETE) {
             pbLoading.setVisibility(View.INVISIBLE);
+            quitFullScreen();
         }
     }
 
@@ -363,7 +364,6 @@ public class JCVideoPlayer extends FrameLayout implements View.OnClickListener, 
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.start || i == R.id.thumb) {
-            EventBus.getDefault().post(new VideoEvents().setType(VideoEvents.VE_IS_LOGIN));
             if (TextUtils.isEmpty(url)) {
                 Toast.makeText(getContext(), "视频地址为空", Toast.LENGTH_SHORT).show();
                 return;

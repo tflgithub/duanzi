@@ -49,7 +49,7 @@ public class TabAdapter extends RecyclerView.Adapter<TabAdapter.TabViewHolder> i
         holder.title.setText(area.areaName);
         holder.itemView.setTag(position);
         if (vector.get(position)) {
-            holder.title.setTextColor(ContextUtils.getContext().getResources().getColor(R.color.green));
+            holder.title.setTextColor(ContextUtils.getContext().getResources().getColor(R.color.colorPrimary));
         } else {
             holder.title.setTextColor(Color.GRAY);
         }

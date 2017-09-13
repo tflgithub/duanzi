@@ -11,10 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.utils.StringUtils;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
@@ -94,14 +93,14 @@ public class UpdateNickFragment extends Fragment implements View.OnClickListener
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 switch (mParam1) {
-                    case Contants.UPDATE_USERINFO.NICK_NAME:
+                    case Constants.UPDATE_USERINFO.NICK_NAME:
                         if (s.length() > 5) {
                             btn_ok.setEnabled(true);
                         } else {
                             btn_ok.setEnabled(false);
                         }
                         break;
-                    case Contants.UPDATE_USERINFO.EMAIL:
+                    case Constants.UPDATE_USERINFO.EMAIL:
                         if (StringUtils.isEmail(s.toString())) {
                             btn_ok.setEnabled(true);
                         } else {
@@ -145,10 +144,10 @@ public class UpdateNickFragment extends Fragment implements View.OnClickListener
 
     private void actionUpdate() {
         switch (mParam1) {
-            case Contants.UPDATE_USERINFO.NICK_NAME:
+            case Constants.UPDATE_USERINFO.NICK_NAME:
                 AVUser.getCurrentUser().put("nickName", editText.getText().toString());
                 break;
-            case Contants.UPDATE_USERINFO.EMAIL:
+            case Constants.UPDATE_USERINFO.EMAIL:
                 AVUser.getCurrentUser().put("email", editText.getText().toString());
                 break;
         }

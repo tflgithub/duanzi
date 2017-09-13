@@ -5,7 +5,8 @@ import android.view.View;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.adapter.DownLoadMoviesAdapter;
-import com.anna.duanzi.common.Contants;
+import com.anna.duanzi.base.BaseFragment;
+import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.Movies;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -49,7 +50,7 @@ public class FragmentUnDownLoadMovies extends BaseFragment implements TflLoadMor
         mRecyclerView.setDivider(R.drawable.bottom_line);
         tflListAdapter.changeMode(TflListModel.MODE_LOADING);
         query = AVObject.getQuery(Movies.class);
-        query.whereEqualTo("category", Contants.MEMBER_AREA.CATEGORY_DOWNLOAD);
+        query.whereEqualTo("category", Constants.MEMBER_AREA.CATEGORY_DOWNLOAD);
         query.orderByDescending("createdAt");
         query.countInBackground(new CountCallback() {
             @Override

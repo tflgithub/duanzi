@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
 
-import com.anna.duanzi.TinkerApplication;
-
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import me.drakeet.materialdialog.MaterialDialog;
 
@@ -14,12 +12,10 @@ import me.drakeet.materialdialog.MaterialDialog;
  */
 public class UIUtils {
 
-    public static Context getContext() {
-        return TinkerApplication.getContext();
-    }
+
 
     public static Resources getResources() {
-        return getContext().getResources();
+        return ContextUtils.getContext().getResources();
     }
 
     public static String getString(int id) {

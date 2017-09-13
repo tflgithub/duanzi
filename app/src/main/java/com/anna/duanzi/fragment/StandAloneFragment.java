@@ -1,14 +1,12 @@
 package com.anna.duanzi.fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.anna.duanzi.R;
-import com.anna.duanzi.domain.Duanzi;
+import com.anna.duanzi.base.BaseFragment;
 import com.anna.duanzi.domain.Games;
 import com.avos.avoscloud.AVQuery;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
-import com.cn.fodel.tfl_list_recycler_view.TflListRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

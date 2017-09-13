@@ -14,6 +14,4 @@ public class Constants {
     static final int TYPE_DIALOG = 1;
 
     static final String TAG = "UpdateChecker";
-
-    static final String UPDATE_URL = "https://raw.githubusercontent.com/tflgithub/kflx/master/update.json";
 }

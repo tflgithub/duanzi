@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="query_hot">
+        <item>段子</item>
+        <item>视频</item>
+        <item>趣图</item>
+    </string-array>
+
+    <string-array name="query_guess">
+        <item>美女</item>
+        <item>搞笑</item>
+        <item>激情</item>
+    </string-array>
+
+    <array name="drawable_array">
+        <item>@drawable/edit_image_selector</item>
+        <item>@drawable/edit_vedio_selector</item>
+        <item>@drawable/edit_txt_selector</item>
+    </array>
+</resources>

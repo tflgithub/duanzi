@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="debug"><source path="D:\androidProject\duanzi\DroidPlugin\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="D:\androidProject\duanzi\DroidPlugin\src\androidTest\assets"/><source path="D:\androidProject\duanzi\DroidPlugin\build\generated\assets\shaders\androidTest\debug"/></dataSet></merger>

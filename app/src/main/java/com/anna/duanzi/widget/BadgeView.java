@@ -18,12 +18,11 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TabWidget;
-import android.widget.TextView;
 
 /**
  * Created by tfl on 2016/10/19.
  */
-public class BadgeView extends TextView {
+public class BadgeView extends android.support.v7.widget.AppCompatTextView {
 
     public static final int POSITION_TOP_LEFT = 1;
     public static final int POSITION_TOP_RIGHT = 2;

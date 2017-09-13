@@ -15,21 +15,11 @@
             <option value="$PROJECT_DIR$/jcvideoplayer-lib" />
             <option value="$PROJECT_DIR$/multi-image-selector" />
             <option value="$PROJECT_DIR$/page_curl" />
+            <option value="$PROJECT_DIR$/recyclerviewcardgallery" />
             <option value="$PROJECT_DIR$/tfl_list_recycler_view" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DroidPlugin" />
-            <option value="$PROJECT_DIR$/android_auto_update" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/jcvideoplayer-lib" />
-            <option value="$PROJECT_DIR$/multi-image-selector" />
-            <option value="$PROJECT_DIR$/page_curl" />
-            <option value="$PROJECT_DIR$/tfl_list_recycler_view" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

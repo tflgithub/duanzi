@@ -10,7 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.anna.duanzi.BookPageFactory;
+import com.anna.duanzi.utils.BookPageFactory;
 import com.anna.duanzi.base.BaseActivity;
 import com.anna.duanzi.utils.FileUtils;
 import com.anna.duanzi.widget.PageWidget;
