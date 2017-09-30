@@ -36,42 +36,21 @@
         </LinearLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="40dp"
+        android:background="@drawable/menu_bg"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/deep_gray" />
 
-        <android.support.v4.app.FragmentTabHost
-            android:id="@android:id/tabhost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TabWidget
-                    android:id="@android:id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/tab_bg" />
-
-                <View
-                    android:id="@+id/view_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dip"
-                    android:background="#D1D1D1" />
-
-                <FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dip"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-        </android.support.v4.app.FragmentTabHost>
-
-    </FrameLayout>
-
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/tab_layout"
+        android:layout_weight="1" />
 
 </LinearLayout>

@@ -37,7 +37,7 @@ public class HttpHelper {
      */
     public void getAreas(final Callback callback) {
         AVQuery<Area> query = AVObject.getQuery(Area.class);
-        query.setCachePolicy(AVQuery.CachePolicy.CACHE_ELSE_NETWORK);
+        query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
         query.findInBackground(new FindCallback<Area>() {
             @Override
             public void done(List<Area> list, AVException e) {
@@ -55,7 +55,7 @@ public class HttpHelper {
      * @param callback
      */
     public void getData(AVQuery<Duanzi> query, final Callback callback) {
-        query.setCachePolicy(AVQuery.CachePolicy.CACHE_ELSE_NETWORK);
+        query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
         query.findInBackground(new FindCallback<Duanzi>() {
             @Override
             public void done(List<Duanzi> list, AVException e) {

@@ -4,13 +4,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  * Created by tfl on 2016/11/2.
  */
 public class ImageUtil {
 
     public static Bitmap decodeBitmap(String filePath, int reqWidth,
-                                             int reqHeight, int resWidth, int resHeight) {
+                                      int reqHeight, int resWidth, int resHeight) {
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -79,5 +83,27 @@ public class ImageUtil {
         Bitmap resizedBitmap = Bitmap.createBitmap(BitmapOrg, 0, 0, width,
                 height, matrix, true);
         return resizedBitmap;
+    }
+
+
+    public static String saveImageToSD(Bitmap bmp, String dirPath) {
+        if (bmp == null) {
+            return "";
+        }
+        File appDir = new File(dirPath);
+        if (!appDir.exists()) {
+            appDir.mkdir();
+        }
+        String fileName = System.currentTimeMillis() + ".png";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file.getAbsolutePath();
     }
 }

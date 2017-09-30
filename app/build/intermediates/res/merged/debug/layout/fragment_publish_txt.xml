@@ -4,19 +4,23 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/et_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:padding="5dp"
         android:background="@drawable/tab_bg"
-        android:hint="标题" />
+        android:textColor="@color/black"
+        android:hint="标题"
+        android:padding="5dp" />
 
     <EditText
-        android:layout_marginTop="10dp"
+        android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:maxLength="1000"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/tab_bg"
         android:gravity="top"
-        android:padding="5dp"
-        android:background="@drawable/tab_bg" />
+        android:maxLength="1000"
+        android:padding="5dp" />
 
 </LinearLayout>

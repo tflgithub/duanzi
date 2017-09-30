@@ -272,12 +272,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\layout\\abc_expanded_menu_layout.xml"
-    },
-    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_found_password.xml",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_found_password.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_image_title.xml",
@@ -492,6 +492,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\view_tab.xml"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_recorder_progress.xml",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\layout\\activity_recorder_progress.xml"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
@@ -558,6 +562,14 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\global_dialog_tpl.xml",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\layout\\global_dialog_tpl.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_video_thumb_edit.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_video_thumb_edit.xml"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_found.xml",
@@ -652,6 +664,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\header_actionbar.xml"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_index_gallery_item.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_index_gallery_item.xml"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_txt.xml",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_txt.xml"
     },
@@ -674,5 +690,9 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_image.xml",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\fragment_image.xml"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_recorder.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\layout\\activity_recorder.xml"
     }
 ]

@@ -52,6 +52,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\icon_transports.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_ok.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_ok.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -88,6 +92,14 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\box_total_time.9.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\box_total_time.9.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_video_big.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_video_big.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_dropbox.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_dropbox.png"
     },
@@ -106,6 +118,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\jinru_normal.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\jinru_normal.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icn_flashlight_on.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\icn_flashlight_on.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png",
@@ -160,6 +176,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_wechatmoments.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_overturn.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_overturn.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_digg_normal_night.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ic_digg_normal_night.png"
     },
@@ -202,6 +222,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_whatsapp.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_whatsapp.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\box_recorder_focus.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\box_recorder_focus.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\camera_flash_off.png",
@@ -372,6 +396,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_facebookmessenger.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_ok.png",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ic_ok.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\add_desc.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\add_desc.png"
     },
@@ -390,6 +418,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_delete.png",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ic_delete.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_laiwangmoments.png",
@@ -528,6 +560,10 @@
         "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_back_white.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_video_big_hl.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_video_big_hl.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_laiwang.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_laiwang.png"
     },
@@ -546,6 +582,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_shortmessage.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_shortmessage.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_back.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_back.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
@@ -600,6 +640,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_ok_hl.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_ok_hl.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_tumblr.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_tumblr.png"
     },
@@ -646,6 +690,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icn_change_view.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\icn_change_view.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_check_default.png",
@@ -724,6 +772,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_wechat.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_delete_hl.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_delete_hl.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ms_smallvideo_icon.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ms_smallvideo_icon.png"
     },
@@ -746,6 +798,10 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_email.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_email.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\stop.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\stop.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_pinterest.png",
@@ -788,6 +844,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icn_change_view_pressed.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\icn_change_view_pressed.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -812,6 +872,10 @@
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_tencentweibo.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_flash.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_flash.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_kakaostory.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_kakaostory.png"
     },
@@ -824,7 +888,15 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\btn_recorder_delete.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\btn_recorder_delete.png"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_facebook.png",
         "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_facebook.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icn_flashlight_off.png",
+        "source": "D:\\androidProject\\duanzi\\mediarecord\\build\\intermediates\\bundles\\default\\res\\drawable-xhdpi-v4\\icn_flashlight_off.png"
     }
 ]

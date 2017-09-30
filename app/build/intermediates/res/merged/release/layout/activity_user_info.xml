@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserInfoActivity">
+
+    <include layout="@layout/header_actionbar" />
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginTop="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/text_black_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="头像" />
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:onClick="onClick" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginLeft="10dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/ry_update_nick_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_selector"
+        android:onClick="onClick"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/text_black_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="昵称" />
+
+        <TextView
+            android:id="@+id/tv_nick_name"
+            style="@style/text_gray_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="未设置" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginLeft="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/ry_update_sex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_selector"
+        android:onClick="onClick"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/text_black_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="性别" />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            style="@style/text_gray_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="男" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginLeft="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/ry_update_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_selector"
+        android:onClick="onClick"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/text_black_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="邮箱" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            style="@style/text_gray_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="未设置" />
+    </RelativeLayout>
+
+    <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+
+    <RelativeLayout
+        android:id="@+id/ry_update_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_selector"
+        android:onClick="onClick"
+        android:padding="10dp">
+
+        <TextView
+            style="@style/text_black_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="手机号码" />
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            style="@style/text_gray_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="13411111" />
+    </RelativeLayout>
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/tv_update_password"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_selector"
+        android:gravity="center|left"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="修改密码" />
+
+    <LinearLayout style="@style/common_horizontal_division_line_style" />
+
+    <LinearLayout
+        style="@style/common_horizontal_division_line_style"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv_quit"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/layout_selector"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="退出登录"
+        android:textColor="@color/orange" />
+
+    <LinearLayout style="@style/common_horizontal_division_line_style" />
+</LinearLayout>

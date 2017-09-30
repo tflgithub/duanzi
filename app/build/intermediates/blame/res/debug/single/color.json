@@ -72,6 +72,10 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\color\\btn_txt_selector_1.xml",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\color\\btn_txt_selector_1.xml"
+    },
+    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\color\\abc_search_url_text.xml"
     },

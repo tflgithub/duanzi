@@ -76,10 +76,6 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\ms_video_focus_icon.png",
-        "source": "D:\\androidProject\\duanzi\\vediorecord\\build\\intermediates\\bundles\\default\\res\\drawable-xxxhdpi-v4\\ms_video_focus_icon.png"
-    },
-    {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f6ca5c3007cafd1f5171064328562b602865be58\\output\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
     },
@@ -98,10 +94,6 @@
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\40bda1ccb19a320c7d84104e4088b891b63ea8e3\\output\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\ms_smallvideo_icon.png",
-        "source": "D:\\androidProject\\duanzi\\vediorecord\\build\\intermediates\\bundles\\default\\res\\drawable-xxxhdpi-v4\\ms_smallvideo_icon.png"
     },
     {
         "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",

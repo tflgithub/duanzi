@@ -1,7 +1,6 @@
 package com.anna.duanzi.adapter;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +12,14 @@ import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Comment;
 import com.anna.duanzi.domain.Duanzi;
 import com.anna.duanzi.domain.Image;
-import com.anna.duanzi.widget.BadgeView;
+import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.CountCallback;
+import com.avos.avoscloud.GetCallback;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
@@ -39,6 +40,7 @@ public class ImageAdapter extends
     private AVQuery<Comment> commentAVQuery = AVQuery.getQuery("Comment");
     private AVQuery<AVObject> diggAVQuery = new AVQuery<>("Digg");
     private AVQuery<AVObject> clickAVQuery = new AVQuery<>("Click_Statistics");
+    private AVQuery<AVUser> avUserAVQuery = new AVQuery<>("_User");
 
     public ImageAdapter(List<Duanzi> data, Context context) {
         super(data);
@@ -66,6 +68,15 @@ public class ImageAdapter extends
         Duanzi duanzi = mData.get(position);
         AVFile imageFile = duanzi.getAVFile("image");
         if (imageFile != null) {
+            avUserAVQuery.getInBackground(imageFile.getOwnerObjectId(), new GetCallback<AVUser>() {
+                @Override
+                public void done(AVUser avUser, AVException e) {
+                    if (e == null && avUser != null) {
+                        ((ViewHolder) holder).tv_username.setText(avUser.getUsername());
+                        Glide.with(mContext).load(avUser.getString("headImage")).placeholder(R.drawable.default_round_head).into((((ViewHolder) holder).header_image_publisher));
+                    }
+                }
+            });
             Glide.with(mContext).load(imageFile.getUrl()).placeholder(R.drawable.image_default_normal).listener(new RequestListener<String, GlideDrawable>() {
                 @Override
                 public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
@@ -166,8 +177,9 @@ public class ImageAdapter extends
     }
 
     private class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_title, tv_image_count, tv_click_num, tv_comment, tv_digg;
+        TextView tv_title, tv_image_count, tv_click_num, tv_comment, tv_digg, tv_username;
         ImageView img_content;
+        CircleImageView header_image_publisher;
 
         public ViewHolder(View rootView) {
             super(rootView);
@@ -177,6 +189,8 @@ public class ImageAdapter extends
             tv_click_num = (TextView) itemView.findViewById(R.id.tv_click_num);
             tv_comment = (TextView) itemView.findViewById(R.id.tv_comment);
             tv_digg = (TextView) itemView.findViewById(R.id.tv_dig);
+            tv_username = (TextView) itemView.findViewById(R.id.tv_user_name);
+            header_image_publisher = (CircleImageView) itemView.findViewById(R.id.header_image_publisher);
         }
     }
 

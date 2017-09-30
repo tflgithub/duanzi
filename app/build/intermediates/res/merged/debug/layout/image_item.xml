@@ -6,9 +6,9 @@
     android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="2dp"
-    android:paddingTop="10dp"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
 
     <TextView
         android:id="@+id/tv_title"
@@ -70,11 +70,27 @@
             style="@style/text_gray_12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:background="@null"
             android:drawableLeft="@drawable/ic_pop_digg_normal"
             android:gravity="center"
             android:padding="5dp"
             android:text="+10" />
+
+        <com.anna.duanzi.widget.CircleImageView
+            android:id="@+id/header_image_publisher"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="30dp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            style="@style/text_orange_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:padding="5dp" />
+
     </LinearLayout>
 </LinearLayout>

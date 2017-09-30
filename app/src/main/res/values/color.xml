@@ -14,6 +14,7 @@
     <color name="color_white">#FFFFFF</color>
 
     <color name="colorPrimary">	#6495ED</color>
+    <color name="red">#ffF44336</color>
     <color name="colorPrimaryDark">	#4169E1</color>
 
 </resources>

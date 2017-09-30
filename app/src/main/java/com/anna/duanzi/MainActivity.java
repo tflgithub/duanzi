@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.anna.duanzi.activity.MemberActivity;
 import com.anna.duanzi.activity.PublishActivity;
+import com.anna.duanzi.activity.RecorderActivity;
 import com.anna.duanzi.base.BaseActivity;
 import com.anna.duanzi.base.BaseFragment;
 import com.anna.duanzi.common.Constants;
@@ -204,8 +205,13 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
     @Override
     public void menuItemClicked(int menuNumber) {
-        Intent intent = new Intent(this, PublishActivity.class);
-        intent.putExtra(Constants.CATEGORY, menuNumber);
-        startActivity(intent);
+        if (menuNumber == 2) {
+            Intent intent = new Intent(this, RecorderActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, PublishActivity.class);
+            intent.putExtra(Constants.CATEGORY, menuNumber);
+            startActivity(intent);
+        }
     }
 }

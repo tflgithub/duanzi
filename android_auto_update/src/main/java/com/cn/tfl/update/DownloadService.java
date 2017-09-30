@@ -5,15 +5,10 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.VerificationParams;
 import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.util.Log;
-import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -22,11 +17,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import android.content.pm.IPackageInstallObserver2;
-import android.content.pm.IPackageManager;
 /**
  * Created by tfl on 2016/10/24.
  */
@@ -195,45 +187,6 @@ public class DownloadService extends IntentService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-
-    /**
-     * 无需root实现静默安装
-     * @param apkFile
-     */
-    private void autoInstall(File apkFile)
-    {
-        try {
-            //Uri uri = Uri.fromFile(apkFile);
-            Class<?> clazz = Class.forName("android.os.ServiceManager");
-            Method method = clazz.getMethod("getService", String.class);
-            IBinder iBinder = (IBinder) method.invoke(null, "package");
-            IPackageManager ipm = IPackageManager.Stub.asInterface(iBinder);
-            @SuppressWarnings("deprecation")
-            VerificationParams verificationParams = new VerificationParams(null, null, null, VerificationParams.NO_UID, null);
-            ipm.installPackage(apkFile.toString(), new PackageInstallObserver(), 2, null, verificationParams, "");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-    }
-
-    // 用于显示结果
-    class PackageInstallObserver extends IPackageInstallObserver2.Stub {
-
-        @Override
-        public void onUserActionRequired(Intent intent) throws RemoteException {
-            // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onPackageInstalled(String basePackageName, int returnCode, String msg, Bundle extras) throws RemoteException {
-            // TODO Auto-generated method stub
-
         }
     }
 }

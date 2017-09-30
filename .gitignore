@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-.gitignore
 .gradle/3.3/
 .idea/libraries/YoumiSdk_v7_5_0_2017_07_18_.xml
 DroidPlugin/assets/
@@ -186,4 +185,3 @@ DroidPlugin/build/intermediates/transforms/stripDebugSymbol/
 DroidPlugin/res/drawable-mdpi/
 app/build/generated/source/r/debug/android/support/multidex/
 app/build/generated/source/r/debug/android/support/v4/
-!/app/src/main/java/com/anna/duanzi/fragment/PublishVedioFragment.java

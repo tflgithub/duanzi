@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\avoscloud_feedback_notification.9.png",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-mdpi\\avoscloud_feedback_notification.9.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\avoscloud_feedback_dev_reply_background.9.png",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-mdpi\\avoscloud_feedback_dev_reply_background.9.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi\\avoscloud_feedback_user_reply_background.9.png",
+        "source": "D:\\androidProject\\duanzi\\app\\src\\main\\res\\drawable-mdpi\\avoscloud_feedback_user_reply_background.9.png"
+    }
+]

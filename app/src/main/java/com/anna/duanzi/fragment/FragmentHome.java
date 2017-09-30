@@ -1,12 +1,12 @@
 package com.anna.duanzi.fragment;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTabHost;
-import android.view.LayoutInflater;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.TabHost;
-import android.widget.TabWidget;
-import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.activity.HomeActivity;
@@ -16,16 +16,19 @@ import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVUser;
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FragmentHome extends BaseFragment implements TabHost.OnTabChangeListener {
+public class FragmentHome extends BaseFragment {
 
-    @Bind(android.R.id.tabhost)
-    public FragmentTabHost mTabHost;
-    @Bind(android.R.id.tabs)
-    TabWidget tabWidget;
+    @Bind(R.id.tab_layout)
+    public TabLayout tabLayout;
+    @Bind(R.id.pager)
+    ViewPager viewPager;
     @Bind(R.id.iv_user_head)
     CircleImageView iv_user_head;
 
@@ -46,16 +49,31 @@ public class FragmentHome extends BaseFragment implements TabHost.OnTabChangeLis
     }
 
     private void initTabHost() {
-        tabWidget.setDividerDrawable(null);
-        mTabHost.setup(getActivity(), getChildFragmentManager(),
-                android.R.id.tabcontent);
-        String tabs[] = TabDb.getTabsTxt();
-        for (int i = 0; i < tabs.length; i++) {
-            TabHost.TabSpec tabSpec = mTabHost.newTabSpec(tabs[i]).setIndicator(getTabView(i));
-            mTabHost.addTab(tabSpec, TabDb.getFragments()[i], null);
-            mTabHost.setTag(i);
-        }
-        mTabHost.setOnTabChangedListener(this);
+        tabLayout.addTab(tabLayout.newTab().setText("段子"));
+        tabLayout.addTab(tabLayout.newTab().setText("小说"));
+        fragments.add(new TxtFragment());
+        fragments.add(new FictionFragment());
+        PagerAdapter adapter = new PagerAdapter
+                (getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        viewPager.setCurrentItem(0);
     }
 
     @Override
@@ -76,44 +94,25 @@ public class FragmentHome extends BaseFragment implements TabHost.OnTabChangeLis
         }
     }
 
-    private View getTabView(int idx) {
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.tab_item, null);
-        ((TextView) view.findViewById(R.id.tv_title)).setText(TabDb.getTabsTxt()[idx]);
-        if (idx == 0) {
-            ((TextView) view.findViewById(R.id.tv_title)).setTextColor(getResources().getColor(R.color.colorPrimary));
-            (view.findViewById(R.id.view_bottom)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        }
-        return view;
-    }
+    List<Fragment> fragments = new ArrayList<>();
 
-    @Override
-    public void onTabChanged(String tabId) {
-        updateTab();
-    }
+    class PagerAdapter extends FragmentStatePagerAdapter {
 
-    private void updateTab() {
-        TabWidget tabw = mTabHost.getTabWidget();
-        for (int i = 0; i < tabw.getChildCount(); i++) {
-            View view = tabw.getChildAt(i);
-            if (i == mTabHost.getCurrentTab()) {
-                ((TextView) view.findViewById(R.id.tv_title)).setTextColor(getResources().getColor(R.color.colorPrimary));
-                (view.findViewById(R.id.view_bottom)).setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-            } else {
-                ((TextView) view.findViewById(R.id.tv_title)).setTextColor(getResources().getColor(R.color.gray));
-                (view.findViewById(R.id.view_bottom)).setBackgroundColor(getResources().getColor(R.color.gray));
-            }
-        }
-    }
+        int mNumOfTabs;
 
-    static class TabDb {
-        public static String[] getTabsTxt() {
-            String[] tabs = {"段子", "小说"};
-            return tabs;
+        public PagerAdapter(FragmentManager fm, int NumOfTabs) {
+            super(fm);
+            this.mNumOfTabs = NumOfTabs;
         }
 
-        public static Class[] getFragments() {
-            Class[] clz = {TxtFragment.class, FictionFragment.class};
-            return clz;
+        @Override
+        public Fragment getItem(int position) {
+            return fragments.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mNumOfTabs;
         }
     }
 }

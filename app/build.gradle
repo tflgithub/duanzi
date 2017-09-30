@@ -30,10 +30,13 @@ android {
     defaultConfig {
         applicationId "com.anna.duanzi"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 2
         versionName "2.0.0"
         multiDexEnabled true
+        ndk{
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
     }
 
     dexOptions {
@@ -71,6 +74,7 @@ dependencies {
     compile project(':DroidPlugin')
     compile('cn.leancloud.android:avoscloud-push:v4.4.4@aar') { transitive = true }
     compile project(':recyclerviewcardgallery')
+    compile project(':mediarecord')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'

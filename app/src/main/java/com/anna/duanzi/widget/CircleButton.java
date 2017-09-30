@@ -162,8 +162,8 @@ public class CircleButton extends android.support.v7.widget.AppCompatImageView {
         if (borderWidth != 0) {
             canvas.drawCircle(centerX, centerY, borderRadius, borderPaint);
         }
-        canvas.drawLine(with / 3, centerY,4 * with / 6, centerY, centerPaint);
-        canvas.drawLine(centerX, 4 * height / 6, centerX, height / 3, centerPaint);
+//        canvas.drawLine(with / 3, centerY,4 * with / 6, centerY, centerPaint);
+//        canvas.drawLine(centerX, 4 * height / 6, centerX, height / 3, centerPaint);
         super.onDraw(canvas);
     }
 

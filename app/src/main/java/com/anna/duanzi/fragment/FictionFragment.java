@@ -39,7 +39,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class FictionFragment extends BaseFragment implements UIUtils.DialogListener,TflLoadMoreListener {
+public class FictionFragment extends BaseFragment implements UIUtils.DialogListener,TflLoadMoreListener{
 
     @Bind(R.id.recycler_view)
     TflListRecyclerView recyclerView;
@@ -147,7 +147,6 @@ public class FictionFragment extends BaseFragment implements UIUtils.DialogListe
             }
         });
     }
-
 
     class SpaceItemDecoration extends RecyclerView.ItemDecoration {
 

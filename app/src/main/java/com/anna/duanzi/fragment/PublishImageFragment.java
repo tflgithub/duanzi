@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import butterknife.ButterKnife;
-
 
 public class PublishImageFragment extends BaseFragment {
     DragLinearView dragLinearView;
@@ -31,7 +29,6 @@ public class PublishImageFragment extends BaseFragment {
         View view = View.inflate(getActivity(), R.layout.fragment_publish_image, null);
         dragLinearView = (DragLinearView) view.findViewById(R.id.dragView);
         desc_layout = (LinearLayout) view.findViewById(R.id.desc_layout);
-        ButterKnife.bind(view);
         return view;
     }
 
@@ -88,7 +85,7 @@ public class PublishImageFragment extends BaseFragment {
         });
     }
 
-    HashMap<String, View> viewMap = new HashMap<>();
+    public HashMap<String, View> viewMap = new HashMap<>();
 
     public LinkedList<DragLinearView.ImageTagElement> imageTagElements() {
         LinkedList<DragLinearView.ImageTagElement> list = new LinkedList<>();
@@ -97,7 +94,10 @@ public class PublishImageFragment extends BaseFragment {
             list.add(new DragLinearView.ImageTagElement(bitmap, param.get(i)));
             View view = View.inflate(getContext(), R.layout.imge_desc_edit, null);
             int num = i + 1;
-            ((EditText) view.findViewById(R.id.image_desc)).setHint("编辑图" + num + "描述");
+            ((EditText) view.findViewById(R.id.image_desc)).setHint("编辑图" + num + "描述(限50字以内)");
+            if (i == 0) {
+                view.setFocusable(true);
+            }
             viewMap.put(param.get(i), view);
             desc_layout.addView(view);
         }

@@ -79,9 +79,9 @@ public class AttentionPersonActivity extends BaseActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                followeeFragment.initData();
-                followerFragment.initData();
+
             }
+
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 

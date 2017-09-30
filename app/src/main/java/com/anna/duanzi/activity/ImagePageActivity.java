@@ -82,7 +82,7 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
         imageId = getIntent().getExtras().getString("imageId");
         HttpHelper.getInstance().clickStatistics(imageId);
         AVQuery<Image> query = AVObject.getQuery(Image.class);
-        query.setCachePolicy(AVQuery.CachePolicy.CACHE_ELSE_NETWORK);
+        query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
         query.whereEqualTo("imageId", imageId);
         query.findInBackground(new FindCallback<Image>() {
             @Override

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_flash_auto.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_flash_auto.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_flash_on.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_flash_on.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_flash_off.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_flash_off.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_camera_rear.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_camera_rear.png"
+    },
+    {
+        "merged": "D:\\androidProject\\duanzi\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_camera_front.png",
+        "source": "D:\\androidProject\\duanzi\\multi-image-selector\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_camera_front.png"
+    }
+]

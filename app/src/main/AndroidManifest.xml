@@ -22,7 +22,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".MyApplication"
@@ -140,8 +140,11 @@
         <activity android:name=".activity.AttentionPersonActivity" />
         <activity android:name=".activity.AddAttentionActivity" />
         <activity android:name=".activity.PublishActivity" />
+        <activity android:name=".activity.PublishEditActivity" />
         <activity
-            android:name=".activity.PublishEditActivity" />
+            android:name=".activity.RecorderActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:name=".activity.VideoThumbEditActivity"></activity>
     </application>
 
 </manifest>
