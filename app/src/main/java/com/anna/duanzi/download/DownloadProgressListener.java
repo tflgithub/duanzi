@@ -1,4 +1,4 @@
-package com.anna.duanzi.upgrade;
+package com.anna.duanzi.download;
 
 /**
  * Created by Administrator on 2016/11/16.

@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Movies;
-import com.anna.duanzi.upgrade.DownloadProgressListener;
-import com.anna.duanzi.upgrade.FileDownloader;
-import com.anna.duanzi.upgrade.FileService;
+import com.anna.duanzi.download.DownloadProgressListener;
+import com.anna.duanzi.download.FileDownloader;
+import com.anna.duanzi.download.FileService;
 import com.anna.duanzi.widget.DownloadProgressButton;
 import com.avos.avoscloud.AVFile;
 import com.bumptech.glide.Glide;

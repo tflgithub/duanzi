@@ -1,4 +1,4 @@
-package com.anna.duanzi.upgrade;
+package com.anna.duanzi.download;
 
 import android.content.Context;
 import android.util.Log;
