@@ -19,14 +19,15 @@
         android:gravity="center|left"
         android:text="dd" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="120dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/img_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:src="@drawable/hugh"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
 
         <TextView
@@ -34,13 +35,11 @@
             style="@style/text_gray_12sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             android:layout_margin="10dp"
+            android:layout_gravity="bottom|right"
             android:background="@drawable/bg_channel_header_subscription"
-            android:gravity="center"
             android:padding="5dp" />
-    </RelativeLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,10 +75,10 @@
             android:padding="5dp"
             android:text="+10" />
 
-        <com.anna.duanzi.widget.CircleImageView
+        <ImageView
             android:id="@+id/header_image_publisher"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="center|right"
             android:layout_marginLeft="30dp"
             android:padding="5dp" />

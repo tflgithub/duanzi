@@ -39,8 +39,10 @@
             anna:text_size="12sp" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_weight="1" />
 
 
@@ -83,6 +85,7 @@
         android:id="@+id/gooey_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:layout_marginBottom="2dp"
         anna:fab_radius="@dimen/big_circle_radius"
         anna:gap_between_menu_fab="@dimen/min_gap"

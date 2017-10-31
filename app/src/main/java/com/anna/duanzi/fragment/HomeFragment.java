@@ -1,11 +1,9 @@
 package com.anna.duanzi.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import com.anna.duanzi.R;
 import com.anna.duanzi.activity.ImagePageActivity;
 import com.anna.duanzi.activity.VideoActivity;
@@ -56,12 +54,6 @@ public class HomeFragment extends BaseFragment implements TflLoadMoreListener {
         return view;
     }
 
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
-
     /**
      * fragment与activity产生关联是  回调这个方法
      */
@@ -86,7 +78,7 @@ public class HomeFragment extends BaseFragment implements TflLoadMoreListener {
                 });
                 break;
             case Constants.CATEGORY_VIDEO:
-                tflListAdapter = new VideoAdapter(dataList);
+                tflListAdapter = new VideoAdapter(dataList,getActivity());
                 tflListAdapter.setOnItemClickListener(new TflListInterface.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, Object o) {
@@ -114,7 +106,7 @@ public class HomeFragment extends BaseFragment implements TflLoadMoreListener {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(tflListAdapter);
         mRecyclerView.setDivider(R.drawable.bottom_line);
-
+        mRecyclerView.enableAutoLoadMore(this);
         if (area_list != null && area_list.size() > 0) {
             load();
         }

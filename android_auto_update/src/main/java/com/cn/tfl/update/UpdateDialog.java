@@ -2,34 +2,35 @@ package com.cn.tfl.update;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.view.View;
+import me.drakeet.materialdialog.MaterialDialog;
 
 /**
  * Created by tfl on 2016/10/24.
  */
 public class UpdateDialog {
 
-    static void show(final Context context, String content, final String downloadUrl) {
+    public static void show(final Context context, String content, final String downloadUrl) {
         if (isContextValid(context)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle(R.string.android_auto_update_dialog_title);
-            builder.setMessage(content)
-                    .setPositiveButton(R.string.android_auto_update_dialog_btn_download, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+            final MaterialDialog materialDialog=new MaterialDialog(context);
+            materialDialog.setTitle(R.string.android_auto_update_dialog_title)
+                    .setMessage(content)
+                    .setPositiveButton(R.string.android_auto_update_dialog_btn_download, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
                             goToDownload(context, downloadUrl);
+                            materialDialog.dismiss();
                         }
                     })
-                    .setNegativeButton(R.string.android_auto_update_dialog_btn_cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        }
-                    });
-
-            AlertDialog dialog = builder.create();
-            //点击对话框外面,对话框不消失
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.show();
+                    .setNegativeButton(R.string.android_auto_update_dialog_btn_cancel,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    materialDialog.dismiss();
+                                }
+                            });
+            materialDialog.show();
         }
     }
 

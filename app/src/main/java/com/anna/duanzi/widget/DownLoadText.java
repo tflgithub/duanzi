@@ -20,7 +20,7 @@ public class DownLoadText extends TextView {
     /**
      * 未下载状态字体颜色
      */
-    private int normalColor = getResources().getColor(R.color.gray);
+    private int normalColor = getResources().getColor(R.color.deep_gray);
     /**
      * 下载中的字体颜色
      */
@@ -152,28 +152,30 @@ public class DownLoadText extends TextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         String tip = "";
+        int color = normalColor;
         switch (curState) {
             case STATE_NORMAL:
                 tip = getResources().getString(R.string.download);
-                setTextColor(normalColor);
+                color = normalColor;
                 break;
             case STATE_DOWNLOADING:
-                setTextColor(downLoadColor);
+                color = downLoadColor;
                 tip = getResources().getString(R.string.downloading);
                 break;
             case STATE_STOPDOWNLOADING:
                 tip = getResources().getString(R.string.download_stop);
-                setTextColor(normalColor);
+                color = normalColor;
                 break;
             case STATE_COMPLETE:
                 tip = getResources().getString(R.string.download_complete);
-                setTextColor(completeColor);
+                color = completeColor;
         }
         /**
          * 绘制提示文本
          */
         Rect textBound = new Rect();
         paint.getTextBounds(tip, 0, tip.length(), textBound);
+        paint.setColor(color);
         canvas.drawText(tip, (getMeasuredWidth() - textBound.width()) / 2, (getMeasuredHeight() + textBound.height()) / 2, paint);
     }
 

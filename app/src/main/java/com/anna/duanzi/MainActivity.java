@@ -1,6 +1,7 @@
 package com.anna.duanzi;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -34,14 +35,16 @@ public class MainActivity extends BaseActivity implements OnClickListener,
 
     @Bind(R.id.id_viewpager)
     ViewPager mViewPager;
+    @Bind((R.id.gooey_menu))
+    GooeyMenu mGooeyMenu;
+    @Bind(R.id.view)
+    View view;
 
     private List<BaseFragment> mTabs = new ArrayList<>();
 
     private FragmentPagerAdapter mAdapter;
 
     private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<>();
-
-    GooeyMenu mGooeyMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +55,14 @@ public class MainActivity extends BaseActivity implements OnClickListener,
         initDatas();
         mViewPager.setAdapter(mAdapter);
         mViewPager.addOnPageChangeListener(this);
-        mGooeyMenu = (GooeyMenu) findViewById(R.id.gooey_menu);
         mGooeyMenu.setOnMenuListener(this);
     }
 
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
     private void initDatas() {
         for (int i = 0; i < 4; i++) {
@@ -93,6 +100,18 @@ public class MainActivity extends BaseActivity implements OnClickListener,
         one.setIconAlpha(1.0f);
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isLogin) {
+            mGooeyMenu.setVisibility(View.VISIBLE);
+            view.setVisibility(View.VISIBLE);
+        } else {
+            mGooeyMenu.setVisibility(View.GONE);
+            view.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public void onClick(View v) {

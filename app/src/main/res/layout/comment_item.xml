@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-    <com.anna.duanzi.widget.CircleImageView
+    <ImageView
         android:id="@+id/iv_user_head"
         android:layout_width="40dp"
         android:layout_height="40dp" />

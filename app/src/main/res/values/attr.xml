@@ -79,11 +79,18 @@
         <attr name="tabSelectedTextColor" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="DownLoadButton">
-        <attr name="normalBackground" format="reference|color" />
-        <attr name="downLoadedBackground" format="reference|color" />
-        <attr name="downLoadCompleteBackground" format="reference|color" />
-        <attr name="textColor" format="reference|color" />
+    <declare-styleable name="DownloadProgressButton">
+        <attr name="button_radius" format="float"/>
+        <attr name="background_color" format="color"/>
+        <attr name="background_second_color" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_covercolor" format="color"/>
+        <attr name="background_strokeWidth" format="dimension"/>
+        <attr name="text_normal" format="string"/>
+        <attr name="text_downing" format="string"/>
+        <attr name="text_pause" format="string"/>
+        <attr name="text_finish" format="string"/>
+        <attr name="animation_duration" format="integer"/>
     </declare-styleable>
 
     <declare-styleable name="TagView">

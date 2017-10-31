@@ -14,6 +14,9 @@
 
     </style>
 
+    <style name="Theme.beginBackground" parent="@android:style/android:Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 
     <style name="rtl_RecyclerTabLayout">
         <item name="rtl_tabMinWidth">72dp</item>
@@ -86,6 +89,11 @@
     <style name="text_black_22sp">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="text_black_18sp">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="text_gray_22sp">

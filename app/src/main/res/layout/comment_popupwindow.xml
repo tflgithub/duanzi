@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pop_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/menu_bg"
-    android:id="@+id/pop_layout"
+    android:orientation="vertical"
     android:padding="10dp">
 
 
@@ -14,10 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/comment_write_input_bg_normal"
+        android:focusable="true"
         android:gravity="top" />
 
     <Button
         android:id="@+id/fb_btn"
+        style="@style/text_gray_12sp"
         android:layout_width="70dp"
         android:layout_height="35dp"
         android:layout_gravity="right"
@@ -25,7 +27,6 @@
         android:background="@drawable/fb_btn_selector"
         android:enabled="false"
         android:gravity="center"
-        style="@style/text_gray_12sp"
         android:text="发表" />
 
 </LinearLayout>

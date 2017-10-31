@@ -1,9 +1,11 @@
 package com.anna.duanzi.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
@@ -14,7 +16,10 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
+import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.CountCallback;
+import com.avos.avoscloud.GetCallback;
+import com.bumptech.glide.Glide;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
 
@@ -22,22 +27,24 @@ import java.util.List;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.PlayListener;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Created by Administrator on 2016/10/12.
  */
 public class VideoAdapter extends
         TflListAdapter<Duanzi> {
-
+    private Context mContext;
     private AVQuery<Comment> commentAVQuery = AVQuery.getQuery("Comment");
     private AVQuery<AVObject> diggAVQuery = new AVQuery<>("Digg");
     private AVQuery<AVObject> clickAVQuery = new AVQuery<>("Click_Statistics");
-
-    public VideoAdapter(List<Duanzi> data) {
+    private AVQuery<AVUser> avUserAVQuery = new AVQuery<>("_User");
+    public VideoAdapter(List<Duanzi> data,Context context) {
         super(data);
         diggAVQuery.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
         clickAVQuery.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
         commentAVQuery.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
+        mContext=context;
     }
 
     @Override
@@ -60,6 +67,21 @@ public class VideoAdapter extends
         AVFile videoImageFile = duanzi.getAVFile("image");
         DataViewHolder videoViewHolder = (DataViewHolder) holder;
         if (videoFile.getUrl() != null && videoImageFile.getUrl() != null) {
+            avUserAVQuery.getInBackground(videoFile.getOwnerObjectId(), new GetCallback<AVUser>() {
+                @Override
+                public void done(AVUser avUser, AVException e) {
+                    if (e == null && avUser != null) {
+                        ((VideoAdapter.DataViewHolder) holder).tv_username.setText(avUser.getUsername());
+                        Glide.with(mContext)
+                                .load(avUser.getString("headImage"))
+                                .crossFade()
+                                .centerCrop()
+                                .bitmapTransform(new CropCircleTransformation(mContext))
+                                .placeholder(R.drawable.default_round_head)
+                                .into((((VideoAdapter.DataViewHolder) holder).header_image_publisher));
+                    }
+                }
+            });
             videoViewHolder.jcVideoPlayer.setUp(videoFile.getUrl(),
                     videoImageFile.getUrl(),
                     duanzi.title);
@@ -146,14 +168,17 @@ public class VideoAdapter extends
 
     public class DataViewHolder extends RecyclerView.ViewHolder {
         public JCVideoPlayer jcVideoPlayer;
-        public TextView tv_click_num, tv_comment, tv_digg;
-
+        public TextView tv_click_num, tv_comment, tv_digg,tv_username;
+        ImageView header_image_publisher;
         public DataViewHolder(View rootView) {
             super(rootView);
             jcVideoPlayer = (JCVideoPlayer) itemView.findViewById(R.id.video_controller);
+            jcVideoPlayer.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
             tv_click_num = (TextView) itemView.findViewById(R.id.tv_click_num);
             tv_comment = (TextView) itemView.findViewById(R.id.tv_comment);
             tv_digg = (TextView) itemView.findViewById(R.id.tv_dig);
+            tv_username = (TextView) itemView.findViewById(R.id.tv_user_name);
+            header_image_publisher = (ImageView) itemView.findViewById(R.id.header_image_publisher);
         }
     }
 }

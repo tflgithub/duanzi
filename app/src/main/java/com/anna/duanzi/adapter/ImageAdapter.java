@@ -12,7 +12,6 @@ import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Comment;
 import com.anna.duanzi.domain.Duanzi;
 import com.anna.duanzi.domain.Image;
-import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
@@ -28,6 +27,8 @@ import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Created by tfl on 2016/10/12.
@@ -73,7 +74,13 @@ public class ImageAdapter extends
                 public void done(AVUser avUser, AVException e) {
                     if (e == null && avUser != null) {
                         ((ViewHolder) holder).tv_username.setText(avUser.getUsername());
-                        Glide.with(mContext).load(avUser.getString("headImage")).placeholder(R.drawable.default_round_head).into((((ViewHolder) holder).header_image_publisher));
+                        Glide.with(mContext)
+                                .load(avUser.getString("headImage"))
+                                .crossFade()
+                                .centerCrop()
+                                .bitmapTransform(new CropCircleTransformation(mContext))
+                                .placeholder(R.drawable.default_round_head)
+                                .into((((ViewHolder) holder).header_image_publisher));
                     }
                 }
             });
@@ -178,8 +185,7 @@ public class ImageAdapter extends
 
     private class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_title, tv_image_count, tv_click_num, tv_comment, tv_digg, tv_username;
-        ImageView img_content;
-        CircleImageView header_image_publisher;
+        ImageView img_content,header_image_publisher;
 
         public ViewHolder(View rootView) {
             super(rootView);
@@ -190,7 +196,7 @@ public class ImageAdapter extends
             tv_comment = (TextView) itemView.findViewById(R.id.tv_comment);
             tv_digg = (TextView) itemView.findViewById(R.id.tv_dig);
             tv_username = (TextView) itemView.findViewById(R.id.tv_user_name);
-            header_image_publisher = (CircleImageView) itemView.findViewById(R.id.header_image_publisher);
+            header_image_publisher = (ImageView) itemView.findViewById(R.id.header_image_publisher);
         }
     }
 

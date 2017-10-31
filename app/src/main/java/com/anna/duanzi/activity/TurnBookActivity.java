@@ -3,6 +3,7 @@ package com.anna.duanzi.activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,10 +16,15 @@ import com.anna.duanzi.base.BaseActivity;
 import com.anna.duanzi.utils.FileUtils;
 import com.anna.duanzi.widget.PageWidget;
 
+import net.youmi.android.nm.cm.ErrorCode;
+import net.youmi.android.nm.sp.SpotListener;
+import net.youmi.android.nm.sp.SpotManager;
+
 import java.io.IOException;
 
 public class TurnBookActivity extends BaseActivity {
 
+    private static final String TAG = TurnBookActivity.class.getSimpleName();
     /**
      * Called when the activity is first created.
      */
@@ -51,8 +57,8 @@ public class TurnBookActivity extends BaseActivity {
 //        pagefactory.setBgBitmap(BitmapFactory.decodeResource(
 //                this.getResources(), R.drawable.txt_bg));//设置背景图片
 
-        String name=getIntent().getExtras().getString("name");
-        String filePath= FileUtils.getInstance().getFilePath(FileUtils.getInstance().getFileCacheRoot(),name);
+        String name = getIntent().getExtras().getString("name");
+        String filePath = FileUtils.getInstance().getFilePath(FileUtils.getInstance().getFileCacheRoot(), name);
         try {
             // "/sdcard/test.txt"
             pagefactory.openbook(filePath);//打开文件
@@ -118,6 +124,83 @@ public class TurnBookActivity extends BaseActivity {
             }
 
         });
+        setupSlideableSpotAd();
     }
 
+
+    /**
+     * 设置轮播插屏广告
+     */
+    private void setupSlideableSpotAd() {
+        // 设置插屏图片类型，默认竖图
+        //		// 横图
+        SpotManager.getInstance(mContext).setImageType(SpotManager
+                .IMAGE_TYPE_HORIZONTAL);
+        // 竖图
+        // SpotManager.getInstance(mContext).setImageType(SpotManager.IMAGE_TYPE_VERTICAL);
+
+        // 设置动画类型，默认高级动画
+        //		// 无动画
+        //		SpotManager.getInstance(mContext).setAnimationType(SpotManager
+        //				.ANIMATION_TYPE_NONE);
+        //		// 简单动画
+        //		SpotManager.getInstance(mContext)
+        //		                    .setAnimationType(SpotManager.ANIMATION_TYPE_SIMPLE);
+        // 高级动画
+        SpotManager.getInstance(mContext)
+                .setAnimationType(SpotManager.ANIMATION_TYPE_ADVANCED);
+
+        // 展示轮播插屏广告
+        SpotManager.getInstance(mContext)
+                .showSlideableSpot(mContext, new SpotListener() {
+
+                    @Override
+                    public void onShowSuccess() {
+                    }
+
+                    @Override
+                    public void onShowFailed(int errorCode) {
+                        Log.e(TAG, "轮播插屏展示失败");
+                        switch (errorCode) {
+                            case ErrorCode.NON_NETWORK:
+                                Log.e(TAG, "网络异常");
+                                break;
+                            case ErrorCode.NON_AD:
+                                Log.e(TAG, "暂无轮播插屏广告");
+                                break;
+                            case ErrorCode.RESOURCE_NOT_READY:
+                                Log.e(TAG, "轮播插屏资源还没准备好");
+                                break;
+                            case ErrorCode.SHOW_INTERVAL_LIMITED:
+                                Log.e(TAG, "请勿频繁展示");
+                                break;
+                            case ErrorCode.WIDGET_NOT_IN_VISIBILITY_STATE:
+                                Log.e(TAG, "请设置插屏为可见状态");
+                                break;
+                            default:
+                                Log.e(TAG, "请稍后再试");
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onSpotClosed() {
+
+                    }
+
+                    @Override
+                    public void onSpotClicked(boolean isWebPage) {
+                        Log.d(TAG, "轮播插屏被点击");
+                    }
+                });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // 开屏展示界面的 onDestroy() 回调方法中调用
+        SpotManager.getInstance(mContext).onDestroy();
+        // 插屏广告（包括普通插屏广告、轮播插屏广告、原生插屏广告）
+        SpotManager.getInstance(mContext).onAppExit();
+    }
 }

@@ -7,12 +7,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.activity.HomeActivity;
 import com.anna.duanzi.activity.SearchActivity;
 import com.anna.duanzi.base.BaseFragment;
-import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVUser;
 import com.bumptech.glide.Glide;
 
@@ -22,6 +22,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class FragmentHome extends BaseFragment {
 
@@ -30,7 +31,7 @@ public class FragmentHome extends BaseFragment {
     @Bind(R.id.pager)
     ViewPager viewPager;
     @Bind(R.id.iv_user_head)
-    CircleImageView iv_user_head;
+    ImageView iv_user_head;
 
     @Override
     public View initView() {
@@ -43,8 +44,17 @@ public class FragmentHome extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (AVUser.getCurrentUser() != null) {
-            Glide.with(this).load(AVUser.getCurrentUser().getString("headImage")).placeholder(R.drawable.default_round_head).into(iv_user_head);
+        if (isLogin) {
+            //Glide.with(this).load(AVUser.getCurrentUser().getString("headImage")).placeholder(R.drawable.default_round_head).into(iv_user_head);
+            Glide.with(this)
+                    .load(AVUser.getCurrentUser().getString("headImage"))
+                    .crossFade()
+                    .centerCrop()
+                    .bitmapTransform(new CropCircleTransformation(getActivity()))
+                    .placeholder(R.drawable.default_round_head)
+                    .into(iv_user_head);
+        } else {
+            iv_user_head.setImageResource(R.drawable.default_round_head);
         }
     }
 

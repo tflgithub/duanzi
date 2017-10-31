@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
+import com.anna.duanzi.activity.DownLoadAreaActivity;
 import com.anna.duanzi.domain.MoviesItem;
 import com.cn.tfl.update.StorageUtils;
 
@@ -72,7 +73,7 @@ public class FragmentMyDownLoadMovies extends ListFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         isViewCreated = true;
-        setEmptyText("你还没有下载电影");
+        setEmptyText("没有下的载电影");
         setListAdapter(adapter);
         setListShown(false);
         getListView().setOnItemClickListener(null);
@@ -102,7 +103,7 @@ public class FragmentMyDownLoadMovies extends ListFragment {
         if (adapter.getCount() > 0) {
             adapter.clear();
         }
-        new Thread("Mp4Scanner") {
+        new Thread() {
             @Override
             public void run() {
                 File file = StorageUtils.getCacheDirectory(getActivity());

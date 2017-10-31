@@ -21,6 +21,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.OrientationEventListener;
@@ -35,6 +37,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anna.duanzi.R;
 
@@ -45,10 +48,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.Buffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -65,6 +68,7 @@ import static cn.tfl.mediarecord.util.Constants.MIN_RECORD_TIME;
 
 public class RecorderActivity extends Activity implements OnClickListener {
 
+    private static final int CAMERA_OK = 100;
     private final String TAG = getClass().getSimpleName();
     private PowerManager.WakeLock mWakeLock;
     private String strVideoPath;
@@ -118,6 +122,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
     private DeviceOrientationEventListener orientationListener;
     // The degrees of the device rotated clockwise from its natural orientation.
     private int deviceOrientation = OrientationEventListener.ORIENTATION_UNKNOWN;
+    //private RecordHelper recordHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +163,21 @@ public class RecorderActivity extends Activity implements OnClickListener {
         new AsyncTask<String, Integer, Boolean>() {
             @Override
             protected Boolean doInBackground(String... params) {
-                boolean result = setCamera();
+                boolean result = false;
+                if (Build.VERSION.SDK_INT > 22) {
+                    if (ContextCompat.checkSelfPermission(RecorderActivity.this,
+                            android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        //先判断有没有权限 ，没有就在这里进行权限的申请
+                        ActivityCompat.requestPermissions(RecorderActivity.this,
+                                new String[]{android.Manifest.permission.CAMERA}, CAMERA_OK);
+                    } else {
+                        //说明已经获取到摄像头权限了 想干嘛干嘛
+                        result = setCamera();
+                    }
+                } else {
+                    //这个说明系统版本在6.0之下，不需要动态获取权限。
+                    result = setCamera();
+                }
                 return result;
             }
 
@@ -235,7 +254,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
 //            try {
 //                mHolder.addCallback(null);
 //                cameraDevice.setPreviewCallback(null);
-//
 //            } catch (RuntimeException e) {
 //            }
         }
@@ -266,32 +284,37 @@ public class RecorderActivity extends Activity implements OnClickListener {
                 frameTimeStamp = l2 + mAudioTimestamp;
                 mLastAudioTimestamp = mAudioTimestamp;
             }
-            if (null != data && isRecordingStarted && recording) {
-                if (isFirstFrame) {
-                    isFirstFrame = false;
-                    firstData = data;
+            if (isRecordingStarted && recording) {
+                if (lastSavedframe != null
+                        && lastSavedframe.getFrameBytesData() != null) {
+                    if (isFirstFrame) {
+                        isFirstFrame = false;
+                        firstData = data;
+                    }
+                    totalTime = System.currentTimeMillis() - firstTime - pausedTime - rollbackTime - ((long) (1.0 / (double) frameRate) * 1000);
+                    if (totalTime >= MIN_RECORD_TIME) {
+                        nextBtn.setEnabled(true);
+                    }
+                    if (totalTime >= MAX_RECORD_TIME) {
+                        onRecordPause();
+                        saveRecorder();
+                        return;
+                    }
+                    if (totalTime > 0)
+                        cancelBtn.setEnabled(true);
+                    mVideoTimestamp += frameTime;
+                    if (lastSavedframe.getTimeStamp() > mVideoTimestamp) {
+                        mVideoTimestamp = lastSavedframe.getTimeStamp();
+                    }
+                    //tempVideoList.add(lastSavedframe);
+                    recorderThread.putByteData(lastSavedframe);
                 }
-                totalTime = System.currentTimeMillis() - firstTime - pausedTime - rollbackTime - ((long) (1.0 / (double) frameRate) * 1000);
-                if (totalTime >= MIN_RECORD_TIME) {
-                    nextBtn.setEnabled(true);
-                }
-                if (totalTime >= MAX_RECORD_TIME) {
-                    onRecordPause();
-                    saveRecorder();
-                    return;
-                }
-                if (totalTime > 0)
-                    cancelBtn.setEnabled(true);
-                mVideoTimestamp += frameTime;
-                if (lastSavedframe.getTimeStamp() > mVideoTimestamp) {
-                    mVideoTimestamp = lastSavedframe.getTimeStamp();
-                }
-                tempVideoList.add(lastSavedframe);
             }
             lastSavedframe = new SavedFrames(data, frameTimeStamp, isRotateVideo, isFrontCam);
             cameraDevice.addCallbackBuffer(bufferByte);
         }
     }
+
 
     private void handleSurfaceChanged() {
         if (cameraDevice == null) {
@@ -386,6 +409,24 @@ public class RecorderActivity extends Activity implements OnClickListener {
     }
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case CAMERA_OK:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //这里已经获取到了摄像头的权限，想干嘛干嘛了可以
+                    setCamera();
+                } else {
+                    //这里是拒绝给APP摄像头权限，给个提示什么的说明一下都可以。
+                    Toast.makeText(RecorderActivity.this, "请手动打开相机权限", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+
     private void initVideoRecorder() {
         strVideoPath = Util.createFinalPath(this);
         RecorderParameters recorderParameters = Util.getRecorderParameter(currentResolution);
@@ -394,6 +435,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
         frameTime = (1000000L / frameRate);
         fileVideoPath = new File(strVideoPath);
         videoRecorder = new FFmpegFrameRecorder(strVideoPath, Constants.OUTPUT_WIDTH, Constants.OUTPUT_HEIGHT, recorderParameters.getAudioChannel());
+        videoRecorder.setContext(this);
         videoRecorder.setFormat(recorderParameters.getVideoOutputFormat());
         videoRecorder.setSampleRate(recorderParameters.getAudioSamplingRate());
         videoRecorder.setFrameRate(recorderParameters.getVideoFrameRate());
@@ -406,6 +448,8 @@ public class RecorderActivity extends Activity implements OnClickListener {
         audioRecordRunnable = new AudioRecordRunnable();
         audioThread = new Thread(audioRecordRunnable);
         recorderThread = new RecorderThread(videoRecorder, previewWidth, previewHeight);
+        recorderThread.start();
+        //recordHelper = new RecordHelper(videoRecorder, previewWidth, previewHeight);
     }
 
     class AudioRecordRunnable implements Runnable {
@@ -427,7 +471,11 @@ public class RecorderActivity extends Activity implements OnClickListener {
 
         private void record(ShortBuffer shortBuffer) {
             this.mCount += shortBuffer.limit();
-            tempAudioList.add(shortBuffer);
+            try {
+                videoRecorder.recordSamples(new Buffer[]{shortBuffer});
+            } catch (FrameRecorder.Exception e) {
+                e.printStackTrace();
+            }
             return;
         }
 
@@ -489,7 +537,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
         initVideoRecorder();
         startRecording();
         firstTime = System.currentTimeMillis();
-        isRecordingStarted = true;
     }
 
     private class DeviceOrientationEventListener
@@ -529,7 +576,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
             mWakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
             mWakeLock.acquire();
         }
-        if (isRecordingStarted && !recordFinish) {
+        if (isRecordingStarted) {
             onRecordStart();
         }
     }
@@ -554,7 +601,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
         super.onDestroy();
         isRecordingStarted = false;
         runAudioThread = false;
-        releaseResources();
         if (cameraView != null) {
             cameraView.stopPreview();
             if (cameraDevice != null) {
@@ -578,14 +624,15 @@ public class RecorderActivity extends Activity implements OnClickListener {
     private long stopPauseTime = 0;// 暂停录制的结束时间
 
     public void onRecordStart() {
+        recording = true;
         if (!isRecordingStarted) {
+            isRecordingStarted = true;
             initiateRecording();
         } else {
             stopPauseTime = System.currentTimeMillis();
             totalPauseTime = stopPauseTime - startPauseTime - ((long) (1.0 / (double) frameRate) * 1000);
             pausedTime += totalPauseTime;
         }
-        recording = true;
         recordBtn.setImageResource(R.drawable.stop);
         if (deviceOrientation == 0) {
             isRotateVideo = true;
@@ -607,22 +654,18 @@ public class RecorderActivity extends Activity implements OnClickListener {
         recordingTime = SystemClock.elapsedRealtime()
                 - chronometer.getBase();// 保存这次记录了的时间
         recordTimeList.add(chronometer.getText().toString());
-        if (isRecordingStarted) {
-            cancelBtn.setVisibility(View.VISIBLE);
-            nextBtn.setVisibility(View.VISIBLE);
-        }
+//        if (isRecordingStarted) {
+//            cancelBtn.setVisibility(View.VISIBLE);
+           nextBtn.setVisibility(View.VISIBLE);
+//        }
         progressView.setCurrentState(ProgressView.State.PAUSE);
         progressView.putTimeList((int) totalTime);
         startPauseTime = System.currentTimeMillis();
-        // 保存本次录制的视频、音频数据
+        // 保存本次录制的视频数据
         ArrayList<SavedFrames> tempList1 = (ArrayList<SavedFrames>) tempVideoList
                 .clone();
         allVideoList.add(tempList1);
         tempVideoList.clear();
-        ArrayList<ShortBuffer> tempList2 = (ArrayList<ShortBuffer>) tempAudioList
-                .clone();
-        allAudioList.add(tempList2);
-        tempAudioList.clear();
     }
 
     @Override
@@ -638,7 +681,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
                 }
                 break;
             case R.id.recorder_next:
-                onRecordPause();
+                //onRecordPause();
                 saveRecorder();
                 break;
             case R.id.recorder_flashlight:
@@ -686,21 +729,15 @@ public class RecorderActivity extends Activity implements OnClickListener {
 
     // 用于暂存录制的视频数据
     private ArrayList<SavedFrames> tempVideoList = new ArrayList<>();
-    // 用于暂存录制的音频数据
-    private ArrayList<ShortBuffer> tempAudioList = new ArrayList<>();
 
     private LinkedList<String> recordTimeList = new LinkedList<>();
     private LinkedList<ArrayList<SavedFrames>> allVideoList = new LinkedList<>();
-    private LinkedList<ArrayList<ShortBuffer>> allAudioList = new LinkedList<>();
     private long rollbackTime = 0;// 回删的视频时长
     private boolean isRollbackSate = false;// 回删状态标识，点击"回删"标记为true，再次点击"回删"会删除最近的视频片段
 
     private void rollbackVideo() {
         if (allVideoList != null && allVideoList.size() > 0) {
             allVideoList.removeLast();
-        }
-        if (allAudioList != null && allAudioList.size() > 0) {
-            allAudioList.removeLast();
         }
         if (recordTimeList != null && recordTimeList.size() > 0) {
             recordTimeList.removeLast();
@@ -741,7 +778,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                recorderThread.start();
                 recordFinish = true;
                 runAudioThread = false;
                 savingDialog = new Dialog(RecorderActivity.this,
@@ -801,34 +837,22 @@ public class RecorderActivity extends Activity implements OnClickListener {
             @Override
             protected Void doInBackground(Void... params) {
                 publishProgress(20);
-                Iterator<ArrayList<SavedFrames>> videoIterator = allVideoList
-                        .iterator();
-                ArrayList<SavedFrames> videoList = null;
-                SavedFrames videoFrame = null;
-                while (videoIterator.hasNext()) {
-                    videoList = videoIterator.next();
-                    for (int i = 0; i < videoList.size(); i++) {
-                        videoFrame = videoList.get(i);
-                        recorderThread.putByteData(videoFrame);
-                    }
-                }
+                recorderThread.stopRecord();
+//                Iterator<ArrayList<SavedFrames>> videoIterator = allVideoList
+//                        .iterator();
+//                SavedFrames savedFrames = null;
+//                ArrayList<SavedFrames> videoList = new ArrayList<>();
+//                while (videoIterator.hasNext()) {
+//                    for (int i = 0; i < videoList.size(); i++) {
+//                        savedFrames = videoList.get(i);
+//                        recorderThread.putByteData(savedFrames);
+//                    }
+//                }
+                //recordHelper.processByteData(videoList);
                 publishProgress(60);
-                Iterator<ArrayList<ShortBuffer>> audioIterator = allAudioList
-                        .iterator();
-                ArrayList<ShortBuffer> audioList = null;
-                while (audioIterator.hasNext()) {
-                    audioList = audioIterator.next();
-                    for (ShortBuffer shortBuffer : audioList) {
-                        try {
-                            videoRecorder.recordSamples(shortBuffer);
-                        } catch (FrameRecorder.Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                publishProgress(90);
                 if (firstData != null)
                     getFirstCapture(firstData);
+                publishProgress(90);
                 publishProgress(100);
                 return null;
             }
@@ -842,7 +866,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
             @Override
             protected void onPostExecute(Void result) {
                 super.onPostExecute(result);
-                if (!isFinishing()) {
+                if(!isFinishing()) {
                     savingDialog.dismiss();
                     returnToCaller();
                 }
@@ -860,7 +884,7 @@ public class RecorderActivity extends Activity implements OnClickListener {
         } catch (Throwable e) {
             e.printStackTrace();
         } finally {
-//            recorderThread.stopRecord();
+            //           recorderThread.stopRecord();
 //            if (videoRecorder != null && isRecordingStarted) {
 //                isRecordingStarted = false;
 //                releaseResources();
@@ -868,7 +892,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
             finish();
         }
     }
-
 
     private void releaseResources() {
         if (recorderThread != null) {
@@ -884,5 +907,6 @@ public class RecorderActivity extends Activity implements OnClickListener {
         }
         lastSavedframe = null;
         videoRecorder = null;
+       // recordHelper = null;
     }
 }

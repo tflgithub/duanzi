@@ -81,7 +81,7 @@ public class FictionFragment extends BaseFragment implements UIUtils.DialogListe
             @Override
             public void onItemClick(View view, Object o) {
                 final Fiction fiction = (Fiction) o;
-                if (AVUser.getCurrentUser() == null) {
+                if (!isLogin) {
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
                     return;

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
 import com.anna.duanzi.common.Constants;
+import com.anna.duanzi.utils.LoginPreferences;
 import com.anna.duanzi.utils.StringUtils;
 import com.anna.duanzi.utils.UIUtils;
 import com.avos.avoscloud.AVException;
@@ -232,7 +233,8 @@ public class UserInfoActivity extends BaseActivity implements UIUtils.DialogList
                 startActivity(mIntent);
                 break;
             case UIUtils.DialogListener.LOGOUT:
-                AVUser.logOut();
+                currentUser.logOut();
+                LoginPreferences.getInstance().setLoginStatus(false);
                 finish();
                 break;
         }

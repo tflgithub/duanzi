@@ -1,5 +1,6 @@
 package com.anna.duanzi.fragment;
 
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
@@ -41,11 +42,9 @@ public class FragmentUnDownLoadMovies extends BaseFragment implements TflLoadMor
         return view;
     }
 
-
     @Override
     public void initData() {
         tflListAdapter = new DownLoadMoviesAdapter(dataList, getActivity());
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(tflListAdapter);
         mRecyclerView.setDivider(R.drawable.bottom_line);
         tflListAdapter.changeMode(TflListModel.MODE_LOADING);
@@ -61,6 +60,17 @@ public class FragmentUnDownLoadMovies extends BaseFragment implements TflLoadMor
                     @Override
                     public void done(List<Movies> list, AVException e) {
                         if (e == null) {
+                            List<Movies> newList = new ArrayList<>();
+//                            for (Movies movies : list) {
+//                                if (!downList.contains(movies.name + ".mp4")) {
+//                                    newList.add(movies);
+//                                }
+//                            }
+                            if (list.isEmpty()) {
+                                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                            } else {
+                                mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+                            }
                             tflListAdapter.changeMode(TflListModel.MODE_DATA);
                             tflListAdapter.setData(list);
                         }

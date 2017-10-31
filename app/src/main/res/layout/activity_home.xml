@@ -47,7 +47,7 @@
 
     <include layout="@layout/uc_content" />
 
-    <com.anna.duanzi.widget.CircleImageView
+    <ImageView
         android:id="@+id/iv_user_head"
         android:layout_width="70dp"
         android:layout_height="70dp"

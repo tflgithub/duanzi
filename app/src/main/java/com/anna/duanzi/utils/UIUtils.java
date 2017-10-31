@@ -85,6 +85,26 @@ public class UIUtils {
     }
 
 
+
+
+    public static void shareImage(Context context,String title,String imageUrl)
+    {
+        OnekeyShare share = new OnekeyShare();
+        share.disableSSOWhenAuthorize();
+        share.setTitle(title);
+        share.setImageUrl(imageUrl);
+        share.show(context);
+    }
+
+    public static void shareTxt(Context context,String title,String content)
+    {
+        OnekeyShare share = new OnekeyShare();
+        share.disableSSOWhenAuthorize();
+        share.setText(content);
+        share.setTitle(title);
+        share.show(context);
+    }
+
     public static void showShare(Context context, String platformToShare, boolean showContentEdit, String title, String titleUrl, String content, String imgUrl) {
         OnekeyShare share = new OnekeyShare();
         share.disableSSOWhenAuthorize();
@@ -101,7 +121,7 @@ public class UIUtils {
 //        OnekeyShare oks = new OnekeyShare();
 //        oks.setSilent(!showContentEdit);
 //        if (platformToShare != null) {
-//            oks.setPlatform(platformToShare);
+//        oks.setPlatform(platformToShare);
 //        }
 //        //ShareSDK快捷分享提供两个界面第一个是九宫格 CLASSIC  第二个是SKYBLUE
 //        oks.setTheme(OnekeyShareTheme.CLASSIC);

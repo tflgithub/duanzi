@@ -10,21 +10,18 @@ import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Comment;
-import com.anna.duanzi.domain.Duanzi;
 import com.anna.duanzi.utils.DateUtils;
-import com.anna.duanzi.utils.StringUtils;
 import com.avos.avoscloud.AVException;
-import com.avos.avoscloud.AVFile;
-import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
-import com.avos.avoscloud.CountCallback;
 import com.avos.avoscloud.FindCallback;
 import com.bumptech.glide.Glide;
 import com.cn.fodel.tfl_list_recycler_view.TflListAdapter;
 import com.cn.fodel.tfl_list_recycler_view.TflSimpleViewHolder;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Created by tfl on 2016/10/12.
@@ -65,7 +62,13 @@ public class CommentAdapter extends
                 if (e == null) {
                     String nickName = list.get(0).getString("nickName");
                     String headPath = list.get(0).getString("headImage");
-                    Glide.with(mContext).load(headPath).placeholder(R.drawable.default_round_head).into(((ViewHolder) holder).iv_user_head);
+                    Glide.with(mContext)
+                            .load(headPath)
+                            .crossFade()
+                            .centerCrop()
+                            .bitmapTransform(new CropCircleTransformation(mContext))
+                            .placeholder(R.drawable.default_round_head)
+                            .into(((ViewHolder) holder).iv_user_head);
                     if (nickName.isEmpty()) {
                         ((ViewHolder) holder).tv_user_name.setText("路友");
                     } else {

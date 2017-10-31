@@ -17,10 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/ly_setting"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:visibility="gone"
             android:background="@drawable/layout_selector"
             android:divider="@drawable/bottom_line"
             android:gravity="center|left"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
-                android:text="会员专区" />
+                android:text="会员相关" />
 
         </LinearLayout>
 

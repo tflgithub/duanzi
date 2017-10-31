@@ -13,7 +13,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -28,7 +27,6 @@ import com.anna.duanzi.adapter.CommentAdapter;
 import com.anna.duanzi.base.BaseActivity;
 import com.anna.duanzi.common.HttpHelper;
 import com.anna.duanzi.domain.Comment;
-import com.anna.duanzi.utils.UIUtils;
 import com.anna.duanzi.widget.BadgeView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
@@ -86,14 +84,11 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
 
     boolean isSuccess = false;
 
-    private SVProgressHUD mSVProgressHUD;
-
     private BadgeView commentBadgeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_video);
         initView();
         initData();
@@ -102,10 +97,12 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
 
     private void initView() {
         jcVideoPlayer = (JCVideoPlayer) findViewById(R.id.video_controller);
+        jcVideoPlayer.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
         recyclerView = (TflListRecyclerView) findViewById(R.id.recycler_view);
         refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refresh);
         digg_btn = (ImageView) findViewById(R.id.digg_btn);
         tv_comment = (TextView) findViewById(R.id.tv_comment);
+        findViewById(R.id.iv_share).setVisibility(View.INVISIBLE);
         comment_btn = (ImageView) findViewById(R.id.comment_btn);
         animation = AnimationUtils.loadAnimation(this, R.anim.applaud_animation);
         tv_digg_number_animation = (TextView) findViewById(R.id.tv_digg_number_animation);
@@ -272,7 +269,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
                 digg();
                 break;
             case R.id.iv_share:
-                UIUtils.showShare(this, null, true, title, null, null, videoUrl);
+               // UIUtils.showShare(this, null, true, title, null, null, videoUrl);
                 break;
         }
     }

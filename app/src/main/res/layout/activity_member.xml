@@ -46,7 +46,6 @@
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:paddingLeft="5dip"
-            android:enabled="false"
             android:text="@string/grade_two" />
 
         <LinearLayout
@@ -61,7 +60,6 @@
             android:button="@null"
             android:drawableRight="@android:drawable/btn_radio"
             android:paddingLeft="5dip"
-            android:enabled="false"
             android:text="@string/grade_three" />
     </RadioGroup>
 
@@ -72,6 +70,7 @@
         android:layout_margin="20dp"
         android:background="@drawable/fb_btn_selector"
         android:gravity="center"
+        android:textColor="@color/black"
         android:onClick="onClick"
         android:text="分享给朋友" />
 

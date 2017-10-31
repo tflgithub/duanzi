@@ -3,16 +3,16 @@ package com.anna.duanzi.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
-import com.anna.duanzi.common.Constants;
 import com.anna.duanzi.domain.Version;
 import com.anna.duanzi.utils.UIUtils;
+import com.anna.duanzi.utils.VersionPreferences;
 import com.anna.duanzi.widget.BadgeView;
-import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVObject;
@@ -28,12 +28,13 @@ import com.cn.tfl.update.UpdateChecker;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class HomeActivity extends BaseActivity {
 
     private FeedbackAgent agent;
     @Bind(R.id.iv_user_head)
-    CircleImageView iv_user_head;
+    ImageView iv_user_head;
     private Intent mIntent;
     @Bind(R.id.ly_setting)
     LinearLayout ly_setting;
@@ -47,18 +48,14 @@ public class HomeActivity extends BaseActivity {
     TextView tv_followee;
     @Bind(R.id.tv_follower)
     TextView tv_follower;
+    @Bind(R.id.uc_zoomiv)
+    ImageView uc_zoomiv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         initData();
     }
 
@@ -75,6 +72,7 @@ public class HomeActivity extends BaseActivity {
                     upgrade_desc = version.upgradeDesc;
                     version_code = version.versionCode;
                     apk_url = apkFile.getUrl();
+                    VersionPreferences.getInstance().setApkUrl(apkFile.getUrl());
                     if (version_code > AppUtils.getVersionCode(HomeActivity.this)) {
                         BadgeView badgeView = new BadgeView(HomeActivity.this, tv_update);
                         badgeView.setText("new");
@@ -87,18 +85,34 @@ public class HomeActivity extends BaseActivity {
                 }
             }
         });
-        if (AVUser.getCurrentUser() == null) {
-            tv_nick_name.setText("点击头像登录");
-        } else {
-            if (!AVUser.getCurrentUser().getString("vip").equals(Constants.MEMBER.MEMBER_LEVEL_0)) {
-                ly_setting.setVisibility(View.VISIBLE);
-            }
-            tv_nick_name.setText(AVUser.getCurrentUser().getString("nickName") == null ? AVUser.getCurrentUser().getUsername() : AVUser.getCurrentUser().getString("nickName"));
-            countFolloweeAndFollower();
-            Glide.with(this).load(AVUser.getCurrentUser().getString("headImage")).placeholder(R.drawable.default_round_head).into(iv_user_head);
-        }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!isLogin) {
+            tv_nick_name.setText("点击头像登录");
+            iv_user_head.setImageResource(R.drawable.default_round_head);
+            tv_followee.setVisibility(View.GONE);
+            tv_follower.setVisibility(View.GONE);
+            ly_setting.setVisibility(View.GONE);
+        } else {
+            currentUser = AVUser.getCurrentUser();
+            if (currentUser != null) {
+                tv_nick_name.setText(currentUser.getString("nickName") == null ? AVUser.getCurrentUser().getUsername() : currentUser.getString("nickName"));
+                ly_setting.setVisibility(View.VISIBLE);
+                countFolloweeAndFollower();
+                //Glide.with(mContext).load(currentUser.getString("headImage")).placeholder(R.drawable.hugh).into(uc_zoomiv);
+                Glide.with(mContext)
+                        .load(currentUser.getString("headImage"))
+                                .crossFade()
+                                .centerCrop()
+                                .bitmapTransform(new CropCircleTransformation(mContext))
+                                .placeholder(R.drawable.default_round_head)
+                                .into(iv_user_head);
+            }
+        }
+    }
 
     //统计关注和粉丝
     private void countFolloweeAndFollower() {
@@ -127,7 +141,7 @@ public class HomeActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.iv_user_head:
-                if (AVUser.getCurrentUser() != null) {
+                if (currentUser != null && isLogin) {
                     mIntent.setClass(this, UserInfoActivity.class);
                 } else {
                     mIntent.setClass(this, LoginActivity.class);
@@ -145,7 +159,7 @@ public class HomeActivity extends BaseActivity {
                 agent.startDefaultThreadActivity();
                 break;
             case R.id.tv_share:
-                UIUtils.showShare(this, null, true, "应用下载地址", null, apk_url, null);
+                UIUtils.shareTxt(this, "应用下载地址:", VersionPreferences.getInstance().getApkUrl());
                 break;
             case R.id.tv_followee:
                 mIntent.setClass(this, AttentionPersonActivity.class);

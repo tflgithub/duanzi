@@ -12,4 +12,6 @@ public class WebMovie  extends AVObject {
     public String url;
 
     public String title;
+
+    public String objectId;
 }

@@ -22,7 +22,9 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVMobilePhoneVerifyCallback;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.SignUpCallback;
-import com.bigkoo.svprogresshud.SVProgressHUD;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -30,12 +32,10 @@ import butterknife.OnClick;
 
 public class DefaultLoginFragment extends BackHandledFragment {
 
-    @Bind(R.id.tv_phone_number_error)
-    TextView tv_phone_number_error;
-    @Bind(R.id.tv_vail_code_error)
-    TextView tv_vail_code_error;
     @Bind(R.id.et_phone_number)
     EditText et_phone_number;
+    @Bind(R.id.et_password)
+    EditText et_password;
     @Bind(R.id.et_vail_code)
     EditText et_vail_code;
     @Bind(R.id.tv_send_vail_code)
@@ -69,17 +69,17 @@ public class DefaultLoginFragment extends BackHandledFragment {
     }
 
 
-    @OnClick({R.id.tv_send_vail_code, R.id.tv_account_login, R.id.btn_login})
+    @OnClick({R.id.tv_send_vail_code, R.id.btn_register, R.id.btn_login})
     public void onClick(View view) {
+        if (NetUtils.getNetType(getActivity()) == NetUtils.UNCONNECTED) {
+            Toast.makeText(getActivity(), "无网络，请检查您的网络连接", Toast.LENGTH_SHORT).show();
+            return;
+        }
         switch (view.getId()) {
-            case R.id.btn_login:
-                if (NetUtils.getNetType(getActivity()) == NetUtils.UNCONNECTED) {
-                    Toast.makeText(getActivity(), "无网络，请检查您的网络连接", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                vailCode();
+            case R.id.btn_register:
+                register();
                 break;
-            case R.id.tv_account_login:
+            case R.id.btn_login:
                 toAccountLogin();
                 break;
             case R.id.tv_send_vail_code:
@@ -90,28 +90,43 @@ public class DefaultLoginFragment extends BackHandledFragment {
 
     private void sendVailCode() {
         if (et_phone_number.getText().toString().isEmpty() || !StringUtils.isMobileNumberValid(et_phone_number.getText().toString())) {
-            tv_phone_number_error.setVisibility(View.VISIBLE);
-            tv_vail_code_error.setVisibility(View.INVISIBLE);
+            showToast("手机号码无效");
             et_phone_number.setFocusable(true);
             return;
         }
-        tv_send_vail_code.setEnabled(false);
-        getActivity().startService(mIntent);
+        if (et_password.getText().toString().length() < 6) {
+            showToast("密码不少于6个字符");
+            et_password.setFocusable(true);
+            return;
+        }
         AVUser user = new AVUser();
         user.setUsername(et_phone_number.getText().toString());
         // 其他属性可以像其他AVObject对象一样使用put方法添加
         user.put("mobilePhoneNumber", et_phone_number.getText().toString());
-        mSVProgressHUD.showWithProgress("请稍后...", SVProgressHUD.SVProgressHUDMaskType.Black);
+        user.put("password", et_password.getText().toString());
         user.signUpInBackground(new SignUpCallback() {
             public void done(AVException e) {
                 if (e == null) {
-                    // successfully
-                    mSVProgressHUD.dismiss();
-                    Toast.makeText(getActivity(), "恭喜注册成功", Toast.LENGTH_SHORT).show();
+                    tv_send_vail_code.setEnabled(false);
+                    getActivity().startService(mIntent);
                 } else {
-                    // failed
-                    mSVProgressHUD.showErrorWithStatus("服务器忙，请稍后重试！");
-                    Log.e(TAG, e.getMessage());
+                    // {"code":214,"error":"Mobile phone number has already been taken."}
+                    // {"code":201,"error":"Password is missing or empty."}
+                    try {
+                        Log.e(TAG, e.getMessage());
+                        JSONObject jsonObject = new JSONObject(e.getMessage());
+                        int code = jsonObject.optInt("code");
+                        switch (code) {
+                            case 214:
+                                Toast.makeText(getActivity(), "手机号码被注册！", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                                Toast.makeText(getActivity(), "请稍后再试！", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });
@@ -125,21 +140,23 @@ public class DefaultLoginFragment extends BackHandledFragment {
         AccountLoginFragment accountFragment = (AccountLoginFragment) manager.findFragmentByTag("account");
         if (accountFragment == null) {
             accountFragment = new AccountLoginFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("username", et_phone_number.getText().toString());
+            bundle.putString("password", et_password.getText().toString());
+            accountFragment.setArguments(bundle);
         }
         ft.replace(R.id.fl_container, accountFragment, "account");
         ft.addToBackStack("tag");
         ft.commit();
     }
 
-    private void vailCode() {
+    private void register() {
         if (et_phone_number.getText().toString().isEmpty()) {
-            tv_phone_number_error.setVisibility(View.VISIBLE);
-            tv_vail_code_error.setVisibility(View.INVISIBLE);
+            showToast("手机号码无效");
             et_phone_number.setFocusable(true);
             return;
         } else if (et_vail_code.getText().toString().isEmpty()) {
-            tv_vail_code_error.setVisibility(View.VISIBLE);
-            tv_phone_number_error.setVisibility(View.INVISIBLE);
+            showToast("请填写验证码");
             et_vail_code.setFocusable(true);
             return;
         }
@@ -147,15 +164,15 @@ public class DefaultLoginFragment extends BackHandledFragment {
             @Override
             public void done(AVException e) {
                 if (e == null) {
-                    Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "恭喜注册成功!", Toast.LENGTH_LONG).show();
+                    toAccountLogin();
                 } else {
-                    Toast.makeText(getActivity(), "Failure", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "验证码无效！", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, e.getMessage());
                 }
             }
         });
     }
-
 
     /**
      * 倒计时Handler

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.anna.duanzi.R;
 import com.anna.duanzi.base.BaseActivity;
 import com.avos.avoscloud.AVUser;
@@ -48,6 +47,7 @@ public class SettingActivity extends BaseActivity {
                 break;
             case R.id.ry_update_level:
                 Intent intent2 = new Intent(SettingActivity.this, MemberActivity.class);
+                intent2.putExtra("vipLevel",tv_vip_level.getText().toString());
                 startActivity(intent2);
                 break;
             case R.id.header_actionbar_back:

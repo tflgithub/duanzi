@@ -131,6 +131,7 @@ public class JCVideoPlayer extends FrameLayout implements View.OnClickListener, 
         }
     }
 
+
     /**
      * <p>配置要播放的内容</p>
      * <p>Configuring the Content to Play</p>

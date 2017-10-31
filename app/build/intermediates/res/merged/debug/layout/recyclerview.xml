@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.cn.fodel.tfl_list_recycler_view.TflListRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white" />

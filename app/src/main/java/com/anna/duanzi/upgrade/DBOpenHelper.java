@@ -13,7 +13,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     private static final String DBNAME = "down.db";
     private static final int VERSION = 1;
 
-    public DBOpenHelper(Context context) {
+    public  DBOpenHelper(Context context) {
         super(context, DBNAME, null, VERSION);
         if (Build.VERSION.SDK_INT >= 11) {
             getWritableDatabase().enableWriteAheadLogging();

@@ -49,6 +49,9 @@
 package cn.tfl.mediarecord;
 
 import android.content.ContentValues;
+import android.content.Context;
+
+import com.getkeepsafe.relinker.ReLinker;
 
 import org.bytedeco.javacpp.BytePointer;
 import org.bytedeco.javacpp.DoublePointer;
@@ -171,7 +174,6 @@ import static org.bytedeco.javacpp.swscale.sws_getCachedContext;
 import static org.bytedeco.javacpp.swscale.sws_scale;
 
 /**
- *
  * @author Samuel Audet
  */
 public class FFmpegFrameRecorder extends FrameRecorder {
@@ -185,6 +187,7 @@ public class FFmpegFrameRecorder extends FrameRecorder {
 
     private static Exception loadingException = null;
     private ContentValues videoContentValues;
+    private static Context mContext;
 
     public ContentValues getVideoContentValues() {
         return videoContentValues;
@@ -199,12 +202,16 @@ public class FFmpegFrameRecorder extends FrameRecorder {
             throw loadingException;
         } else {
             try {
-                Loader.load(org.bytedeco.javacpp.avutil.class);
-                Loader.load(org.bytedeco.javacpp.swresample.class);
-                Loader.load(org.bytedeco.javacpp.avcodec.class);
-                Loader.load(org.bytedeco.javacpp.avformat.class);
-                Loader.load(org.bytedeco.javacpp.swscale.class);
-
+//                Loader.load(org.bytedeco.javacpp.avutil.class);
+//                Loader.load(org.bytedeco.javacpp.swresample.class);
+//                Loader.load(org.bytedeco.javacpp.avcodec.class);
+//                Loader.load(org.bytedeco.javacpp.avformat.class);
+//                Loader.load(org.bytedeco.javacpp.swscale.class);
+                ReLinker.loadLibrary(mContext, String.valueOf(avutil.class));
+                ReLinker.loadLibrary(mContext, String.valueOf(swresample.class));
+                ReLinker.loadLibrary(mContext, String.valueOf(avcodec.class));
+                ReLinker.loadLibrary(mContext, String.valueOf(avformat.class));
+                ReLinker.loadLibrary(mContext, String.valueOf(swscale.class));
                 /* initialize libavcodec, and register all codecs and formats */
                 av_register_all();
                 avformat_network_init();
@@ -251,6 +258,10 @@ public class FFmpegFrameRecorder extends FrameRecorder {
 
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+
+    public void setContext(Context context) {
+        this.mContext = context;
     }
 
     public FFmpegFrameRecorder(String filename, int imageWidth, int imageHeight, int audioChannels) {

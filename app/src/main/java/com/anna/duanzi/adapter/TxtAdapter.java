@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.anna.duanzi.R;
 import com.anna.duanzi.domain.Comment;
 import com.anna.duanzi.domain.Duanzi;
+import com.anna.duanzi.widget.CircleImageView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
@@ -30,7 +31,6 @@ public class TxtAdapter extends
     private AVQuery<Comment> commentAVQuery = AVQuery.getQuery("Comment");
     private AVQuery<AVObject> diggAVQuery = new AVQuery<>("Digg");
     private AVQuery<AVObject> clickAVQuery=new AVQuery<>("Click_Statistics");
-
 
     public TxtAdapter(List<Duanzi> data, Context context) {
         super(data);
@@ -110,14 +110,16 @@ public class TxtAdapter extends
 
 
     private class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_content, tv_click_num, tv_comment, tv_digg;
-
+        TextView tv_content, tv_click_num, tv_comment, tv_digg,tv_username;
+        CircleImageView header_image_publisher;
         public ViewHolder(View rootView) {
             super(rootView);
             tv_content = (TextView) itemView.findViewById(R.id.tv_content);
             tv_click_num = (TextView) itemView.findViewById(R.id.tv_click_num);
             tv_comment = (TextView) itemView.findViewById(R.id.tv_comment);
             tv_digg = (TextView) itemView.findViewById(R.id.tv_dig);
+            tv_username = (TextView) itemView.findViewById(R.id.tv_user_name);
+            header_image_publisher = (CircleImageView) itemView.findViewById(R.id.header_image_publisher);
         }
     }
 

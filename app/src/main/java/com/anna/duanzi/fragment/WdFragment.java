@@ -83,7 +83,7 @@ public class WdFragment extends BackHandledFragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (AVUser.getCurrentUser() == null) {
+        if (!isLogin) {
             //tv_login.setText("点击登录");
             ly_setting.setVisibility(View.GONE);
             iv_user_head.setImageResource(R.drawable.default_round_head);

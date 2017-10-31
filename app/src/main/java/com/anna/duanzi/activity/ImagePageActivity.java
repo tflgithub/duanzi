@@ -200,7 +200,7 @@ public class ImagePageActivity extends BaseActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.iv_share:
-                UIUtils.showShare(this, null, true, imageTitles[0], null, null, imageUrls[0]);
+                UIUtils.shareImage(this,imageTitles[0],imageUrls[0]);
                 break;
         }
     }

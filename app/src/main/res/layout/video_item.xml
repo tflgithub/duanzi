@@ -49,6 +49,23 @@
             android:gravity="center"
             android:padding="5dp"
             android:text="+10" />
+
+
+        <ImageView
+            android:id="@+id/header_image_publisher"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|right"
+            android:layout_marginLeft="30dp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            style="@style/text_orange_12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:padding="5dp" />
     </LinearLayout>
 
 

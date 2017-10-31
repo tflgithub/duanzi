@@ -6,12 +6,13 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Administrator on 2017/8/29.
  */
 
-public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<CircleImageView> {
+public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<ImageView> {
 
 
     private final String TAG_TOOLBAR = "toolbar";
@@ -31,14 +32,14 @@ public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<Circl
     }
 
     @Override
-    public boolean layoutDependsOn(CoordinatorLayout parent, CircleImageView child, View dependency) {
+    public boolean layoutDependsOn(CoordinatorLayout parent, ImageView child, View dependency) {
         return dependency instanceof DisInterceptNestedScrollView;
     }
 
 
     //当dependency变化的时候调用
     @Override
-    public boolean onDependentViewChanged(CoordinatorLayout parent, CircleImageView child, View dependency) {
+    public boolean onDependentViewChanged(CoordinatorLayout parent, ImageView child, View dependency) {
         //初始化一些基础参数
         init(parent, child, dependency);
         //计算比例
@@ -63,7 +64,7 @@ public class CircleImageInUsercBehavior extends CoordinatorLayout.Behavior<Circl
      * @param child
      * @param dependency
      */
-    private void init(CoordinatorLayout parent, CircleImageView child, View dependency) {
+    private void init(CoordinatorLayout parent, ImageView child, View dependency) {
         if (mStartAvatarY == 0) {
             mStartAvatarY = child.getY();
         }

@@ -20,8 +20,8 @@
 
     <!--member-->
     <string name="grade_one">一级会员（分享给10个朋友即可获得）</string>
-    <string name="grade_two">二级会员（30元）推广期间暂不开放</string>
-    <string name="grade_three">三级级会员（50元）推广期间暂不开放</string>
+    <string name="grade_two">二级会员（30元）</string>
+    <string name="grade_three">三级级会员（50元）</string>
     <string name="member_tip">
        温馨提示： 微信分享给朋友时，一定要选择返回快放乐讯才会记录你的分享次数。
     </string>
@@ -44,4 +44,6 @@
 
     <string name="appbar_overscroll_behavior">com.anna.duanzi.widget.AppBarLayoutOverScrollViewBehavior</string>
     <string name="appbar_circleimageview_behavior">com.anna.duanzi.widget.CircleImageInUsercBehavior</string>
+
+    <string name="password">123456</string>
 </resources>

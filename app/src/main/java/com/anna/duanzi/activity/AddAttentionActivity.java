@@ -15,7 +15,6 @@ import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
 import com.cn.fodel.tfl_list_recycler_view.TflListModel;
 import com.cn.fodel.tfl_list_recycler_view.TflListRecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,35 +43,13 @@ public class AddAttentionActivity extends AppCompatActivity {
         addAttentionAdapter = new AddAttentionAdapter(users, AddAttentionActivity.this);
         addAttentionAdapter.changeMode(TflListModel.MODE_LOADING);
         listRecyclerView.setAdapter(addAttentionAdapter);
-
         AVQuery<AVUser> userAVQuery = AVUser.getUserQuery(AVUser.class);
         userAVQuery.whereNotEqualTo("objectId", AVUser.getCurrentUser().getObjectId());
         userAVQuery.findInBackground(new FindCallback<AVUser>() {
             @Override
             public void done(final List<AVUser> allUsers, AVException avException) {
                 if (avException == null) {
-                    //查询已关注
-                    AVQuery<AVUser> followeeQuery = AVUser.followeeQuery(AVUser.getCurrentUser().getObjectId(), AVUser.class);
-                    followeeQuery.findInBackground(new FindCallback<AVUser>() {
-                        @Override
-                        public void done(List<AVUser> followees, AVException avException) {
-                            if (avException == null) {
-                                if (followees.isEmpty()) {
-                                    addAttentionAdapter.setData(allUsers);
-                                } else {
-                                    List<AVUser> newList = new ArrayList<>();
-                                    for (AVUser user : allUsers) {
-                                        for (AVUser followee : followees) {
-                                            if (!user.getObjectId().equals(followee.getObjectId())) {
-                                                newList.add(user);
-                                            }
-                                        }
-                                    }
-                                    addAttentionAdapter.setData(newList);
-                                }
-                            }
-                        }
-                    });
+                    addAttentionAdapter.setData(allUsers);
                 }
             }
         });

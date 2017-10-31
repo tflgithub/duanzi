@@ -90,7 +90,9 @@ public class FoundFragment extends BaseFragment implements OnDismissListener {
     public void onDismiss(SVProgressHUD hud) {
         try {
             String filePath = FileUtils.getInstance().getFilePath(FileUtils.getInstance().getFileCacheRoot(), "transport.apk");
-            PluginManager.getInstance().installPackage(filePath, 0);
+            if (PluginManager.getInstance().getPackageInfo("com.cn.tfl.kuaichuan", 0)== null) {
+                PluginManager.getInstance().installPackage(filePath, 0);
+            }
             PackageManager pm = getActivity().getPackageManager();
             Intent intent = pm.getLaunchIntentForPackage("com.cn.tfl.kuaichuan");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

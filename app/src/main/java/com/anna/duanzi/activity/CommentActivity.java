@@ -15,7 +15,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,8 +51,6 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
 
     private TextView tv_comment;
 
-    private SVProgressHUD mSVProgressHUD;
-
     TflListRecyclerView recyclerView;
 
     MaterialRefreshLayout refreshLayout;
@@ -77,9 +74,7 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_comment);
-        mSVProgressHUD = new SVProgressHUD(this);
         commentPopupWindow = new CommentPopupWindow(CommentActivity.this, itemsOnClick);
         //设置弹出窗体需要软键盘
         commentPopupWindow.setSoftInputMode(CommentPopupWindow.INPUT_METHOD_NEEDED);
@@ -243,11 +238,11 @@ public class CommentActivity extends BaseActivity implements View.OnClickListene
             commentPopupWindow.dismiss();
             switch (v.getId()) {
                 case R.id.fb_btn:
-                    if (AVUser.getCurrentUser() == null) {
+                    if (isLogin) {
+                        postCommit(commentId);
+                    } else {
                         Intent intent = new Intent(CommentActivity.this, LoginActivity.class);
                         startActivity(intent);
-                    } else {
-                        postCommit(commentId);
                     }
                     break;
                 default:

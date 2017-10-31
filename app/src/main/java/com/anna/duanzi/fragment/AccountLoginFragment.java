@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anna.duanzi.R;
+import com.anna.duanzi.utils.LoginPreferences;
 import com.anna.duanzi.utils.NetUtils;
 import com.anna.duanzi.utils.StringUtils;
 import com.avos.avoscloud.AVException;
@@ -70,16 +71,21 @@ public class AccountLoginFragment extends BackHandledFragment {
 
     @Override
     public View initView() {
+        String username = (String) getArguments().get("username");
+        String password = (String) getArguments().get("password");
+        if (!username.isEmpty() && !password.isEmpty()) {
+            et_phone_number.setText(username);
+            et_password.setText(password);
+        }
         return null;
     }
 
     @Override
     public void initData() {
-
     }
 
 
-    @OnClick({R.id.tv_find_password, R.id.tv_vail_code_login, R.id.btn_login})
+    @OnClick({R.id.tv_find_password, R.id.btn_login})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
@@ -87,10 +93,7 @@ public class AccountLoginFragment extends BackHandledFragment {
                     Toast.makeText(getActivity(), "无网络，请检查您的网络连接", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                vailPhoneAndCode();
-                break;
-            case R.id.tv_vail_code_login:
-                getActivity().getSupportFragmentManager().popBackStack();
+                login();
                 break;
             case R.id.tv_find_password:
                 toFoundPassword();
@@ -115,7 +118,7 @@ public class AccountLoginFragment extends BackHandledFragment {
         ft.commit();
     }
 
-    private void vailPhoneAndCode() {
+    private void login() {
         if (et_phone_number.getText().toString().isEmpty() || !StringUtils.isMobileNumberValid(et_phone_number.getText().toString())) {
             tv_phone_number_error.setVisibility(View.VISIBLE);
             tv_password_error.setVisibility(View.INVISIBLE);
@@ -135,6 +138,7 @@ public class AccountLoginFragment extends BackHandledFragment {
                 mSVProgressHUD.dismiss();
                 if (e == null) {
                     isSuccess = true;
+                    LoginPreferences.getInstance().setLoginStatus(isSuccess);
                 } else {
                     isSuccess = false;
                 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
-    style="?android:attr/progressBarStyleLarge"
-    android:id="@+id/loading"
-    android:layout_gravity="center_horizontal"
-    android:layout_width="match_parent"
-    android:background="@drawable/bar_color"
-    android:layout_height="1dp"  >
-</ProgressBar>

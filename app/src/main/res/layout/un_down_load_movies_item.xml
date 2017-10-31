@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/iv_thumb"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/hugh" />
 
     <TextView
         android:id="@+id/tv_title"
-        style="@style/text_gray_14sp"
-        android:layout_width="0dp"
+        style="@style/text_black_14sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_weight="3"
-        android:gravity="center|left"
+        android:layout_below="@id/iv_thumb"
         android:maxEms="15"
-        android:singleLine="true" />
+        android:gravity="center|left"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="dsds" />
 
-    <ProgressBar
-        android:id="@+id/pb_down_load"
-        android:layout_width="0dp"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_height="2dp"
-        android:layout_gravity="center"
-        android:layout_weight="2"
-        android:progressDrawable="@drawable/progressbar_color"
-        android:progress="0"
-        />
-
-    <com.anna.duanzi.widget.DownLoadText
+    <com.anna.duanzi.widget.DownloadProgressButton
         android:id="@+id/btn_down_load"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:padding="5dp" />
+        android:layout_below="@id/tv_title"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        app:background_color="@color/colorPrimary"
+        app:background_second_color="#fff"
+        app:background_strokeWidth="1dp"
+        app:button_radius="5"
+        app:text_color="@color/colorPrimary"
+        app:text_covercolor="#fff"/>
 
-</LinearLayout>
+</RelativeLayout>

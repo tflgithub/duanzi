@@ -20,7 +20,7 @@
 
     <EditText
         android:id="@+id/et_phone_number"
-        style="@style/text_gray_14sp"
+        style="@style/text_black_14sp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textCursorDrawable="@null"
@@ -54,16 +54,6 @@
             android:hint="密码"
             android:inputType="textPassword" />
 
-        <TextView
-            android:id="@+id/tv_find_password"
-            android:textSize="14sp"
-            android:textColor="@color/btn_txt_selector"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:padding="10dp"
-            android:text="找回密码" />
     </RelativeLayout>
 
     <TextView
@@ -85,12 +75,12 @@
         android:text="登录" />
 
     <TextView
-        android:id="@+id/tv_vail_code_login"
+        android:id="@+id/tv_find_password"
         style="@style/text_orange_12sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:text="验证码登录" />
+        android:text="找回密码" />
 
 </LinearLayout>
